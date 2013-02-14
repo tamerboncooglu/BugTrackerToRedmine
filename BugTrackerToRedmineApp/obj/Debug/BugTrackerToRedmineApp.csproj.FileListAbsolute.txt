@@ -1,0 +1,1 @@
+C:\Users\unknown\Documents\Visual Studio 2012\Projects\BugTrackerToRedmine\BugTrackerToRedmineApp\bin\Debug\BugTrackerToRedmineApp.exe.config
