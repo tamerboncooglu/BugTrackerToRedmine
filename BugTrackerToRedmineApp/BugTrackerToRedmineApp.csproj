@@ -32,8 +32,21 @@
     <WarningLevel>4</WarningLevel>
   </PropertyGroup>
   <ItemGroup>
+    <Reference Include="EntityFramework">
+      <HintPath>packages\EntityFramework.5.0.0\lib\net45\EntityFramework.dll</HintPath>
+    </Reference>
+    <Reference Include="MySql.Data">
+      <HintPath>packages\MySql.Data.6.5.4\lib\net40\MySql.Data.dll</HintPath>
+    </Reference>
+    <Reference Include="MySql.Data.Entity">
+      <HintPath>packages\MySQL.Data.Entities.6.5.4.0\lib\net40\MySql.Data.Entity.dll</HintPath>
+    </Reference>
     <Reference Include="System" />
+    <Reference Include="System.ComponentModel.DataAnnotations" />
     <Reference Include="System.Core" />
+    <Reference Include="System.Data.Entity" />
+    <Reference Include="System.Runtime.Serialization" />
+    <Reference Include="System.Security" />
     <Reference Include="System.Xml.Linq" />
     <Reference Include="System.Data.DataSetExtensions" />
     <Reference Include="Microsoft.CSharp" />
@@ -44,16 +57,127 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="bugs.cs">
+      <DependentUpon>BugTrackerModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="BugTrackerModel.Context.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>BugTrackerModel.Context.tt</DependentUpon>
+    </Compile>
+    <Compile Include="BugTrackerModel.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>BugTrackerModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="BugTrackerModel.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>BugTrackerModel.edmx</DependentUpon>
+    </Compile>
+    <Compile Include="bug_posts.cs">
+      <DependentUpon>BugTrackerModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="bug_post_attachments.cs">
+      <DependentUpon>BugTrackerModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="bug_relationships.cs">
+      <DependentUpon>BugTrackerModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="bug_subscriptions.cs">
+      <DependentUpon>BugTrackerModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="bug_tasks.cs">
+      <DependentUpon>BugTrackerModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="bug_user.cs">
+      <DependentUpon>BugTrackerModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="categories.cs">
+      <DependentUpon>BugTrackerModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="custom_col_metadata.cs">
+      <DependentUpon>BugTrackerModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="dashboard_items.cs">
+      <DependentUpon>BugTrackerModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="emailed_links.cs">
+      <DependentUpon>BugTrackerModel.tt</DependentUpon>
+    </Compile>
     <Compile Include="FrmMain.cs">
       <SubType>Form</SubType>
     </Compile>
     <Compile Include="FrmMain.Designer.cs">
       <DependentUpon>FrmMain.cs</DependentUpon>
     </Compile>
+    <Compile Include="FrmTransferUsers.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FrmTransferUsers.Designer.cs">
+      <DependentUpon>FrmTransferUsers.cs</DependentUpon>
+    </Compile>
+    <Compile Include="git_affected_paths.cs">
+      <DependentUpon>BugTrackerModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="git_commits.cs">
+      <DependentUpon>BugTrackerModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="hg_affected_paths.cs">
+      <DependentUpon>BugTrackerModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="hg_revisions.cs">
+      <DependentUpon>BugTrackerModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="orgs.cs">
+      <DependentUpon>BugTrackerModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="priorities.cs">
+      <DependentUpon>BugTrackerModel.tt</DependentUpon>
+    </Compile>
     <Compile Include="Program.cs" />
+    <Compile Include="projects.cs">
+      <DependentUpon>BugTrackerModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="project_user_xref.cs">
+      <DependentUpon>BugTrackerModel.tt</DependentUpon>
+    </Compile>
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="queries.cs">
+      <DependentUpon>BugTrackerModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="queued_notifications.cs">
+      <DependentUpon>BugTrackerModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="reports.cs">
+      <DependentUpon>BugTrackerModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="sessions.cs">
+      <DependentUpon>BugTrackerModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="statuses.cs">
+      <DependentUpon>BugTrackerModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="svn_affected_paths.cs">
+      <DependentUpon>BugTrackerModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="svn_revisions.cs">
+      <DependentUpon>BugTrackerModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="users.cs">
+      <DependentUpon>BugTrackerModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="user_defined_attribute.cs">
+      <DependentUpon>BugTrackerModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="votes_view.cs">
+      <DependentUpon>BugTrackerModel.tt</DependentUpon>
+    </Compile>
     <EmbeddedResource Include="FrmMain.resx">
       <DependentUpon>FrmMain.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="FrmTransferUsers.resx">
+      <DependentUpon>FrmTransferUsers.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Properties\Resources.resx">
       <Generator>ResXFileCodeGenerator</Generator>
@@ -64,6 +188,24 @@
       <AutoGen>True</AutoGen>
       <DependentUpon>Resources.resx</DependentUpon>
     </Compile>
+    <EntityDeploy Include="BugTrackerModel.edmx">
+      <Generator>EntityModelCodeGenerator</Generator>
+      <LastGenOutput>BugTrackerModel.Designer.cs</LastGenOutput>
+    </EntityDeploy>
+    <None Include="BugTrackerModel.Context.tt">
+      <Generator>TextTemplatingFileGenerator</Generator>
+      <DependentUpon>BugTrackerModel.edmx</DependentUpon>
+      <LastGenOutput>BugTrackerModel.Context.cs</LastGenOutput>
+    </None>
+    <None Include="BugTrackerModel.edmx.diagram">
+      <DependentUpon>BugTrackerModel.edmx</DependentUpon>
+    </None>
+    <None Include="BugTrackerModel.tt">
+      <Generator>TextTemplatingFileGenerator</Generator>
+      <DependentUpon>BugTrackerModel.edmx</DependentUpon>
+      <LastGenOutput>BugTrackerModel.cs</LastGenOutput>
+    </None>
+    <None Include="packages.config" />
     <None Include="Properties\Settings.settings">
       <Generator>SettingsSingleFileGenerator</Generator>
       <LastGenOutput>Settings.Designer.cs</LastGenOutput>
@@ -76,6 +218,9 @@
   </ItemGroup>
   <ItemGroup>
     <None Include="App.config" />
+  </ItemGroup>
+  <ItemGroup>
+    <Service Include="{508349B6-6B84-4DF5-91F0-309BEEBAD82D}" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 

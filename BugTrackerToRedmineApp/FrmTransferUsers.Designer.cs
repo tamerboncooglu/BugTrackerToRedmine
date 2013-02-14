@@ -1,6 +1,6 @@
 ﻿namespace BugTrackerToRedmineApp
 {
-    partial class FrmMain
+    partial class FrmTransferUsers
     {
         /// <summary>
         /// Required designer variable.
@@ -28,34 +28,19 @@
         /// </summary>
         private void InitializeComponent()
         {
-            this.btnTransferUsers = new System.Windows.Forms.Button();
             this.SuspendLayout();
             // 
-            // btnTransferUsers
-            // 
-            this.btnTransferUsers.Location = new System.Drawing.Point(38, 27);
-            this.btnTransferUsers.Name = "btnTransferUsers";
-            this.btnTransferUsers.Size = new System.Drawing.Size(141, 41);
-            this.btnTransferUsers.TabIndex = 0;
-            this.btnTransferUsers.Text = "Transfer Users";
-            this.btnTransferUsers.UseVisualStyleBackColor = true;
-            this.btnTransferUsers.Click += new System.EventHandler(this.btnTransferUsers_Click);
-            // 
-            // FrmMain
+            // FrmTransferUsers
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(613, 371);
-            this.Controls.Add(this.btnTransferUsers);
-            this.Name = "FrmMain";
-            this.Text = "BugTracker 2 Redmine";
+            this.ClientSize = new System.Drawing.Size(807, 491);
+            this.Name = "FrmTransferUsers";
+            this.Text = "Transfer Users";
             this.ResumeLayout(false);
 
         }
 
         #endregion
-
-        private System.Windows.Forms.Button btnTransferUsers;
     }
 }
-

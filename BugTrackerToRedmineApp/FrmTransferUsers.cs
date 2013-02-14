@@ -10,18 +10,11 @@ using System.Windows.Forms;
 
 namespace BugTrackerToRedmineApp
 {
-    public partial class FrmMain : Form
+    public partial class FrmTransferUsers : Form
     {
-        public FrmMain()
+        public FrmTransferUsers()
         {
             InitializeComponent();
-        }
-
-        private void btnTransferUsers_Click(object sender, EventArgs e)
-        {
-            var frmTransferUsers = new FrmTransferUsers();
-            frmTransferUsers.ShowDialog();
-            frmTransferUsers.Dispose();
         }
     }
 }
