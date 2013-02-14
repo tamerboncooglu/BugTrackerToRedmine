@@ -1,0 +1,439 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Schema Namespace="BugTrackerModel" Alias="Self" p1:UseStrongSpatialTypes="false" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" xmlns:p1="http://schemas.microsoft.com/ado/2009/02/edm/annotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm">
+  <EntityContainer Name="BugTrackerEntities" p1:LazyLoadingEnabled="true">
+    <EntitySet Name="bug_post_attachments" EntityType="BugTrackerModel.bug_post_attachments" />
+    <EntitySet Name="bug_posts" EntityType="BugTrackerModel.bug_posts" />
+    <EntitySet Name="bug_relationships" EntityType="BugTrackerModel.bug_relationships" />
+    <EntitySet Name="bug_subscriptions" EntityType="BugTrackerModel.bug_subscriptions" />
+    <EntitySet Name="bug_tasks" EntityType="BugTrackerModel.bug_tasks" />
+    <EntitySet Name="bug_user" EntityType="BugTrackerModel.bug_user" />
+    <EntitySet Name="bugs" EntityType="BugTrackerModel.bugs" />
+    <EntitySet Name="categories" EntityType="BugTrackerModel.categories" />
+    <EntitySet Name="custom_col_metadata" EntityType="BugTrackerModel.custom_col_metadata" />
+    <EntitySet Name="dashboard_items" EntityType="BugTrackerModel.dashboard_items" />
+    <EntitySet Name="emailed_links" EntityType="BugTrackerModel.emailed_links" />
+    <EntitySet Name="git_affected_paths" EntityType="BugTrackerModel.git_affected_paths" />
+    <EntitySet Name="git_commits" EntityType="BugTrackerModel.git_commits" />
+    <EntitySet Name="hg_affected_paths" EntityType="BugTrackerModel.hg_affected_paths" />
+    <EntitySet Name="hg_revisions" EntityType="BugTrackerModel.hg_revisions" />
+    <EntitySet Name="orgs" EntityType="BugTrackerModel.orgs" />
+    <EntitySet Name="priorities" EntityType="BugTrackerModel.priorities" />
+    <EntitySet Name="project_user_xref" EntityType="BugTrackerModel.project_user_xref" />
+    <EntitySet Name="projects" EntityType="BugTrackerModel.projects" />
+    <EntitySet Name="queries" EntityType="BugTrackerModel.queries" />
+    <EntitySet Name="queued_notifications" EntityType="BugTrackerModel.queued_notifications" />
+    <EntitySet Name="reports" EntityType="BugTrackerModel.reports" />
+    <EntitySet Name="sessions" EntityType="BugTrackerModel.sessions" />
+    <EntitySet Name="statuses" EntityType="BugTrackerModel.statuses" />
+    <EntitySet Name="svn_affected_paths" EntityType="BugTrackerModel.svn_affected_paths" />
+    <EntitySet Name="svn_revisions" EntityType="BugTrackerModel.svn_revisions" />
+    <EntitySet Name="user_defined_attribute" EntityType="BugTrackerModel.user_defined_attribute" />
+    <EntitySet Name="users" EntityType="BugTrackerModel.users" />
+    <EntitySet Name="votes_view" EntityType="BugTrackerModel.votes_view" />
+  </EntityContainer>
+  <EntityType Name="bug_post_attachments">
+    <Key>
+      <PropertyRef Name="bpa_id" />
+    </Key>
+    <Property Name="bpa_id" Type="Int32" Nullable="false" p1:StoreGeneratedPattern="Identity" />
+    <Property Name="bpa_post" Type="Int32" Nullable="false" />
+    <Property Name="bpa_content" Type="Binary" Nullable="false" MaxLength="Max" FixedLength="false" />
+  </EntityType>
+  <EntityType Name="bug_posts">
+    <Key>
+      <PropertyRef Name="bp_id" />
+    </Key>
+    <Property Name="bp_id" Type="Int32" Nullable="false" p1:StoreGeneratedPattern="Identity" />
+    <Property Name="bp_bug" Type="Int32" Nullable="false" />
+    <Property Name="bp_type" Type="String" Nullable="false" MaxLength="8" Unicode="false" FixedLength="false" />
+    <Property Name="bp_user" Type="Int32" Nullable="false" />
+    <Property Name="bp_date" Type="DateTime" Nullable="false" Precision="3" />
+    <Property Name="bp_comment" Type="String" Nullable="false" MaxLength="Max" Unicode="true" FixedLength="false" />
+    <Property Name="bp_comment_search" Type="String" MaxLength="Max" Unicode="true" FixedLength="false" />
+    <Property Name="bp_email_from" Type="String" MaxLength="800" Unicode="true" FixedLength="false" />
+    <Property Name="bp_email_to" Type="String" MaxLength="800" Unicode="true" FixedLength="false" />
+    <Property Name="bp_file" Type="String" MaxLength="1000" Unicode="true" FixedLength="false" />
+    <Property Name="bp_size" Type="Int32" />
+    <Property Name="bp_content_type" Type="String" MaxLength="200" Unicode="true" FixedLength="false" />
+    <Property Name="bp_parent" Type="Int32" />
+    <Property Name="bp_original_comment_id" Type="Int32" />
+    <Property Name="bp_hidden_from_external_users" Type="Int32" Nullable="false" />
+    <Property Name="bp_email_cc" Type="String" MaxLength="800" Unicode="true" FixedLength="false" />
+  </EntityType>
+  <EntityType Name="bug_relationships">
+    <Key>
+      <PropertyRef Name="re_id" />
+    </Key>
+    <Property Name="re_id" Type="Int32" Nullable="false" p1:StoreGeneratedPattern="Identity" />
+    <Property Name="re_bug1" Type="Int32" Nullable="false" />
+    <Property Name="re_bug2" Type="Int32" Nullable="false" />
+    <Property Name="re_type" Type="String" MaxLength="500" Unicode="true" FixedLength="false" />
+    <Property Name="re_direction" Type="Int32" Nullable="false" />
+  </EntityType>
+  <EntityType Name="bug_subscriptions">
+    <Key>
+      <PropertyRef Name="bs_bug" />
+      <PropertyRef Name="bs_user" />
+    </Key>
+    <Property Name="bs_bug" Type="Int32" Nullable="false" />
+    <Property Name="bs_user" Type="Int32" Nullable="false" />
+  </EntityType>
+  <EntityType Name="bug_tasks">
+    <Key>
+      <PropertyRef Name="tsk_id" />
+    </Key>
+    <Property Name="tsk_id" Type="Int32" Nullable="false" p1:StoreGeneratedPattern="Identity" />
+    <Property Name="tsk_bug" Type="Int32" Nullable="false" />
+    <Property Name="tsk_created_user" Type="Int32" Nullable="false" />
+    <Property Name="tsk_created_date" Type="DateTime" Nullable="false" Precision="3" />
+    <Property Name="tsk_last_updated_user" Type="Int32" Nullable="false" />
+    <Property Name="tsk_last_updated_date" Type="DateTime" Nullable="false" Precision="3" />
+    <Property Name="tsk_assigned_to_user" Type="Int32" />
+    <Property Name="tsk_planned_start_date" Type="DateTime" Precision="3" />
+    <Property Name="tsk_actual_start_date" Type="DateTime" Precision="3" />
+    <Property Name="tsk_planned_end_date" Type="DateTime" Precision="3" />
+    <Property Name="tsk_actual_end_date" Type="DateTime" Precision="3" />
+    <Property Name="tsk_planned_duration" Type="Decimal" Precision="6" Scale="2" />
+    <Property Name="tsk_actual_duration" Type="Decimal" Precision="6" Scale="2" />
+    <Property Name="tsk_duration_units" Type="String" MaxLength="20" Unicode="true" FixedLength="false" />
+    <Property Name="tsk_percent_complete" Type="Int32" />
+    <Property Name="tsk_status" Type="Int32" />
+    <Property Name="tsk_sort_sequence" Type="Int32" />
+    <Property Name="tsk_description" Type="String" MaxLength="400" Unicode="true" FixedLength="false" />
+  </EntityType>
+  <EntityType Name="bug_user">
+    <Key>
+      <PropertyRef Name="bu_bug" />
+      <PropertyRef Name="bu_user" />
+      <PropertyRef Name="bu_flag" />
+      <PropertyRef Name="bu_seen" />
+      <PropertyRef Name="bu_vote" />
+    </Key>
+    <Property Name="bu_bug" Type="Int32" Nullable="false" />
+    <Property Name="bu_user" Type="Int32" Nullable="false" />
+    <Property Name="bu_flag" Type="Int32" Nullable="false" />
+    <Property Name="bu_flag_datetime" Type="DateTime" Precision="3" />
+    <Property Name="bu_seen" Type="Int32" Nullable="false" />
+    <Property Name="bu_seen_datetime" Type="DateTime" Precision="3" />
+    <Property Name="bu_vote" Type="Int32" Nullable="false" />
+    <Property Name="bu_vote_datetime" Type="DateTime" Precision="3" />
+  </EntityType>
+  <EntityType Name="bugs">
+    <Key>
+      <PropertyRef Name="bg_id" />
+    </Key>
+    <Property Name="bg_id" Type="Int32" Nullable="false" p1:StoreGeneratedPattern="Identity" />
+    <Property Name="bg_short_desc" Type="String" Nullable="false" MaxLength="200" Unicode="true" FixedLength="false" />
+    <Property Name="bg_reported_user" Type="Int32" Nullable="false" />
+    <Property Name="bg_reported_date" Type="DateTime" Nullable="false" Precision="3" />
+    <Property Name="bg_status" Type="Int32" Nullable="false" />
+    <Property Name="bg_priority" Type="Int32" Nullable="false" />
+    <Property Name="bg_org" Type="Int32" Nullable="false" />
+    <Property Name="bg_category" Type="Int32" Nullable="false" />
+    <Property Name="bg_project" Type="Int32" Nullable="false" />
+    <Property Name="bg_assigned_to_user" Type="Int32" />
+    <Property Name="bg_last_updated_user" Type="Int32" />
+    <Property Name="bg_last_updated_date" Type="DateTime" Precision="3" />
+    <Property Name="bg_user_defined_attribute" Type="Int32" />
+    <Property Name="bg_project_custom_dropdown_value1" Type="String" MaxLength="120" Unicode="true" FixedLength="false" />
+    <Property Name="bg_project_custom_dropdown_value2" Type="String" MaxLength="120" Unicode="true" FixedLength="false" />
+    <Property Name="bg_project_custom_dropdown_value3" Type="String" MaxLength="120" Unicode="true" FixedLength="false" />
+    <Property Name="bg_tags" Type="String" MaxLength="200" Unicode="true" FixedLength="false" />
+    <Property Name="Bildiren" Type="String" MaxLength="128" Unicode="true" FixedLength="false" />
+    <Property Name="Nasıl_oluşturuluyor" Type="String" MaxLength="2048" Unicode="true" FixedLength="false" />
+  </EntityType>
+  <EntityType Name="categories">
+    <Key>
+      <PropertyRef Name="ct_id" />
+    </Key>
+    <Property Name="ct_id" Type="Int32" Nullable="false" p1:StoreGeneratedPattern="Identity" />
+    <Property Name="ct_name" Type="String" Nullable="false" MaxLength="80" Unicode="true" FixedLength="false" />
+    <Property Name="ct_sort_seq" Type="Int32" Nullable="false" />
+    <Property Name="ct_default" Type="Int32" Nullable="false" />
+  </EntityType>
+  <EntityType Name="custom_col_metadata">
+    <Key>
+      <PropertyRef Name="ccm_colorder" />
+    </Key>
+    <Property Name="ccm_colorder" Type="Int32" Nullable="false" />
+    <Property Name="ccm_dropdown_vals" Type="String" Nullable="false" MaxLength="1000" Unicode="true" FixedLength="false" />
+    <Property Name="ccm_sort_seq" Type="Int32" />
+    <Property Name="ccm_dropdown_type" Type="String" MaxLength="20" Unicode="false" FixedLength="false" />
+  </EntityType>
+  <EntityType Name="dashboard_items">
+    <Key>
+      <PropertyRef Name="ds_id" />
+    </Key>
+    <Property Name="ds_id" Type="Int32" Nullable="false" p1:StoreGeneratedPattern="Identity" />
+    <Property Name="ds_user" Type="Int32" Nullable="false" />
+    <Property Name="ds_report" Type="Int32" Nullable="false" />
+    <Property Name="ds_chart_type" Type="String" Nullable="false" MaxLength="8" Unicode="false" FixedLength="false" />
+    <Property Name="ds_col" Type="Int32" Nullable="false" />
+    <Property Name="ds_row" Type="Int32" Nullable="false" />
+  </EntityType>
+  <EntityType Name="emailed_links">
+    <Key>
+      <PropertyRef Name="el_id" />
+    </Key>
+    <Property Name="el_id" Type="String" Nullable="false" MaxLength="37" Unicode="false" FixedLength="true" />
+    <Property Name="el_date" Type="DateTime" Nullable="false" Precision="3" />
+    <Property Name="el_email" Type="String" Nullable="false" MaxLength="120" Unicode="true" FixedLength="false" />
+    <Property Name="el_action" Type="String" Nullable="false" MaxLength="20" Unicode="true" FixedLength="false" />
+    <Property Name="el_username" Type="String" MaxLength="40" Unicode="true" FixedLength="false" />
+    <Property Name="el_user_id" Type="Int32" />
+    <Property Name="el_salt" Type="Int32" />
+    <Property Name="el_password" Type="String" MaxLength="64" Unicode="true" FixedLength="false" />
+    <Property Name="el_firstname" Type="String" MaxLength="60" Unicode="true" FixedLength="false" />
+    <Property Name="el_lastname" Type="String" MaxLength="60" Unicode="true" FixedLength="false" />
+  </EntityType>
+  <EntityType Name="git_affected_paths">
+    <Key>
+      <PropertyRef Name="gitap_id" />
+    </Key>
+    <Property Name="gitap_id" Type="Int32" Nullable="false" p1:StoreGeneratedPattern="Identity" />
+    <Property Name="gitap_gitcom_id" Type="Int32" Nullable="false" />
+    <Property Name="gitap_action" Type="String" Nullable="false" MaxLength="8" Unicode="true" FixedLength="false" />
+    <Property Name="gitap_path" Type="String" Nullable="false" MaxLength="400" Unicode="true" FixedLength="false" />
+  </EntityType>
+  <EntityType Name="git_commits">
+    <Key>
+      <PropertyRef Name="gitcom_id" />
+    </Key>
+    <Property Name="gitcom_id" Type="Int32" Nullable="false" p1:StoreGeneratedPattern="Identity" />
+    <Property Name="gitcom_commit" Type="String" MaxLength="40" Unicode="false" FixedLength="true" />
+    <Property Name="gitcom_bug" Type="Int32" Nullable="false" />
+    <Property Name="gitcom_repository" Type="String" Nullable="false" MaxLength="400" Unicode="true" FixedLength="false" />
+    <Property Name="gitcom_author" Type="String" Nullable="false" MaxLength="100" Unicode="true" FixedLength="false" />
+    <Property Name="gitcom_git_date" Type="String" Nullable="false" MaxLength="100" Unicode="true" FixedLength="false" />
+    <Property Name="gitcom_btnet_date" Type="DateTime" Nullable="false" Precision="3" />
+    <Property Name="gitcom_msg" Type="String" Nullable="false" MaxLength="Max" Unicode="true" FixedLength="false" />
+  </EntityType>
+  <EntityType Name="hg_affected_paths">
+    <Key>
+      <PropertyRef Name="hgap_id" />
+    </Key>
+    <Property Name="hgap_id" Type="Int32" Nullable="false" p1:StoreGeneratedPattern="Identity" />
+    <Property Name="hgap_hgrev_id" Type="Int32" Nullable="false" />
+    <Property Name="hgap_action" Type="String" Nullable="false" MaxLength="8" Unicode="true" FixedLength="false" />
+    <Property Name="hgap_path" Type="String" Nullable="false" MaxLength="400" Unicode="true" FixedLength="false" />
+  </EntityType>
+  <EntityType Name="hg_revisions">
+    <Key>
+      <PropertyRef Name="hgrev_id" />
+    </Key>
+    <Property Name="hgrev_id" Type="Int32" Nullable="false" p1:StoreGeneratedPattern="Identity" />
+    <Property Name="hgrev_revision" Type="Int32" />
+    <Property Name="hgrev_bug" Type="Int32" Nullable="false" />
+    <Property Name="hgrev_repository" Type="String" Nullable="false" MaxLength="400" Unicode="true" FixedLength="false" />
+    <Property Name="hgrev_author" Type="String" Nullable="false" MaxLength="100" Unicode="true" FixedLength="false" />
+    <Property Name="hgrev_hg_date" Type="String" Nullable="false" MaxLength="100" Unicode="true" FixedLength="false" />
+    <Property Name="hgrev_btnet_date" Type="DateTime" Nullable="false" Precision="3" />
+    <Property Name="hgrev_msg" Type="String" Nullable="false" MaxLength="Max" Unicode="true" FixedLength="false" />
+  </EntityType>
+  <EntityType Name="orgs">
+    <Key>
+      <PropertyRef Name="og_id" />
+    </Key>
+    <Property Name="og_id" Type="Int32" Nullable="false" p1:StoreGeneratedPattern="Identity" />
+    <Property Name="og_name" Type="String" Nullable="false" MaxLength="80" Unicode="true" FixedLength="false" />
+    <Property Name="og_domain" Type="String" MaxLength="80" Unicode="true" FixedLength="false" />
+    <Property Name="og_non_admins_can_use" Type="Int32" Nullable="false" />
+    <Property Name="og_external_user" Type="Int32" Nullable="false" />
+    <Property Name="og_can_be_assigned_to" Type="Int32" Nullable="false" />
+    <Property Name="og_can_only_see_own_reported" Type="Int32" Nullable="false" />
+    <Property Name="og_can_edit_sql" Type="Int32" Nullable="false" />
+    <Property Name="og_can_delete_bug" Type="Int32" Nullable="false" />
+    <Property Name="og_can_edit_and_delete_posts" Type="Int32" Nullable="false" />
+    <Property Name="og_can_merge_bugs" Type="Int32" Nullable="false" />
+    <Property Name="og_can_mass_edit_bugs" Type="Int32" Nullable="false" />
+    <Property Name="og_can_use_reports" Type="Int32" Nullable="false" />
+    <Property Name="og_can_edit_reports" Type="Int32" Nullable="false" />
+    <Property Name="og_can_view_tasks" Type="Int32" Nullable="false" />
+    <Property Name="og_can_edit_tasks" Type="Int32" Nullable="false" />
+    <Property Name="og_can_search" Type="Int32" Nullable="false" />
+    <Property Name="og_other_orgs_permission_level" Type="Int32" Nullable="false" />
+    <Property Name="og_can_assign_to_internal_users" Type="Int32" Nullable="false" />
+    <Property Name="og_category_field_permission_level" Type="Int32" Nullable="false" />
+    <Property Name="og_priority_field_permission_level" Type="Int32" Nullable="false" />
+    <Property Name="og_assigned_to_field_permission_level" Type="Int32" Nullable="false" />
+    <Property Name="og_status_field_permission_level" Type="Int32" Nullable="false" />
+    <Property Name="og_project_field_permission_level" Type="Int32" Nullable="false" />
+    <Property Name="og_org_field_permission_level" Type="Int32" Nullable="false" />
+    <Property Name="og_udf_field_permission_level" Type="Int32" Nullable="false" />
+    <Property Name="og_tags_field_permission_level" Type="Int32" Nullable="false" />
+    <Property Name="og_active" Type="Int32" Nullable="false" />
+    <Property Name="og_Bildiren_field_permission_level" Type="Int32" />
+    <Property Name="og_Nasıl_oluşturuluyor_field_permission_level" Type="Int32" />
+  </EntityType>
+  <EntityType Name="priorities">
+    <Key>
+      <PropertyRef Name="pr_id" />
+    </Key>
+    <Property Name="pr_id" Type="Int32" Nullable="false" p1:StoreGeneratedPattern="Identity" />
+    <Property Name="pr_name" Type="String" Nullable="false" MaxLength="60" Unicode="true" FixedLength="false" />
+    <Property Name="pr_sort_seq" Type="Int32" Nullable="false" />
+    <Property Name="pr_background_color" Type="String" Nullable="false" MaxLength="14" Unicode="true" FixedLength="false" />
+    <Property Name="pr_style" Type="String" MaxLength="30" Unicode="true" FixedLength="false" />
+    <Property Name="pr_default" Type="Int32" Nullable="false" />
+  </EntityType>
+  <EntityType Name="project_user_xref">
+    <Key>
+      <PropertyRef Name="pu_id" />
+    </Key>
+    <Property Name="pu_id" Type="Int32" Nullable="false" p1:StoreGeneratedPattern="Identity" />
+    <Property Name="pu_project" Type="Int32" Nullable="false" />
+    <Property Name="pu_user" Type="Int32" Nullable="false" />
+    <Property Name="pu_auto_subscribe" Type="Int32" Nullable="false" />
+    <Property Name="pu_permission_level" Type="Int32" Nullable="false" />
+    <Property Name="pu_admin" Type="Int32" Nullable="false" />
+  </EntityType>
+  <EntityType Name="projects">
+    <Key>
+      <PropertyRef Name="pj_id" />
+    </Key>
+    <Property Name="pj_id" Type="Int32" Nullable="false" p1:StoreGeneratedPattern="Identity" />
+    <Property Name="pj_name" Type="String" Nullable="false" MaxLength="80" Unicode="true" FixedLength="false" />
+    <Property Name="pj_active" Type="Int32" Nullable="false" />
+    <Property Name="pj_default_user" Type="Int32" />
+    <Property Name="pj_auto_assign_default_user" Type="Int32" />
+    <Property Name="pj_auto_subscribe_default_user" Type="Int32" />
+    <Property Name="pj_enable_pop3" Type="Int32" />
+    <Property Name="pj_pop3_username" Type="String" MaxLength="50" Unicode="false" FixedLength="false" />
+    <Property Name="pj_pop3_password" Type="String" MaxLength="20" Unicode="true" FixedLength="false" />
+    <Property Name="pj_pop3_email_from" Type="String" MaxLength="120" Unicode="true" FixedLength="false" />
+    <Property Name="pj_enable_custom_dropdown1" Type="Int32" Nullable="false" />
+    <Property Name="pj_enable_custom_dropdown2" Type="Int32" Nullable="false" />
+    <Property Name="pj_enable_custom_dropdown3" Type="Int32" Nullable="false" />
+    <Property Name="pj_custom_dropdown_label1" Type="String" MaxLength="80" Unicode="true" FixedLength="false" />
+    <Property Name="pj_custom_dropdown_label2" Type="String" MaxLength="80" Unicode="true" FixedLength="false" />
+    <Property Name="pj_custom_dropdown_label3" Type="String" MaxLength="80" Unicode="true" FixedLength="false" />
+    <Property Name="pj_custom_dropdown_values1" Type="String" MaxLength="800" Unicode="true" FixedLength="false" />
+    <Property Name="pj_custom_dropdown_values2" Type="String" MaxLength="800" Unicode="true" FixedLength="false" />
+    <Property Name="pj_custom_dropdown_values3" Type="String" MaxLength="800" Unicode="true" FixedLength="false" />
+    <Property Name="pj_default" Type="Int32" Nullable="false" />
+    <Property Name="pj_description" Type="String" MaxLength="200" Unicode="true" FixedLength="false" />
+  </EntityType>
+  <EntityType Name="queries">
+    <Key>
+      <PropertyRef Name="qu_id" />
+    </Key>
+    <Property Name="qu_id" Type="Int32" Nullable="false" p1:StoreGeneratedPattern="Identity" />
+    <Property Name="qu_desc" Type="String" Nullable="false" MaxLength="200" Unicode="true" FixedLength="false" />
+    <Property Name="qu_sql" Type="String" Nullable="false" MaxLength="Max" Unicode="true" FixedLength="false" />
+    <Property Name="qu_default" Type="Int32" />
+    <Property Name="qu_user" Type="Int32" />
+    <Property Name="qu_org" Type="Int32" />
+  </EntityType>
+  <EntityType Name="queued_notifications">
+    <Key>
+      <PropertyRef Name="qn_id" />
+    </Key>
+    <Property Name="qn_id" Type="Int32" Nullable="false" p1:StoreGeneratedPattern="Identity" />
+    <Property Name="qn_date_created" Type="DateTime" Nullable="false" Precision="3" />
+    <Property Name="qn_bug" Type="Int32" Nullable="false" />
+    <Property Name="qn_user" Type="Int32" Nullable="false" />
+    <Property Name="qn_status" Type="String" Nullable="false" MaxLength="30" Unicode="true" FixedLength="false" />
+    <Property Name="qn_retries" Type="Int32" Nullable="false" />
+    <Property Name="qn_last_exception" Type="String" Nullable="false" MaxLength="1000" Unicode="true" FixedLength="false" />
+    <Property Name="qn_to" Type="String" Nullable="false" MaxLength="200" Unicode="true" FixedLength="false" />
+    <Property Name="qn_from" Type="String" Nullable="false" MaxLength="200" Unicode="true" FixedLength="false" />
+    <Property Name="qn_subject" Type="String" Nullable="false" MaxLength="400" Unicode="true" FixedLength="false" />
+    <Property Name="qn_body" Type="String" Nullable="false" MaxLength="Max" Unicode="true" FixedLength="false" />
+  </EntityType>
+  <EntityType Name="reports">
+    <Key>
+      <PropertyRef Name="rp_id" />
+    </Key>
+    <Property Name="rp_id" Type="Int32" Nullable="false" p1:StoreGeneratedPattern="Identity" />
+    <Property Name="rp_desc" Type="String" Nullable="false" MaxLength="200" Unicode="true" FixedLength="false" />
+    <Property Name="rp_sql" Type="String" Nullable="false" MaxLength="Max" Unicode="true" FixedLength="false" />
+    <Property Name="rp_chart_type" Type="String" Nullable="false" MaxLength="8" Unicode="false" FixedLength="false" />
+  </EntityType>
+  <EntityType Name="sessions">
+    <Key>
+      <PropertyRef Name="se_id" />
+    </Key>
+    <Property Name="se_id" Type="String" Nullable="false" MaxLength="37" Unicode="false" FixedLength="true" />
+    <Property Name="se_date" Type="DateTime" Nullable="false" Precision="3" />
+    <Property Name="se_user" Type="Int32" Nullable="false" />
+  </EntityType>
+  <EntityType Name="statuses">
+    <Key>
+      <PropertyRef Name="st_id" />
+    </Key>
+    <Property Name="st_id" Type="Int32" Nullable="false" p1:StoreGeneratedPattern="Identity" />
+    <Property Name="st_name" Type="String" Nullable="false" MaxLength="60" Unicode="true" FixedLength="false" />
+    <Property Name="st_sort_seq" Type="Int32" Nullable="false" />
+    <Property Name="st_style" Type="String" MaxLength="30" Unicode="true" FixedLength="false" />
+    <Property Name="st_default" Type="Int32" Nullable="false" />
+  </EntityType>
+  <EntityType Name="svn_affected_paths">
+    <Key>
+      <PropertyRef Name="svnap_id" />
+    </Key>
+    <Property Name="svnap_id" Type="Int32" Nullable="false" p1:StoreGeneratedPattern="Identity" />
+    <Property Name="svnap_svnrev_id" Type="Int32" Nullable="false" />
+    <Property Name="svnap_action" Type="String" Nullable="false" MaxLength="8" Unicode="true" FixedLength="false" />
+    <Property Name="svnap_path" Type="String" Nullable="false" MaxLength="400" Unicode="true" FixedLength="false" />
+  </EntityType>
+  <EntityType Name="svn_revisions">
+    <Key>
+      <PropertyRef Name="svnrev_id" />
+    </Key>
+    <Property Name="svnrev_id" Type="Int32" Nullable="false" p1:StoreGeneratedPattern="Identity" />
+    <Property Name="svnrev_revision" Type="Int32" Nullable="false" />
+    <Property Name="svnrev_bug" Type="Int32" Nullable="false" />
+    <Property Name="svnrev_repository" Type="String" Nullable="false" MaxLength="400" Unicode="true" FixedLength="false" />
+    <Property Name="svnrev_author" Type="String" Nullable="false" MaxLength="100" Unicode="true" FixedLength="false" />
+    <Property Name="svnrev_svn_date" Type="String" Nullable="false" MaxLength="100" Unicode="true" FixedLength="false" />
+    <Property Name="svnrev_btnet_date" Type="DateTime" Nullable="false" Precision="3" />
+    <Property Name="svnrev_msg" Type="String" Nullable="false" MaxLength="Max" Unicode="true" FixedLength="false" />
+  </EntityType>
+  <EntityType Name="user_defined_attribute">
+    <Key>
+      <PropertyRef Name="udf_id" />
+    </Key>
+    <Property Name="udf_id" Type="Int32" Nullable="false" p1:StoreGeneratedPattern="Identity" />
+    <Property Name="udf_name" Type="String" Nullable="false" MaxLength="60" Unicode="true" FixedLength="false" />
+    <Property Name="udf_sort_seq" Type="Int32" Nullable="false" />
+    <Property Name="udf_default" Type="Int32" Nullable="false" />
+  </EntityType>
+  <EntityType Name="users">
+    <Key>
+      <PropertyRef Name="us_id" />
+    </Key>
+    <Property Name="us_id" Type="Int32" Nullable="false" p1:StoreGeneratedPattern="Identity" />
+    <Property Name="us_username" Type="String" Nullable="false" MaxLength="40" Unicode="true" FixedLength="false" />
+    <Property Name="us_salt" Type="Int32" />
+    <Property Name="us_password" Type="String" Nullable="false" MaxLength="64" Unicode="true" FixedLength="false" />
+    <Property Name="us_firstname" Type="String" MaxLength="60" Unicode="true" FixedLength="false" />
+    <Property Name="us_lastname" Type="String" MaxLength="60" Unicode="true" FixedLength="false" />
+    <Property Name="us_email" Type="String" MaxLength="120" Unicode="true" FixedLength="false" />
+    <Property Name="us_admin" Type="Int32" Nullable="false" />
+    <Property Name="us_default_query" Type="Int32" Nullable="false" />
+    <Property Name="us_enable_notifications" Type="Int32" Nullable="false" />
+    <Property Name="us_auto_subscribe" Type="Int32" Nullable="false" />
+    <Property Name="us_auto_subscribe_own_bugs" Type="Int32" />
+    <Property Name="us_auto_subscribe_reported_bugs" Type="Int32" />
+    <Property Name="us_send_notifications_to_self" Type="Int32" />
+    <Property Name="us_active" Type="Int32" Nullable="false" />
+    <Property Name="us_bugs_per_page" Type="Int32" />
+    <Property Name="us_forced_project" Type="Int32" />
+    <Property Name="us_reported_notifications" Type="Int32" Nullable="false" />
+    <Property Name="us_assigned_notifications" Type="Int32" Nullable="false" />
+    <Property Name="us_subscribed_notifications" Type="Int32" Nullable="false" />
+    <Property Name="us_signature" Type="String" MaxLength="1000" Unicode="true" FixedLength="false" />
+    <Property Name="us_use_fckeditor" Type="Int32" Nullable="false" />
+    <Property Name="us_enable_bug_list_popups" Type="Int32" Nullable="false" />
+    <Property Name="us_created_user" Type="Int32" Nullable="false" />
+    <Property Name="us_org" Type="Int32" Nullable="false" />
+    <Property Name="us_most_recent_login_datetime" Type="DateTime" Precision="3" />
+  </EntityType>
+  <EntityType Name="votes_view">
+    <Key>
+      <PropertyRef Name="vote_bug" />
+    </Key>
+    <Property Name="vote_bug" Type="Int32" Nullable="false" />
+    <Property Name="vote_total" Type="Int32" />
+  </EntityType>
+</Schema>

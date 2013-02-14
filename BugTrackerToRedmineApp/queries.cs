@@ -14,11 +14,15 @@ namespace BugTrackerToRedmineApp
     
     public partial class queries
     {
-        public int qu_id { get; set; }
-        public string qu_desc { get; set; }
-        public string qu_sql { get; set; }
-        public Nullable<int> qu_default { get; set; }
-        public Nullable<int> qu_user { get; set; }
-        public Nullable<int> qu_org { get; set; }
+        public int id { get; set; }
+        public Nullable<int> project_id { get; set; }
+        public string name { get; set; }
+        public string filters { get; set; }
+        public int user_id { get; set; }
+        public bool is_public { get; set; }
+        public string column_names { get; set; }
+        public string sort_criteria { get; set; }
+        public string group_by { get; set; }
+        public string type { get; set; }
     }
 }

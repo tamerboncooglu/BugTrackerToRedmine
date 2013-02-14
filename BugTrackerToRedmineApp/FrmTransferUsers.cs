@@ -16,5 +16,11 @@ namespace BugTrackerToRedmineApp
         {
             InitializeComponent();
         }
+
+        private void FrmTransferUsers_Load(object sender, EventArgs e)
+        {
+            BugTrackerEntities bugTrackerEntities = new BugTrackerEntities();
+            grdBTUsers.DataSource = bugTrackerEntities.users.ToList();
+        }
     }
 }

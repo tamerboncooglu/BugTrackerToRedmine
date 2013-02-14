@@ -1,0 +1,469 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Schema Namespace="BugTrackerModel.Store" Alias="Self" Provider="System.Data.SqlClient" ProviderManifestToken="2005" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns="http://schemas.microsoft.com/ado/2009/11/edm/ssdl">
+  <EntityContainer Name="BugTrackerModelStoreContainer">
+    <EntitySet Name="bug_post_attachments" EntityType="BugTrackerModel.Store.bug_post_attachments" store:Type="Tables" Schema="dbo" />
+    <EntitySet Name="bug_posts" EntityType="BugTrackerModel.Store.bug_posts" store:Type="Tables" Schema="dbo" />
+    <EntitySet Name="bug_relationships" EntityType="BugTrackerModel.Store.bug_relationships" store:Type="Tables" Schema="dbo" />
+    <EntitySet Name="bug_subscriptions" EntityType="BugTrackerModel.Store.bug_subscriptions" store:Type="Tables" store:Schema="dbo" store:Name="bug_subscriptions">
+      <DefiningQuery>SELECT 
+      [bug_subscriptions].[bs_bug] AS [bs_bug], 
+      [bug_subscriptions].[bs_user] AS [bs_user]
+      FROM [dbo].[bug_subscriptions] AS [bug_subscriptions]</DefiningQuery>
+    </EntitySet>
+    <EntitySet Name="bug_tasks" EntityType="BugTrackerModel.Store.bug_tasks" store:Type="Tables" Schema="dbo" />
+    <EntitySet Name="bug_user" EntityType="BugTrackerModel.Store.bug_user" store:Type="Tables" store:Schema="dbo" store:Name="bug_user">
+      <DefiningQuery>SELECT 
+      [bug_user].[bu_bug] AS [bu_bug], 
+      [bug_user].[bu_user] AS [bu_user], 
+      [bug_user].[bu_flag] AS [bu_flag], 
+      [bug_user].[bu_flag_datetime] AS [bu_flag_datetime], 
+      [bug_user].[bu_seen] AS [bu_seen], 
+      [bug_user].[bu_seen_datetime] AS [bu_seen_datetime], 
+      [bug_user].[bu_vote] AS [bu_vote], 
+      [bug_user].[bu_vote_datetime] AS [bu_vote_datetime]
+      FROM [dbo].[bug_user] AS [bug_user]</DefiningQuery>
+    </EntitySet>
+    <EntitySet Name="bugs" EntityType="BugTrackerModel.Store.bugs" store:Type="Tables" Schema="dbo" />
+    <EntitySet Name="categories" EntityType="BugTrackerModel.Store.categories" store:Type="Tables" Schema="dbo" />
+    <EntitySet Name="custom_col_metadata" EntityType="BugTrackerModel.Store.custom_col_metadata" store:Type="Tables" Schema="dbo" />
+    <EntitySet Name="dashboard_items" EntityType="BugTrackerModel.Store.dashboard_items" store:Type="Tables" Schema="dbo" />
+    <EntitySet Name="emailed_links" EntityType="BugTrackerModel.Store.emailed_links" store:Type="Tables" Schema="dbo" />
+    <EntitySet Name="git_affected_paths" EntityType="BugTrackerModel.Store.git_affected_paths" store:Type="Tables" Schema="dbo" />
+    <EntitySet Name="git_commits" EntityType="BugTrackerModel.Store.git_commits" store:Type="Tables" Schema="dbo" />
+    <EntitySet Name="hg_affected_paths" EntityType="BugTrackerModel.Store.hg_affected_paths" store:Type="Tables" Schema="dbo" />
+    <EntitySet Name="hg_revisions" EntityType="BugTrackerModel.Store.hg_revisions" store:Type="Tables" Schema="dbo" />
+    <EntitySet Name="orgs" EntityType="BugTrackerModel.Store.orgs" store:Type="Tables" Schema="dbo" />
+    <EntitySet Name="priorities" EntityType="BugTrackerModel.Store.priorities" store:Type="Tables" Schema="dbo" />
+    <EntitySet Name="project_user_xref" EntityType="BugTrackerModel.Store.project_user_xref" store:Type="Tables" Schema="dbo" />
+    <EntitySet Name="projects" EntityType="BugTrackerModel.Store.projects" store:Type="Tables" Schema="dbo" />
+    <EntitySet Name="queries" EntityType="BugTrackerModel.Store.queries" store:Type="Tables" Schema="dbo" />
+    <EntitySet Name="queued_notifications" EntityType="BugTrackerModel.Store.queued_notifications" store:Type="Tables" Schema="dbo" />
+    <EntitySet Name="reports" EntityType="BugTrackerModel.Store.reports" store:Type="Tables" Schema="dbo" />
+    <EntitySet Name="sessions" EntityType="BugTrackerModel.Store.sessions" store:Type="Tables" Schema="dbo" />
+    <EntitySet Name="statuses" EntityType="BugTrackerModel.Store.statuses" store:Type="Tables" Schema="dbo" />
+    <EntitySet Name="svn_affected_paths" EntityType="BugTrackerModel.Store.svn_affected_paths" store:Type="Tables" Schema="dbo" />
+    <EntitySet Name="svn_revisions" EntityType="BugTrackerModel.Store.svn_revisions" store:Type="Tables" Schema="dbo" />
+    <EntitySet Name="user_defined_attribute" EntityType="BugTrackerModel.Store.user_defined_attribute" store:Type="Tables" Schema="dbo" />
+    <EntitySet Name="users" EntityType="BugTrackerModel.Store.users" store:Type="Tables" Schema="dbo" />
+    <EntitySet Name="votes_view" EntityType="BugTrackerModel.Store.votes_view" store:Type="Views" store:Schema="dbo" store:Name="votes_view">
+      <DefiningQuery>SELECT 
+      [votes_view].[vote_bug] AS [vote_bug], 
+      [votes_view].[vote_total] AS [vote_total]
+      FROM [dbo].[votes_view] AS [votes_view]</DefiningQuery>
+    </EntitySet>
+  </EntityContainer>
+  <EntityType Name="bug_post_attachments">
+    <Key>
+      <PropertyRef Name="bpa_id" />
+    </Key>
+    <Property Name="bpa_id" Type="int" Nullable="false" StoreGeneratedPattern="Identity" />
+    <Property Name="bpa_post" Type="int" Nullable="false" />
+    <Property Name="bpa_content" Type="image" Nullable="false" />
+  </EntityType>
+  <EntityType Name="bug_posts">
+    <Key>
+      <PropertyRef Name="bp_id" />
+    </Key>
+    <Property Name="bp_id" Type="int" Nullable="false" StoreGeneratedPattern="Identity" />
+    <Property Name="bp_bug" Type="int" Nullable="false" />
+    <Property Name="bp_type" Type="varchar" Nullable="false" MaxLength="8" />
+    <Property Name="bp_user" Type="int" Nullable="false" />
+    <Property Name="bp_date" Type="datetime" Nullable="false" />
+    <Property Name="bp_comment" Type="ntext" Nullable="false" />
+    <Property Name="bp_comment_search" Type="ntext" />
+    <Property Name="bp_email_from" Type="nvarchar" MaxLength="800" />
+    <Property Name="bp_email_to" Type="nvarchar" MaxLength="800" />
+    <Property Name="bp_file" Type="nvarchar" MaxLength="1000" />
+    <Property Name="bp_size" Type="int" />
+    <Property Name="bp_content_type" Type="nvarchar" MaxLength="200" />
+    <Property Name="bp_parent" Type="int" />
+    <Property Name="bp_original_comment_id" Type="int" />
+    <Property Name="bp_hidden_from_external_users" Type="int" Nullable="false" />
+    <Property Name="bp_email_cc" Type="nvarchar" MaxLength="800" />
+  </EntityType>
+  <EntityType Name="bug_relationships">
+    <Key>
+      <PropertyRef Name="re_id" />
+    </Key>
+    <Property Name="re_id" Type="int" Nullable="false" StoreGeneratedPattern="Identity" />
+    <Property Name="re_bug1" Type="int" Nullable="false" />
+    <Property Name="re_bug2" Type="int" Nullable="false" />
+    <Property Name="re_type" Type="nvarchar" MaxLength="500" />
+    <Property Name="re_direction" Type="int" Nullable="false" />
+  </EntityType>
+  <!--Errors Found During Generation:
+      warning 6002: The table/view 'BugTracker.dbo.bug_subscriptions' does not have a primary key defined. The key has been inferred and the definition was created as a read-only table/view.
+      -->
+  <EntityType Name="bug_subscriptions">
+    <Key>
+      <PropertyRef Name="bs_bug" />
+      <PropertyRef Name="bs_user" />
+    </Key>
+    <Property Name="bs_bug" Type="int" Nullable="false" />
+    <Property Name="bs_user" Type="int" Nullable="false" />
+  </EntityType>
+  <EntityType Name="bug_tasks">
+    <Key>
+      <PropertyRef Name="tsk_id" />
+    </Key>
+    <Property Name="tsk_id" Type="int" Nullable="false" StoreGeneratedPattern="Identity" />
+    <Property Name="tsk_bug" Type="int" Nullable="false" />
+    <Property Name="tsk_created_user" Type="int" Nullable="false" />
+    <Property Name="tsk_created_date" Type="datetime" Nullable="false" />
+    <Property Name="tsk_last_updated_user" Type="int" Nullable="false" />
+    <Property Name="tsk_last_updated_date" Type="datetime" Nullable="false" />
+    <Property Name="tsk_assigned_to_user" Type="int" />
+    <Property Name="tsk_planned_start_date" Type="datetime" />
+    <Property Name="tsk_actual_start_date" Type="datetime" />
+    <Property Name="tsk_planned_end_date" Type="datetime" />
+    <Property Name="tsk_actual_end_date" Type="datetime" />
+    <Property Name="tsk_planned_duration" Type="decimal" Precision="6" Scale="2" />
+    <Property Name="tsk_actual_duration" Type="decimal" Precision="6" Scale="2" />
+    <Property Name="tsk_duration_units" Type="nvarchar" MaxLength="20" />
+    <Property Name="tsk_percent_complete" Type="int" />
+    <Property Name="tsk_status" Type="int" />
+    <Property Name="tsk_sort_sequence" Type="int" />
+    <Property Name="tsk_description" Type="nvarchar" MaxLength="400" />
+  </EntityType>
+  <!--Errors Found During Generation:
+      warning 6002: The table/view 'BugTracker.dbo.bug_user' does not have a primary key defined. The key has been inferred and the definition was created as a read-only table/view.
+      -->
+  <EntityType Name="bug_user">
+    <Key>
+      <PropertyRef Name="bu_bug" />
+      <PropertyRef Name="bu_user" />
+      <PropertyRef Name="bu_flag" />
+      <PropertyRef Name="bu_seen" />
+      <PropertyRef Name="bu_vote" />
+    </Key>
+    <Property Name="bu_bug" Type="int" Nullable="false" />
+    <Property Name="bu_user" Type="int" Nullable="false" />
+    <Property Name="bu_flag" Type="int" Nullable="false" />
+    <Property Name="bu_flag_datetime" Type="datetime" />
+    <Property Name="bu_seen" Type="int" Nullable="false" />
+    <Property Name="bu_seen_datetime" Type="datetime" />
+    <Property Name="bu_vote" Type="int" Nullable="false" />
+    <Property Name="bu_vote_datetime" Type="datetime" />
+  </EntityType>
+  <EntityType Name="bugs">
+    <Key>
+      <PropertyRef Name="bg_id" />
+    </Key>
+    <Property Name="bg_id" Type="int" Nullable="false" StoreGeneratedPattern="Identity" />
+    <Property Name="bg_short_desc" Type="nvarchar" Nullable="false" MaxLength="200" />
+    <Property Name="bg_reported_user" Type="int" Nullable="false" />
+    <Property Name="bg_reported_date" Type="datetime" Nullable="false" />
+    <Property Name="bg_status" Type="int" Nullable="false" />
+    <Property Name="bg_priority" Type="int" Nullable="false" />
+    <Property Name="bg_org" Type="int" Nullable="false" />
+    <Property Name="bg_category" Type="int" Nullable="false" />
+    <Property Name="bg_project" Type="int" Nullable="false" />
+    <Property Name="bg_assigned_to_user" Type="int" />
+    <Property Name="bg_last_updated_user" Type="int" />
+    <Property Name="bg_last_updated_date" Type="datetime" />
+    <Property Name="bg_user_defined_attribute" Type="int" />
+    <Property Name="bg_project_custom_dropdown_value1" Type="nvarchar" MaxLength="120" />
+    <Property Name="bg_project_custom_dropdown_value2" Type="nvarchar" MaxLength="120" />
+    <Property Name="bg_project_custom_dropdown_value3" Type="nvarchar" MaxLength="120" />
+    <Property Name="bg_tags" Type="nvarchar" MaxLength="200" />
+    <Property Name="Bildiren" Type="nvarchar" MaxLength="128" />
+    <Property Name="Nasıl oluşturuluyor" Type="nvarchar" MaxLength="2048" />
+  </EntityType>
+  <EntityType Name="categories">
+    <Key>
+      <PropertyRef Name="ct_id" />
+    </Key>
+    <Property Name="ct_id" Type="int" Nullable="false" StoreGeneratedPattern="Identity" />
+    <Property Name="ct_name" Type="nvarchar" Nullable="false" MaxLength="80" />
+    <Property Name="ct_sort_seq" Type="int" Nullable="false" />
+    <Property Name="ct_default" Type="int" Nullable="false" />
+  </EntityType>
+  <EntityType Name="custom_col_metadata">
+    <Key>
+      <PropertyRef Name="ccm_colorder" />
+    </Key>
+    <Property Name="ccm_colorder" Type="int" Nullable="false" />
+    <Property Name="ccm_dropdown_vals" Type="nvarchar" Nullable="false" MaxLength="1000" />
+    <Property Name="ccm_sort_seq" Type="int" />
+    <Property Name="ccm_dropdown_type" Type="varchar" MaxLength="20" />
+  </EntityType>
+  <EntityType Name="dashboard_items">
+    <Key>
+      <PropertyRef Name="ds_id" />
+    </Key>
+    <Property Name="ds_id" Type="int" Nullable="false" StoreGeneratedPattern="Identity" />
+    <Property Name="ds_user" Type="int" Nullable="false" />
+    <Property Name="ds_report" Type="int" Nullable="false" />
+    <Property Name="ds_chart_type" Type="varchar" Nullable="false" MaxLength="8" />
+    <Property Name="ds_col" Type="int" Nullable="false" />
+    <Property Name="ds_row" Type="int" Nullable="false" />
+  </EntityType>
+  <EntityType Name="emailed_links">
+    <Key>
+      <PropertyRef Name="el_id" />
+    </Key>
+    <Property Name="el_id" Type="char" Nullable="false" MaxLength="37" />
+    <Property Name="el_date" Type="datetime" Nullable="false" />
+    <Property Name="el_email" Type="nvarchar" Nullable="false" MaxLength="120" />
+    <Property Name="el_action" Type="nvarchar" Nullable="false" MaxLength="20" />
+    <Property Name="el_username" Type="nvarchar" MaxLength="40" />
+    <Property Name="el_user_id" Type="int" />
+    <Property Name="el_salt" Type="int" />
+    <Property Name="el_password" Type="nvarchar" MaxLength="64" />
+    <Property Name="el_firstname" Type="nvarchar" MaxLength="60" />
+    <Property Name="el_lastname" Type="nvarchar" MaxLength="60" />
+  </EntityType>
+  <EntityType Name="git_affected_paths">
+    <Key>
+      <PropertyRef Name="gitap_id" />
+    </Key>
+    <Property Name="gitap_id" Type="int" Nullable="false" StoreGeneratedPattern="Identity" />
+    <Property Name="gitap_gitcom_id" Type="int" Nullable="false" />
+    <Property Name="gitap_action" Type="nvarchar" Nullable="false" MaxLength="8" />
+    <Property Name="gitap_path" Type="nvarchar" Nullable="false" MaxLength="400" />
+  </EntityType>
+  <EntityType Name="git_commits">
+    <Key>
+      <PropertyRef Name="gitcom_id" />
+    </Key>
+    <Property Name="gitcom_id" Type="int" Nullable="false" StoreGeneratedPattern="Identity" />
+    <Property Name="gitcom_commit" Type="char" MaxLength="40" />
+    <Property Name="gitcom_bug" Type="int" Nullable="false" />
+    <Property Name="gitcom_repository" Type="nvarchar" Nullable="false" MaxLength="400" />
+    <Property Name="gitcom_author" Type="nvarchar" Nullable="false" MaxLength="100" />
+    <Property Name="gitcom_git_date" Type="nvarchar" Nullable="false" MaxLength="100" />
+    <Property Name="gitcom_btnet_date" Type="datetime" Nullable="false" />
+    <Property Name="gitcom_msg" Type="ntext" Nullable="false" />
+  </EntityType>
+  <EntityType Name="hg_affected_paths">
+    <Key>
+      <PropertyRef Name="hgap_id" />
+    </Key>
+    <Property Name="hgap_id" Type="int" Nullable="false" StoreGeneratedPattern="Identity" />
+    <Property Name="hgap_hgrev_id" Type="int" Nullable="false" />
+    <Property Name="hgap_action" Type="nvarchar" Nullable="false" MaxLength="8" />
+    <Property Name="hgap_path" Type="nvarchar" Nullable="false" MaxLength="400" />
+  </EntityType>
+  <EntityType Name="hg_revisions">
+    <Key>
+      <PropertyRef Name="hgrev_id" />
+    </Key>
+    <Property Name="hgrev_id" Type="int" Nullable="false" StoreGeneratedPattern="Identity" />
+    <Property Name="hgrev_revision" Type="int" />
+    <Property Name="hgrev_bug" Type="int" Nullable="false" />
+    <Property Name="hgrev_repository" Type="nvarchar" Nullable="false" MaxLength="400" />
+    <Property Name="hgrev_author" Type="nvarchar" Nullable="false" MaxLength="100" />
+    <Property Name="hgrev_hg_date" Type="nvarchar" Nullable="false" MaxLength="100" />
+    <Property Name="hgrev_btnet_date" Type="datetime" Nullable="false" />
+    <Property Name="hgrev_msg" Type="ntext" Nullable="false" />
+  </EntityType>
+  <EntityType Name="orgs">
+    <Key>
+      <PropertyRef Name="og_id" />
+    </Key>
+    <Property Name="og_id" Type="int" Nullable="false" StoreGeneratedPattern="Identity" />
+    <Property Name="og_name" Type="nvarchar" Nullable="false" MaxLength="80" />
+    <Property Name="og_domain" Type="nvarchar" MaxLength="80" />
+    <Property Name="og_non_admins_can_use" Type="int" Nullable="false" />
+    <Property Name="og_external_user" Type="int" Nullable="false" />
+    <Property Name="og_can_be_assigned_to" Type="int" Nullable="false" />
+    <Property Name="og_can_only_see_own_reported" Type="int" Nullable="false" />
+    <Property Name="og_can_edit_sql" Type="int" Nullable="false" />
+    <Property Name="og_can_delete_bug" Type="int" Nullable="false" />
+    <Property Name="og_can_edit_and_delete_posts" Type="int" Nullable="false" />
+    <Property Name="og_can_merge_bugs" Type="int" Nullable="false" />
+    <Property Name="og_can_mass_edit_bugs" Type="int" Nullable="false" />
+    <Property Name="og_can_use_reports" Type="int" Nullable="false" />
+    <Property Name="og_can_edit_reports" Type="int" Nullable="false" />
+    <Property Name="og_can_view_tasks" Type="int" Nullable="false" />
+    <Property Name="og_can_edit_tasks" Type="int" Nullable="false" />
+    <Property Name="og_can_search" Type="int" Nullable="false" />
+    <Property Name="og_other_orgs_permission_level" Type="int" Nullable="false" />
+    <Property Name="og_can_assign_to_internal_users" Type="int" Nullable="false" />
+    <Property Name="og_category_field_permission_level" Type="int" Nullable="false" />
+    <Property Name="og_priority_field_permission_level" Type="int" Nullable="false" />
+    <Property Name="og_assigned_to_field_permission_level" Type="int" Nullable="false" />
+    <Property Name="og_status_field_permission_level" Type="int" Nullable="false" />
+    <Property Name="og_project_field_permission_level" Type="int" Nullable="false" />
+    <Property Name="og_org_field_permission_level" Type="int" Nullable="false" />
+    <Property Name="og_udf_field_permission_level" Type="int" Nullable="false" />
+    <Property Name="og_tags_field_permission_level" Type="int" Nullable="false" />
+    <Property Name="og_active" Type="int" Nullable="false" />
+    <Property Name="og_Bildiren_field_permission_level" Type="int" />
+    <Property Name="og_Nasıl oluşturuluyor_field_permission_level" Type="int" />
+  </EntityType>
+  <EntityType Name="priorities">
+    <Key>
+      <PropertyRef Name="pr_id" />
+    </Key>
+    <Property Name="pr_id" Type="int" Nullable="false" StoreGeneratedPattern="Identity" />
+    <Property Name="pr_name" Type="nvarchar" Nullable="false" MaxLength="60" />
+    <Property Name="pr_sort_seq" Type="int" Nullable="false" />
+    <Property Name="pr_background_color" Type="nvarchar" Nullable="false" MaxLength="14" />
+    <Property Name="pr_style" Type="nvarchar" MaxLength="30" />
+    <Property Name="pr_default" Type="int" Nullable="false" />
+  </EntityType>
+  <EntityType Name="project_user_xref">
+    <Key>
+      <PropertyRef Name="pu_id" />
+    </Key>
+    <Property Name="pu_id" Type="int" Nullable="false" StoreGeneratedPattern="Identity" />
+    <Property Name="pu_project" Type="int" Nullable="false" />
+    <Property Name="pu_user" Type="int" Nullable="false" />
+    <Property Name="pu_auto_subscribe" Type="int" Nullable="false" />
+    <Property Name="pu_permission_level" Type="int" Nullable="false" />
+    <Property Name="pu_admin" Type="int" Nullable="false" />
+  </EntityType>
+  <EntityType Name="projects">
+    <Key>
+      <PropertyRef Name="pj_id" />
+    </Key>
+    <Property Name="pj_id" Type="int" Nullable="false" StoreGeneratedPattern="Identity" />
+    <Property Name="pj_name" Type="nvarchar" Nullable="false" MaxLength="80" />
+    <Property Name="pj_active" Type="int" Nullable="false" />
+    <Property Name="pj_default_user" Type="int" />
+    <Property Name="pj_auto_assign_default_user" Type="int" />
+    <Property Name="pj_auto_subscribe_default_user" Type="int" />
+    <Property Name="pj_enable_pop3" Type="int" />
+    <Property Name="pj_pop3_username" Type="varchar" MaxLength="50" />
+    <Property Name="pj_pop3_password" Type="nvarchar" MaxLength="20" />
+    <Property Name="pj_pop3_email_from" Type="nvarchar" MaxLength="120" />
+    <Property Name="pj_enable_custom_dropdown1" Type="int" Nullable="false" />
+    <Property Name="pj_enable_custom_dropdown2" Type="int" Nullable="false" />
+    <Property Name="pj_enable_custom_dropdown3" Type="int" Nullable="false" />
+    <Property Name="pj_custom_dropdown_label1" Type="nvarchar" MaxLength="80" />
+    <Property Name="pj_custom_dropdown_label2" Type="nvarchar" MaxLength="80" />
+    <Property Name="pj_custom_dropdown_label3" Type="nvarchar" MaxLength="80" />
+    <Property Name="pj_custom_dropdown_values1" Type="nvarchar" MaxLength="800" />
+    <Property Name="pj_custom_dropdown_values2" Type="nvarchar" MaxLength="800" />
+    <Property Name="pj_custom_dropdown_values3" Type="nvarchar" MaxLength="800" />
+    <Property Name="pj_default" Type="int" Nullable="false" />
+    <Property Name="pj_description" Type="nvarchar" MaxLength="200" />
+  </EntityType>
+  <EntityType Name="queries">
+    <Key>
+      <PropertyRef Name="qu_id" />
+    </Key>
+    <Property Name="qu_id" Type="int" Nullable="false" StoreGeneratedPattern="Identity" />
+    <Property Name="qu_desc" Type="nvarchar" Nullable="false" MaxLength="200" />
+    <Property Name="qu_sql" Type="ntext" Nullable="false" />
+    <Property Name="qu_default" Type="int" />
+    <Property Name="qu_user" Type="int" />
+    <Property Name="qu_org" Type="int" />
+  </EntityType>
+  <EntityType Name="queued_notifications">
+    <Key>
+      <PropertyRef Name="qn_id" />
+    </Key>
+    <Property Name="qn_id" Type="int" Nullable="false" StoreGeneratedPattern="Identity" />
+    <Property Name="qn_date_created" Type="datetime" Nullable="false" />
+    <Property Name="qn_bug" Type="int" Nullable="false" />
+    <Property Name="qn_user" Type="int" Nullable="false" />
+    <Property Name="qn_status" Type="nvarchar" Nullable="false" MaxLength="30" />
+    <Property Name="qn_retries" Type="int" Nullable="false" />
+    <Property Name="qn_last_exception" Type="nvarchar" Nullable="false" MaxLength="1000" />
+    <Property Name="qn_to" Type="nvarchar" Nullable="false" MaxLength="200" />
+    <Property Name="qn_from" Type="nvarchar" Nullable="false" MaxLength="200" />
+    <Property Name="qn_subject" Type="nvarchar" Nullable="false" MaxLength="400" />
+    <Property Name="qn_body" Type="ntext" Nullable="false" />
+  </EntityType>
+  <EntityType Name="reports">
+    <Key>
+      <PropertyRef Name="rp_id" />
+    </Key>
+    <Property Name="rp_id" Type="int" Nullable="false" StoreGeneratedPattern="Identity" />
+    <Property Name="rp_desc" Type="nvarchar" Nullable="false" MaxLength="200" />
+    <Property Name="rp_sql" Type="ntext" Nullable="false" />
+    <Property Name="rp_chart_type" Type="varchar" Nullable="false" MaxLength="8" />
+  </EntityType>
+  <EntityType Name="sessions">
+    <Key>
+      <PropertyRef Name="se_id" />
+    </Key>
+    <Property Name="se_id" Type="char" Nullable="false" MaxLength="37" />
+    <Property Name="se_date" Type="datetime" Nullable="false" />
+    <Property Name="se_user" Type="int" Nullable="false" />
+  </EntityType>
+  <EntityType Name="statuses">
+    <Key>
+      <PropertyRef Name="st_id" />
+    </Key>
+    <Property Name="st_id" Type="int" Nullable="false" StoreGeneratedPattern="Identity" />
+    <Property Name="st_name" Type="nvarchar" Nullable="false" MaxLength="60" />
+    <Property Name="st_sort_seq" Type="int" Nullable="false" />
+    <Property Name="st_style" Type="nvarchar" MaxLength="30" />
+    <Property Name="st_default" Type="int" Nullable="false" />
+  </EntityType>
+  <EntityType Name="svn_affected_paths">
+    <Key>
+      <PropertyRef Name="svnap_id" />
+    </Key>
+    <Property Name="svnap_id" Type="int" Nullable="false" StoreGeneratedPattern="Identity" />
+    <Property Name="svnap_svnrev_id" Type="int" Nullable="false" />
+    <Property Name="svnap_action" Type="nvarchar" Nullable="false" MaxLength="8" />
+    <Property Name="svnap_path" Type="nvarchar" Nullable="false" MaxLength="400" />
+  </EntityType>
+  <EntityType Name="svn_revisions">
+    <Key>
+      <PropertyRef Name="svnrev_id" />
+    </Key>
+    <Property Name="svnrev_id" Type="int" Nullable="false" StoreGeneratedPattern="Identity" />
+    <Property Name="svnrev_revision" Type="int" Nullable="false" />
+    <Property Name="svnrev_bug" Type="int" Nullable="false" />
+    <Property Name="svnrev_repository" Type="nvarchar" Nullable="false" MaxLength="400" />
+    <Property Name="svnrev_author" Type="nvarchar" Nullable="false" MaxLength="100" />
+    <Property Name="svnrev_svn_date" Type="nvarchar" Nullable="false" MaxLength="100" />
+    <Property Name="svnrev_btnet_date" Type="datetime" Nullable="false" />
+    <Property Name="svnrev_msg" Type="ntext" Nullable="false" />
+  </EntityType>
+  <EntityType Name="user_defined_attribute">
+    <Key>
+      <PropertyRef Name="udf_id" />
+    </Key>
+    <Property Name="udf_id" Type="int" Nullable="false" StoreGeneratedPattern="Identity" />
+    <Property Name="udf_name" Type="nvarchar" Nullable="false" MaxLength="60" />
+    <Property Name="udf_sort_seq" Type="int" Nullable="false" />
+    <Property Name="udf_default" Type="int" Nullable="false" />
+  </EntityType>
+  <EntityType Name="users">
+    <Key>
+      <PropertyRef Name="us_id" />
+    </Key>
+    <Property Name="us_id" Type="int" Nullable="false" StoreGeneratedPattern="Identity" />
+    <Property Name="us_username" Type="nvarchar" Nullable="false" MaxLength="40" />
+    <Property Name="us_salt" Type="int" />
+    <Property Name="us_password" Type="nvarchar" Nullable="false" MaxLength="64" />
+    <Property Name="us_firstname" Type="nvarchar" MaxLength="60" />
+    <Property Name="us_lastname" Type="nvarchar" MaxLength="60" />
+    <Property Name="us_email" Type="nvarchar" MaxLength="120" />
+    <Property Name="us_admin" Type="int" Nullable="false" />
+    <Property Name="us_default_query" Type="int" Nullable="false" />
+    <Property Name="us_enable_notifications" Type="int" Nullable="false" />
+    <Property Name="us_auto_subscribe" Type="int" Nullable="false" />
+    <Property Name="us_auto_subscribe_own_bugs" Type="int" />
+    <Property Name="us_auto_subscribe_reported_bugs" Type="int" />
+    <Property Name="us_send_notifications_to_self" Type="int" />
+    <Property Name="us_active" Type="int" Nullable="false" />
+    <Property Name="us_bugs_per_page" Type="int" />
+    <Property Name="us_forced_project" Type="int" />
+    <Property Name="us_reported_notifications" Type="int" Nullable="false" />
+    <Property Name="us_assigned_notifications" Type="int" Nullable="false" />
+    <Property Name="us_subscribed_notifications" Type="int" Nullable="false" />
+    <Property Name="us_signature" Type="nvarchar" MaxLength="1000" />
+    <Property Name="us_use_fckeditor" Type="int" Nullable="false" />
+    <Property Name="us_enable_bug_list_popups" Type="int" Nullable="false" />
+    <Property Name="us_created_user" Type="int" Nullable="false" />
+    <Property Name="us_org" Type="int" Nullable="false" />
+    <Property Name="us_most_recent_login_datetime" Type="datetime" />
+  </EntityType>
+  <!--Errors Found During Generation:
+      warning 6002: The table/view 'BugTracker.dbo.votes_view' does not have a primary key defined. The key has been inferred and the definition was created as a read-only table/view.
+      -->
+  <EntityType Name="votes_view">
+    <Key>
+      <PropertyRef Name="vote_bug" />
+    </Key>
+    <Property Name="vote_bug" Type="int" Nullable="false" />
+    <Property Name="vote_total" Type="int" />
+  </EntityType>
+</Schema>

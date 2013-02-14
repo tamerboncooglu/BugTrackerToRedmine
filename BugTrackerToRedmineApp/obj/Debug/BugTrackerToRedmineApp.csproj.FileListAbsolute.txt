@@ -1,1 +1,14 @@
 C:\Users\unknown\Documents\Visual Studio 2012\Projects\BugTrackerToRedmine\BugTrackerToRedmineApp\bin\Debug\BugTrackerToRedmineApp.exe.config
+C:\Users\unknown\Documents\Visual Studio 2012\Projects\BugTrackerToRedmine\BugTrackerToRedmineApp\bin\Debug\BugTrackerToRedmineApp.exe
+C:\Users\unknown\Documents\Visual Studio 2012\Projects\BugTrackerToRedmine\BugTrackerToRedmineApp\bin\Debug\BugTrackerToRedmineApp.pdb
+C:\Users\unknown\Documents\Visual Studio 2012\Projects\BugTrackerToRedmine\BugTrackerToRedmineApp\bin\Debug\EntityFramework.dll
+C:\Users\unknown\Documents\Visual Studio 2012\Projects\BugTrackerToRedmine\BugTrackerToRedmineApp\bin\Debug\MySql.Data.dll
+C:\Users\unknown\Documents\Visual Studio 2012\Projects\BugTrackerToRedmine\BugTrackerToRedmineApp\bin\Debug\MySql.Data.Entity.dll
+C:\Users\unknown\Documents\Visual Studio 2012\Projects\BugTrackerToRedmine\BugTrackerToRedmineApp\bin\Debug\EntityFramework.xml
+C:\Users\unknown\Documents\Visual Studio 2012\Projects\BugTrackerToRedmine\BugTrackerToRedmineApp\obj\Debug\BugTrackerToRedmineApp.csprojResolveAssemblyReference.cache
+C:\Users\unknown\Documents\Visual Studio 2012\Projects\BugTrackerToRedmine\BugTrackerToRedmineApp\obj\Debug\BugTrackerToRedmineApp.FrmMain.resources
+C:\Users\unknown\Documents\Visual Studio 2012\Projects\BugTrackerToRedmine\BugTrackerToRedmineApp\obj\Debug\BugTrackerToRedmineApp.FrmTransferUsers.resources
+C:\Users\unknown\Documents\Visual Studio 2012\Projects\BugTrackerToRedmine\BugTrackerToRedmineApp\obj\Debug\BugTrackerToRedmineApp.Properties.Resources.resources
+C:\Users\unknown\Documents\Visual Studio 2012\Projects\BugTrackerToRedmine\BugTrackerToRedmineApp\obj\Debug\BugTrackerToRedmineApp.csproj.GenerateResource.Cache
+C:\Users\unknown\Documents\Visual Studio 2012\Projects\BugTrackerToRedmine\BugTrackerToRedmineApp\obj\Debug\BugTrackerToRedmineApp.exe
+C:\Users\unknown\Documents\Visual Studio 2012\Projects\BugTrackerToRedmine\BugTrackerToRedmineApp\obj\Debug\BugTrackerToRedmineApp.pdb

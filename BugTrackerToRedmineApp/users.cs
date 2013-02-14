@@ -14,31 +14,22 @@ namespace BugTrackerToRedmineApp
     
     public partial class users
     {
-        public int us_id { get; set; }
-        public string us_username { get; set; }
-        public Nullable<int> us_salt { get; set; }
-        public string us_password { get; set; }
-        public string us_firstname { get; set; }
-        public string us_lastname { get; set; }
-        public string us_email { get; set; }
-        public int us_admin { get; set; }
-        public int us_default_query { get; set; }
-        public int us_enable_notifications { get; set; }
-        public int us_auto_subscribe { get; set; }
-        public Nullable<int> us_auto_subscribe_own_bugs { get; set; }
-        public Nullable<int> us_auto_subscribe_reported_bugs { get; set; }
-        public Nullable<int> us_send_notifications_to_self { get; set; }
-        public int us_active { get; set; }
-        public Nullable<int> us_bugs_per_page { get; set; }
-        public Nullable<int> us_forced_project { get; set; }
-        public int us_reported_notifications { get; set; }
-        public int us_assigned_notifications { get; set; }
-        public int us_subscribed_notifications { get; set; }
-        public string us_signature { get; set; }
-        public int us_use_fckeditor { get; set; }
-        public int us_enable_bug_list_popups { get; set; }
-        public int us_created_user { get; set; }
-        public int us_org { get; set; }
-        public Nullable<System.DateTime> us_most_recent_login_datetime { get; set; }
+        public int id { get; set; }
+        public string login { get; set; }
+        public string hashed_password { get; set; }
+        public string firstname { get; set; }
+        public string lastname { get; set; }
+        public string mail { get; set; }
+        public bool admin { get; set; }
+        public int status { get; set; }
+        public Nullable<System.DateTime> last_login_on { get; set; }
+        public string language { get; set; }
+        public Nullable<int> auth_source_id { get; set; }
+        public Nullable<System.DateTime> created_on { get; set; }
+        public Nullable<System.DateTime> updated_on { get; set; }
+        public string type { get; set; }
+        public string identity_url { get; set; }
+        public string mail_notification { get; set; }
+        public string salt { get; set; }
     }
 }

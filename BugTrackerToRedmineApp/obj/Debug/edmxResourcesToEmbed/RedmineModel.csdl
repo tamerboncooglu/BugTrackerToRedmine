@@ -1,0 +1,857 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Schema Namespace="redmineModel" Alias="Self" p1:UseStrongSpatialTypes="false" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" xmlns:p1="http://schemas.microsoft.com/ado/2009/02/edm/annotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm">
+  <EntityContainer Name="redmineEntities" p1:LazyLoadingEnabled="true">
+    <EntitySet Name="attachments" EntityType="redmineModel.attachments" />
+    <EntitySet Name="auth_sources" EntityType="redmineModel.auth_sources" />
+    <EntitySet Name="boards" EntityType="redmineModel.boards" />
+    <EntitySet Name="changes" EntityType="redmineModel.changes" />
+    <EntitySet Name="changeset_parents" EntityType="redmineModel.changeset_parents" />
+    <EntitySet Name="changesets" EntityType="redmineModel.changesets" />
+    <EntitySet Name="changesets_issues" EntityType="redmineModel.changesets_issues" />
+    <EntitySet Name="chart_done_ratios" EntityType="redmineModel.chart_done_ratios" />
+    <EntitySet Name="chart_issue_statuses" EntityType="redmineModel.chart_issue_statuses" />
+    <EntitySet Name="chart_saved_conditions" EntityType="redmineModel.chart_saved_conditions" />
+    <EntitySet Name="chart_time_entries" EntityType="redmineModel.chart_time_entries" />
+    <EntitySet Name="chats" EntityType="redmineModel.chats" />
+    <EntitySet Name="code_review_assignments" EntityType="redmineModel.code_review_assignments" />
+    <EntitySet Name="code_review_project_settings" EntityType="redmineModel.code_review_project_settings" />
+    <EntitySet Name="code_review_user_settings" EntityType="redmineModel.code_review_user_settings" />
+    <EntitySet Name="code_reviews" EntityType="redmineModel.code_reviews" />
+    <EntitySet Name="comments" EntityType="redmineModel.comments" />
+    <EntitySet Name="custom_fields" EntityType="redmineModel.custom_fields" />
+    <EntitySet Name="custom_fields_projects" EntityType="redmineModel.custom_fields_projects" />
+    <EntitySet Name="custom_fields_trackers" EntityType="redmineModel.custom_fields_trackers" />
+    <EntitySet Name="custom_values" EntityType="redmineModel.custom_values" />
+    <EntitySet Name="documents" EntityType="redmineModel.documents" />
+    <EntitySet Name="enabled_modules" EntityType="redmineModel.enabled_modules" />
+    <EntitySet Name="enumerations" EntityType="redmineModel.enumerations" />
+    <EntitySet Name="groups_users" EntityType="redmineModel.groups_users" />
+    <EntitySet Name="issue_categories" EntityType="redmineModel.issue_categories" />
+    <EntitySet Name="issue_relations" EntityType="redmineModel.issue_relations" />
+    <EntitySet Name="issue_statuses" EntityType="redmineModel.issue_statuses" />
+    <EntitySet Name="issues" EntityType="redmineModel.issues" />
+    <EntitySet Name="journal_details" EntityType="redmineModel.journal_details" />
+    <EntitySet Name="journals" EntityType="redmineModel.journals" />
+    <EntitySet Name="kb_articles" EntityType="redmineModel.kb_articles" />
+    <EntitySet Name="kb_categories" EntityType="redmineModel.kb_categories" />
+    <EntitySet Name="member_roles" EntityType="redmineModel.member_roles" />
+    <EntitySet Name="members" EntityType="redmineModel.members" />
+    <EntitySet Name="messages" EntityType="redmineModel.messages" />
+    <EntitySet Name="news" EntityType="redmineModel.news" />
+    <EntitySet Name="open_id_authentication_associations" EntityType="redmineModel.open_id_authentication_associations" />
+    <EntitySet Name="open_id_authentication_nonces" EntityType="redmineModel.open_id_authentication_nonces" />
+    <EntitySet Name="projects" EntityType="redmineModel.projects" />
+    <EntitySet Name="projects_trackers" EntityType="redmineModel.projects_trackers" />
+    <EntitySet Name="queries" EntityType="redmineModel.queries" />
+    <EntitySet Name="ratings" EntityType="redmineModel.ratings" />
+    <EntitySet Name="repositories" EntityType="redmineModel.repositories" />
+    <EntitySet Name="roles" EntityType="redmineModel.roles" />
+    <EntitySet Name="schema_migrations" EntityType="redmineModel.schema_migrations" />
+    <EntitySet Name="settings" EntityType="redmineModel.settings" />
+    <EntitySet Name="taggings" EntityType="redmineModel.taggings" />
+    <EntitySet Name="tags" EntityType="redmineModel.tags" />
+    <EntitySet Name="time_entries" EntityType="redmineModel.time_entries" />
+    <EntitySet Name="tokens" EntityType="redmineModel.tokens" />
+    <EntitySet Name="trackers" EntityType="redmineModel.trackers" />
+    <EntitySet Name="user_preferences" EntityType="redmineModel.user_preferences" />
+    <EntitySet Name="users" EntityType="redmineModel.users" />
+    <EntitySet Name="versions" EntityType="redmineModel.versions" />
+    <EntitySet Name="viewings" EntityType="redmineModel.viewings" />
+    <EntitySet Name="watchers" EntityType="redmineModel.watchers" />
+    <EntitySet Name="wiki_content_versions" EntityType="redmineModel.wiki_content_versions" />
+    <EntitySet Name="wiki_contents" EntityType="redmineModel.wiki_contents" />
+    <EntitySet Name="wiki_pages" EntityType="redmineModel.wiki_pages" />
+    <EntitySet Name="wiki_redirects" EntityType="redmineModel.wiki_redirects" />
+    <EntitySet Name="wikis" EntityType="redmineModel.wikis" />
+    <EntitySet Name="workflows" EntityType="redmineModel.workflows" />
+  </EntityContainer>
+  <EntityType Name="attachments">
+    <Key>
+      <PropertyRef Name="id" />
+    </Key>
+    <Property Name="id" Type="Int32" Nullable="false" p1:StoreGeneratedPattern="Identity" />
+    <Property Name="container_id" Type="Int32" />
+    <Property Name="container_type" Type="String" MaxLength="30" Unicode="false" FixedLength="false" />
+    <Property Name="filename" Type="String" Nullable="false" MaxLength="255" Unicode="false" FixedLength="false" />
+    <Property Name="disk_filename" Type="String" Nullable="false" MaxLength="255" Unicode="false" FixedLength="false" />
+    <Property Name="filesize" Type="Int32" Nullable="false" />
+    <Property Name="content_type" Type="String" MaxLength="255" Unicode="false" FixedLength="false" />
+    <Property Name="digest" Type="String" Nullable="false" MaxLength="40" Unicode="false" FixedLength="false" />
+    <Property Name="downloads" Type="Int32" Nullable="false" />
+    <Property Name="author_id" Type="Int32" Nullable="false" />
+    <Property Name="created_on" Type="DateTime" />
+    <Property Name="description" Type="String" MaxLength="255" Unicode="false" FixedLength="false" />
+    <Property Name="disk_directory" Type="String" MaxLength="255" Unicode="false" FixedLength="false" />
+  </EntityType>
+  <EntityType Name="auth_sources">
+    <Key>
+      <PropertyRef Name="id" />
+    </Key>
+    <Property Name="id" Type="Int32" Nullable="false" p1:StoreGeneratedPattern="Identity" />
+    <Property Name="type" Type="String" Nullable="false" MaxLength="30" Unicode="false" FixedLength="false" />
+    <Property Name="name" Type="String" Nullable="false" MaxLength="60" Unicode="false" FixedLength="false" />
+    <Property Name="host" Type="String" MaxLength="60" Unicode="false" FixedLength="false" />
+    <Property Name="port" Type="Int32" />
+    <Property Name="account" Type="String" MaxLength="255" Unicode="false" FixedLength="false" />
+    <Property Name="account_password" Type="String" MaxLength="255" Unicode="false" FixedLength="false" />
+    <Property Name="base_dn" Type="String" MaxLength="255" Unicode="false" FixedLength="false" />
+    <Property Name="attr_login" Type="String" MaxLength="30" Unicode="false" FixedLength="false" />
+    <Property Name="attr_firstname" Type="String" MaxLength="30" Unicode="false" FixedLength="false" />
+    <Property Name="attr_lastname" Type="String" MaxLength="30" Unicode="false" FixedLength="false" />
+    <Property Name="attr_mail" Type="String" MaxLength="30" Unicode="false" FixedLength="false" />
+    <Property Name="onthefly_register" Type="Boolean" Nullable="false" />
+    <Property Name="tls" Type="Boolean" Nullable="false" />
+    <Property Name="filter" Type="String" MaxLength="255" Unicode="false" FixedLength="false" />
+    <Property Name="timeout" Type="Int32" />
+  </EntityType>
+  <EntityType Name="boards">
+    <Key>
+      <PropertyRef Name="id" />
+    </Key>
+    <Property Name="id" Type="Int32" Nullable="false" p1:StoreGeneratedPattern="Identity" />
+    <Property Name="project_id" Type="Int32" Nullable="false" />
+    <Property Name="name" Type="String" Nullable="false" MaxLength="255" Unicode="false" FixedLength="false" />
+    <Property Name="description" Type="String" MaxLength="255" Unicode="false" FixedLength="false" />
+    <Property Name="position" Type="Int32" />
+    <Property Name="topics_count" Type="Int32" Nullable="false" />
+    <Property Name="messages_count" Type="Int32" Nullable="false" />
+    <Property Name="last_message_id" Type="Int32" />
+    <Property Name="parent_id" Type="Int32" />
+  </EntityType>
+  <EntityType Name="changes">
+    <Key>
+      <PropertyRef Name="id" />
+    </Key>
+    <Property Name="id" Type="Int32" Nullable="false" p1:StoreGeneratedPattern="Identity" />
+    <Property Name="changeset_id" Type="Int32" Nullable="false" />
+    <Property Name="action" Type="String" Nullable="false" MaxLength="1" Unicode="false" FixedLength="false" />
+    <Property Name="path" Type="String" Nullable="false" MaxLength="65535" Unicode="false" FixedLength="false" />
+    <Property Name="from_path" Type="String" MaxLength="65535" Unicode="false" FixedLength="false" />
+    <Property Name="from_revision" Type="String" MaxLength="255" Unicode="false" FixedLength="false" />
+    <Property Name="revision" Type="String" MaxLength="255" Unicode="false" FixedLength="false" />
+    <Property Name="branch" Type="String" MaxLength="255" Unicode="false" FixedLength="false" />
+  </EntityType>
+  <EntityType Name="changeset_parents">
+    <Key>
+      <PropertyRef Name="changeset_id" />
+      <PropertyRef Name="parent_id" />
+    </Key>
+    <Property Name="changeset_id" Type="Int32" Nullable="false" />
+    <Property Name="parent_id" Type="Int32" Nullable="false" />
+  </EntityType>
+  <EntityType Name="changesets">
+    <Key>
+      <PropertyRef Name="id" />
+    </Key>
+    <Property Name="id" Type="Int32" Nullable="false" p1:StoreGeneratedPattern="Identity" />
+    <Property Name="repository_id" Type="Int32" Nullable="false" />
+    <Property Name="revision" Type="String" Nullable="false" MaxLength="255" Unicode="false" FixedLength="false" />
+    <Property Name="committer" Type="String" MaxLength="255" Unicode="false" FixedLength="false" />
+    <Property Name="committed_on" Type="DateTime" Nullable="false" />
+    <Property Name="comments" Type="String" MaxLength="65535" Unicode="false" FixedLength="false" />
+    <Property Name="commit_date" Type="DateTime" />
+    <Property Name="scmid" Type="String" MaxLength="255" Unicode="false" FixedLength="false" />
+    <Property Name="user_id" Type="Int32" />
+  </EntityType>
+  <EntityType Name="changesets_issues">
+    <Key>
+      <PropertyRef Name="changeset_id" />
+      <PropertyRef Name="issue_id" />
+    </Key>
+    <Property Name="changeset_id" Type="Int32" Nullable="false" />
+    <Property Name="issue_id" Type="Int32" Nullable="false" />
+  </EntityType>
+  <EntityType Name="chart_done_ratios">
+    <Key>
+      <PropertyRef Name="id" />
+    </Key>
+    <Property Name="id" Type="Int32" Nullable="false" p1:StoreGeneratedPattern="Identity" />
+    <Property Name="day" Type="Int32" Nullable="false" />
+    <Property Name="week" Type="Int32" Nullable="false" />
+    <Property Name="month" Type="Int32" Nullable="false" />
+    <Property Name="project_id" Type="Int32" Nullable="false" />
+    <Property Name="issue_id" Type="Int32" Nullable="false" />
+    <Property Name="done_ratio" Type="Int32" Nullable="false" />
+  </EntityType>
+  <EntityType Name="chart_issue_statuses">
+    <Key>
+      <PropertyRef Name="id" />
+    </Key>
+    <Property Name="id" Type="Int32" Nullable="false" p1:StoreGeneratedPattern="Identity" />
+    <Property Name="day" Type="Int32" Nullable="false" />
+    <Property Name="week" Type="Int32" Nullable="false" />
+    <Property Name="month" Type="Int32" Nullable="false" />
+    <Property Name="project_id" Type="Int32" Nullable="false" />
+    <Property Name="issue_id" Type="Int32" Nullable="false" />
+    <Property Name="status_id" Type="Int32" Nullable="false" />
+  </EntityType>
+  <EntityType Name="chart_saved_conditions">
+    <Key>
+      <PropertyRef Name="id" />
+    </Key>
+    <Property Name="id" Type="Int32" Nullable="false" p1:StoreGeneratedPattern="Identity" />
+    <Property Name="name" Type="String" Nullable="false" MaxLength="255" Unicode="false" FixedLength="false" />
+    <Property Name="project_id" Type="Int32" />
+    <Property Name="conditions" Type="String" Nullable="false" MaxLength="255" Unicode="false" FixedLength="false" />
+    <Property Name="chart" Type="String" Nullable="false" MaxLength="255" Unicode="false" FixedLength="false" />
+  </EntityType>
+  <EntityType Name="chart_time_entries">
+    <Key>
+      <PropertyRef Name="id" />
+    </Key>
+    <Property Name="id" Type="Int32" Nullable="false" p1:StoreGeneratedPattern="Identity" />
+    <Property Name="day" Type="Int32" Nullable="false" />
+    <Property Name="week" Type="Int32" Nullable="false" />
+    <Property Name="month" Type="Int32" Nullable="false" />
+    <Property Name="logged_hours" Type="Single" Nullable="false" />
+    <Property Name="entries" Type="Int32" Nullable="false" />
+    <Property Name="user_id" Type="Int32" Nullable="false" />
+    <Property Name="issue_id" Type="Int32" />
+    <Property Name="activity_id" Type="Int32" />
+    <Property Name="project_id" Type="Int32" Nullable="false" />
+  </EntityType>
+  <EntityType Name="chats">
+    <Key>
+      <PropertyRef Name="id" />
+    </Key>
+    <Property Name="id" Type="Int32" Nullable="false" p1:StoreGeneratedPattern="Identity" />
+    <Property Name="message" Type="String" MaxLength="255" Unicode="false" FixedLength="false" />
+    <Property Name="user" Type="Int32" />
+    <Property Name="created_at" Type="DateTime" />
+  </EntityType>
+  <EntityType Name="code_review_assignments">
+    <Key>
+      <PropertyRef Name="id" />
+    </Key>
+    <Property Name="id" Type="Int32" Nullable="false" p1:StoreGeneratedPattern="Identity" />
+    <Property Name="issue_id" Type="Int32" />
+    <Property Name="change_id" Type="Int32" />
+    <Property Name="attachment_id" Type="Int32" />
+    <Property Name="file_path" Type="String" MaxLength="255" Unicode="false" FixedLength="false" />
+    <Property Name="rev" Type="String" MaxLength="255" Unicode="false" FixedLength="false" />
+    <Property Name="rev_to" Type="String" MaxLength="255" Unicode="false" FixedLength="false" />
+    <Property Name="action_type" Type="String" MaxLength="255" Unicode="false" FixedLength="false" />
+    <Property Name="changeset_id" Type="Int32" />
+  </EntityType>
+  <EntityType Name="code_review_project_settings">
+    <Key>
+      <PropertyRef Name="id" />
+    </Key>
+    <Property Name="id" Type="Int32" Nullable="false" p1:StoreGeneratedPattern="Identity" />
+    <Property Name="project_id" Type="Int32" />
+    <Property Name="tracker_id" Type="Int32" />
+    <Property Name="created_at" Type="DateTime" />
+    <Property Name="updated_at" Type="DateTime" />
+    <Property Name="updated_by" Type="Int32" />
+    <Property Name="hide_code_review_tab" Type="Boolean" />
+    <Property Name="auto_relation" Type="Int32" />
+    <Property Name="assignment_tracker_id" Type="Int32" />
+    <Property Name="auto_assign" Type="String" MaxLength="65535" Unicode="false" FixedLength="false" />
+    <Property Name="lock_version" Type="Int32" Nullable="false" />
+    <Property Name="tracker_in_review_dialog" Type="Boolean" />
+  </EntityType>
+  <EntityType Name="code_review_user_settings">
+    <Key>
+      <PropertyRef Name="id" />
+    </Key>
+    <Property Name="id" Type="Int32" Nullable="false" p1:StoreGeneratedPattern="Identity" />
+    <Property Name="user_id" Type="Int32" Nullable="false" />
+    <Property Name="mail_notification" Type="Int32" Nullable="false" />
+    <Property Name="created_at" Type="DateTime" />
+    <Property Name="updated_at" Type="DateTime" />
+  </EntityType>
+  <EntityType Name="code_reviews">
+    <Key>
+      <PropertyRef Name="id" />
+    </Key>
+    <Property Name="id" Type="Int32" Nullable="false" p1:StoreGeneratedPattern="Identity" />
+    <Property Name="project_id" Type="Int32" />
+    <Property Name="change_id" Type="Int32" />
+    <Property Name="created_at" Type="DateTime" />
+    <Property Name="updated_at" Type="DateTime" />
+    <Property Name="line" Type="Int32" />
+    <Property Name="updated_by_id" Type="Int32" />
+    <Property Name="lock_version" Type="Int32" Nullable="false" />
+    <Property Name="status_changed_from" Type="Int32" />
+    <Property Name="status_changed_to" Type="Int32" />
+    <Property Name="issue_id" Type="Int32" />
+    <Property Name="action_type" Type="String" MaxLength="255" Unicode="false" FixedLength="false" />
+    <Property Name="file_path" Type="String" MaxLength="255" Unicode="false" FixedLength="false" />
+    <Property Name="rev" Type="String" MaxLength="255" Unicode="false" FixedLength="false" />
+    <Property Name="rev_to" Type="String" MaxLength="255" Unicode="false" FixedLength="false" />
+    <Property Name="attachment_id" Type="Int32" />
+    <Property Name="file_count" Type="Int32" Nullable="false" />
+  </EntityType>
+  <EntityType Name="comments">
+    <Key>
+      <PropertyRef Name="id" />
+    </Key>
+    <Property Name="id" Type="Int32" Nullable="false" p1:StoreGeneratedPattern="Identity" />
+    <Property Name="commented_type" Type="String" Nullable="false" MaxLength="30" Unicode="false" FixedLength="false" />
+    <Property Name="commented_id" Type="Int32" Nullable="false" />
+    <Property Name="author_id" Type="Int32" Nullable="false" />
+    <Property Name="comments1" Type="String" MaxLength="65535" Unicode="false" FixedLength="false" />
+    <Property Name="created_on" Type="DateTime" Nullable="false" />
+    <Property Name="updated_on" Type="DateTime" Nullable="false" />
+  </EntityType>
+  <EntityType Name="custom_fields">
+    <Key>
+      <PropertyRef Name="id" />
+    </Key>
+    <Property Name="id" Type="Int32" Nullable="false" p1:StoreGeneratedPattern="Identity" />
+    <Property Name="type" Type="String" Nullable="false" MaxLength="30" Unicode="false" FixedLength="false" />
+    <Property Name="name" Type="String" Nullable="false" MaxLength="30" Unicode="false" FixedLength="false" />
+    <Property Name="field_format" Type="String" Nullable="false" MaxLength="30" Unicode="false" FixedLength="false" />
+    <Property Name="possible_values" Type="String" MaxLength="65535" Unicode="false" FixedLength="false" />
+    <Property Name="regexp" Type="String" MaxLength="255" Unicode="false" FixedLength="false" />
+    <Property Name="min_length" Type="Int32" Nullable="false" />
+    <Property Name="max_length" Type="Int32" Nullable="false" />
+    <Property Name="is_required" Type="Boolean" Nullable="false" />
+    <Property Name="is_for_all" Type="Boolean" Nullable="false" />
+    <Property Name="is_filter" Type="Boolean" Nullable="false" />
+    <Property Name="position" Type="Int32" />
+    <Property Name="searchable" Type="Boolean" />
+    <Property Name="default_value" Type="String" MaxLength="65535" Unicode="false" FixedLength="false" />
+    <Property Name="editable" Type="Boolean" />
+    <Property Name="visible" Type="Boolean" Nullable="false" />
+    <Property Name="multiple" Type="Boolean" />
+  </EntityType>
+  <EntityType Name="custom_fields_projects">
+    <Key>
+      <PropertyRef Name="custom_field_id" />
+      <PropertyRef Name="project_id" />
+    </Key>
+    <Property Name="custom_field_id" Type="Int32" Nullable="false" />
+    <Property Name="project_id" Type="Int32" Nullable="false" />
+  </EntityType>
+  <EntityType Name="custom_fields_trackers">
+    <Key>
+      <PropertyRef Name="custom_field_id" />
+      <PropertyRef Name="tracker_id" />
+    </Key>
+    <Property Name="custom_field_id" Type="Int32" Nullable="false" />
+    <Property Name="tracker_id" Type="Int32" Nullable="false" />
+  </EntityType>
+  <EntityType Name="custom_values">
+    <Key>
+      <PropertyRef Name="id" />
+    </Key>
+    <Property Name="id" Type="Int32" Nullable="false" p1:StoreGeneratedPattern="Identity" />
+    <Property Name="customized_type" Type="String" Nullable="false" MaxLength="30" Unicode="false" FixedLength="false" />
+    <Property Name="customized_id" Type="Int32" Nullable="false" />
+    <Property Name="custom_field_id" Type="Int32" Nullable="false" />
+    <Property Name="value" Type="String" MaxLength="65535" Unicode="false" FixedLength="false" />
+  </EntityType>
+  <EntityType Name="documents">
+    <Key>
+      <PropertyRef Name="id" />
+    </Key>
+    <Property Name="id" Type="Int32" Nullable="false" p1:StoreGeneratedPattern="Identity" />
+    <Property Name="project_id" Type="Int32" Nullable="false" />
+    <Property Name="category_id" Type="Int32" Nullable="false" />
+    <Property Name="title" Type="String" Nullable="false" MaxLength="60" Unicode="false" FixedLength="false" />
+    <Property Name="description" Type="String" MaxLength="65535" Unicode="false" FixedLength="false" />
+    <Property Name="created_on" Type="DateTime" />
+  </EntityType>
+  <EntityType Name="enabled_modules">
+    <Key>
+      <PropertyRef Name="id" />
+    </Key>
+    <Property Name="id" Type="Int32" Nullable="false" p1:StoreGeneratedPattern="Identity" />
+    <Property Name="project_id" Type="Int32" />
+    <Property Name="name" Type="String" Nullable="false" MaxLength="255" Unicode="false" FixedLength="false" />
+  </EntityType>
+  <EntityType Name="enumerations">
+    <Key>
+      <PropertyRef Name="id" />
+    </Key>
+    <Property Name="id" Type="Int32" Nullable="false" p1:StoreGeneratedPattern="Identity" />
+    <Property Name="name" Type="String" Nullable="false" MaxLength="30" Unicode="false" FixedLength="false" />
+    <Property Name="position" Type="Int32" />
+    <Property Name="is_default" Type="Boolean" Nullable="false" />
+    <Property Name="type" Type="String" MaxLength="255" Unicode="false" FixedLength="false" />
+    <Property Name="active" Type="Boolean" Nullable="false" />
+    <Property Name="project_id" Type="Int32" />
+    <Property Name="parent_id" Type="Int32" />
+    <Property Name="position_name" Type="String" MaxLength="30" Unicode="false" FixedLength="false" />
+  </EntityType>
+  <EntityType Name="groups_users">
+    <Key>
+      <PropertyRef Name="group_id" />
+      <PropertyRef Name="user_id" />
+    </Key>
+    <Property Name="group_id" Type="Int32" Nullable="false" />
+    <Property Name="user_id" Type="Int32" Nullable="false" />
+  </EntityType>
+  <EntityType Name="issue_categories">
+    <Key>
+      <PropertyRef Name="id" />
+    </Key>
+    <Property Name="id" Type="Int32" Nullable="false" p1:StoreGeneratedPattern="Identity" />
+    <Property Name="project_id" Type="Int32" Nullable="false" />
+    <Property Name="name" Type="String" Nullable="false" MaxLength="30" Unicode="false" FixedLength="false" />
+    <Property Name="assigned_to_id" Type="Int32" />
+  </EntityType>
+  <EntityType Name="issue_relations">
+    <Key>
+      <PropertyRef Name="id" />
+    </Key>
+    <Property Name="id" Type="Int32" Nullable="false" p1:StoreGeneratedPattern="Identity" />
+    <Property Name="issue_from_id" Type="Int32" Nullable="false" />
+    <Property Name="issue_to_id" Type="Int32" Nullable="false" />
+    <Property Name="relation_type" Type="String" Nullable="false" MaxLength="255" Unicode="false" FixedLength="false" />
+    <Property Name="delay" Type="Int32" />
+  </EntityType>
+  <EntityType Name="issue_statuses">
+    <Key>
+      <PropertyRef Name="id" />
+    </Key>
+    <Property Name="id" Type="Int32" Nullable="false" p1:StoreGeneratedPattern="Identity" />
+    <Property Name="name" Type="String" Nullable="false" MaxLength="30" Unicode="false" FixedLength="false" />
+    <Property Name="is_closed" Type="Boolean" Nullable="false" />
+    <Property Name="is_default" Type="Boolean" Nullable="false" />
+    <Property Name="position" Type="Int32" />
+    <Property Name="default_done_ratio" Type="Int32" />
+  </EntityType>
+  <EntityType Name="issues">
+    <Key>
+      <PropertyRef Name="id" />
+    </Key>
+    <Property Name="id" Type="Int32" Nullable="false" p1:StoreGeneratedPattern="Identity" />
+    <Property Name="tracker_id" Type="Int32" Nullable="false" />
+    <Property Name="project_id" Type="Int32" Nullable="false" />
+    <Property Name="subject" Type="String" Nullable="false" MaxLength="255" Unicode="false" FixedLength="false" />
+    <Property Name="description" Type="String" MaxLength="65535" Unicode="false" FixedLength="false" />
+    <Property Name="due_date" Type="DateTime" />
+    <Property Name="category_id" Type="Int32" />
+    <Property Name="status_id" Type="Int32" Nullable="false" />
+    <Property Name="assigned_to_id" Type="Int32" />
+    <Property Name="priority_id" Type="Int32" Nullable="false" />
+    <Property Name="fixed_version_id" Type="Int32" />
+    <Property Name="author_id" Type="Int32" Nullable="false" />
+    <Property Name="lock_version" Type="Int32" Nullable="false" />
+    <Property Name="created_on" Type="DateTime" />
+    <Property Name="updated_on" Type="DateTime" />
+    <Property Name="start_date" Type="DateTime" />
+    <Property Name="done_ratio" Type="Int32" Nullable="false" />
+    <Property Name="estimated_hours" Type="Single" />
+    <Property Name="parent_id" Type="Int32" />
+    <Property Name="root_id" Type="Int32" />
+    <Property Name="lft" Type="Int32" />
+    <Property Name="rgt" Type="Int32" />
+    <Property Name="is_private" Type="Boolean" Nullable="false" />
+  </EntityType>
+  <EntityType Name="journal_details">
+    <Key>
+      <PropertyRef Name="id" />
+    </Key>
+    <Property Name="id" Type="Int32" Nullable="false" p1:StoreGeneratedPattern="Identity" />
+    <Property Name="journal_id" Type="Int32" Nullable="false" />
+    <Property Name="property" Type="String" Nullable="false" MaxLength="30" Unicode="false" FixedLength="false" />
+    <Property Name="prop_key" Type="String" Nullable="false" MaxLength="30" Unicode="false" FixedLength="false" />
+    <Property Name="old_value" Type="String" MaxLength="65535" Unicode="false" FixedLength="false" />
+    <Property Name="value" Type="String" MaxLength="65535" Unicode="false" FixedLength="false" />
+  </EntityType>
+  <EntityType Name="journals">
+    <Key>
+      <PropertyRef Name="id" />
+    </Key>
+    <Property Name="id" Type="Int32" Nullable="false" p1:StoreGeneratedPattern="Identity" />
+    <Property Name="journalized_id" Type="Int32" Nullable="false" />
+    <Property Name="journalized_type" Type="String" Nullable="false" MaxLength="30" Unicode="false" FixedLength="false" />
+    <Property Name="user_id" Type="Int32" Nullable="false" />
+    <Property Name="notes" Type="String" MaxLength="65535" Unicode="false" FixedLength="false" />
+    <Property Name="created_on" Type="DateTime" Nullable="false" />
+    <Property Name="private_notes" Type="Boolean" Nullable="false" />
+  </EntityType>
+  <EntityType Name="kb_articles">
+    <Key>
+      <PropertyRef Name="id" />
+    </Key>
+    <Property Name="id" Type="Int32" Nullable="false" p1:StoreGeneratedPattern="Identity" />
+    <Property Name="category_id" Type="Int32" Nullable="false" />
+    <Property Name="title" Type="String" Nullable="false" MaxLength="255" Unicode="false" FixedLength="false" />
+    <Property Name="summary" Type="String" MaxLength="65535" Unicode="false" FixedLength="false" />
+    <Property Name="content" Type="String" MaxLength="65535" Unicode="false" FixedLength="false" />
+    <Property Name="created_at" Type="DateTime" Nullable="false" />
+    <Property Name="updated_at" Type="DateTime" Nullable="false" />
+    <Property Name="author_id" Type="Int32" Nullable="false" />
+    <Property Name="comments_count" Type="Int32" />
+    <Property Name="project_id" Type="Int32" />
+    <Property Name="updater_id" Type="Int32" Nullable="false" />
+  </EntityType>
+  <EntityType Name="kb_categories">
+    <Key>
+      <PropertyRef Name="id" />
+    </Key>
+    <Property Name="id" Type="Int32" Nullable="false" p1:StoreGeneratedPattern="Identity" />
+    <Property Name="title" Type="String" Nullable="false" MaxLength="255" Unicode="false" FixedLength="false" />
+    <Property Name="description" Type="String" MaxLength="65535" Unicode="false" FixedLength="false" />
+    <Property Name="created_at" Type="DateTime" Nullable="false" />
+    <Property Name="updated_at" Type="DateTime" Nullable="false" />
+    <Property Name="parent_id" Type="Int32" />
+    <Property Name="lft" Type="Int32" />
+    <Property Name="rgt" Type="Int32" />
+  </EntityType>
+  <EntityType Name="member_roles">
+    <Key>
+      <PropertyRef Name="id" />
+    </Key>
+    <Property Name="id" Type="Int32" Nullable="false" p1:StoreGeneratedPattern="Identity" />
+    <Property Name="member_id" Type="Int32" Nullable="false" />
+    <Property Name="role_id" Type="Int32" Nullable="false" />
+    <Property Name="inherited_from" Type="Int32" />
+  </EntityType>
+  <EntityType Name="members">
+    <Key>
+      <PropertyRef Name="id" />
+    </Key>
+    <Property Name="id" Type="Int32" Nullable="false" p1:StoreGeneratedPattern="Identity" />
+    <Property Name="user_id" Type="Int32" Nullable="false" />
+    <Property Name="project_id" Type="Int32" Nullable="false" />
+    <Property Name="created_on" Type="DateTime" />
+    <Property Name="mail_notification" Type="Boolean" Nullable="false" />
+  </EntityType>
+  <EntityType Name="messages">
+    <Key>
+      <PropertyRef Name="id" />
+    </Key>
+    <Property Name="id" Type="Int32" Nullable="false" p1:StoreGeneratedPattern="Identity" />
+    <Property Name="board_id" Type="Int32" Nullable="false" />
+    <Property Name="parent_id" Type="Int32" />
+    <Property Name="subject" Type="String" Nullable="false" MaxLength="255" Unicode="false" FixedLength="false" />
+    <Property Name="content" Type="String" MaxLength="65535" Unicode="false" FixedLength="false" />
+    <Property Name="author_id" Type="Int32" />
+    <Property Name="replies_count" Type="Int32" Nullable="false" />
+    <Property Name="last_reply_id" Type="Int32" />
+    <Property Name="created_on" Type="DateTime" Nullable="false" />
+    <Property Name="updated_on" Type="DateTime" Nullable="false" />
+    <Property Name="locked" Type="Boolean" />
+    <Property Name="sticky" Type="Int32" />
+  </EntityType>
+  <EntityType Name="news">
+    <Key>
+      <PropertyRef Name="id" />
+    </Key>
+    <Property Name="id" Type="Int32" Nullable="false" p1:StoreGeneratedPattern="Identity" />
+    <Property Name="project_id" Type="Int32" />
+    <Property Name="title" Type="String" Nullable="false" MaxLength="60" Unicode="false" FixedLength="false" />
+    <Property Name="summary" Type="String" MaxLength="255" Unicode="false" FixedLength="false" />
+    <Property Name="description" Type="String" MaxLength="65535" Unicode="false" FixedLength="false" />
+    <Property Name="author_id" Type="Int32" Nullable="false" />
+    <Property Name="created_on" Type="DateTime" />
+    <Property Name="comments_count" Type="Int32" Nullable="false" />
+  </EntityType>
+  <EntityType Name="open_id_authentication_associations">
+    <Key>
+      <PropertyRef Name="id" />
+    </Key>
+    <Property Name="id" Type="Int32" Nullable="false" p1:StoreGeneratedPattern="Identity" />
+    <Property Name="issued" Type="Int32" />
+    <Property Name="lifetime" Type="Int32" />
+    <Property Name="handle" Type="String" MaxLength="255" Unicode="false" FixedLength="false" />
+    <Property Name="assoc_type" Type="String" MaxLength="255" Unicode="false" FixedLength="false" />
+    <Property Name="server_url" Type="Binary" MaxLength="Max" FixedLength="false" />
+    <Property Name="secret" Type="Binary" MaxLength="Max" FixedLength="false" />
+  </EntityType>
+  <EntityType Name="open_id_authentication_nonces">
+    <Key>
+      <PropertyRef Name="id" />
+    </Key>
+    <Property Name="id" Type="Int32" Nullable="false" p1:StoreGeneratedPattern="Identity" />
+    <Property Name="timestamp" Type="Int32" Nullable="false" />
+    <Property Name="server_url" Type="String" MaxLength="255" Unicode="false" FixedLength="false" />
+    <Property Name="salt" Type="String" Nullable="false" MaxLength="255" Unicode="false" FixedLength="false" />
+  </EntityType>
+  <EntityType Name="projects">
+    <Key>
+      <PropertyRef Name="id" />
+    </Key>
+    <Property Name="id" Type="Int32" Nullable="false" p1:StoreGeneratedPattern="Identity" />
+    <Property Name="name" Type="String" Nullable="false" MaxLength="255" Unicode="false" FixedLength="false" />
+    <Property Name="description" Type="String" MaxLength="65535" Unicode="false" FixedLength="false" />
+    <Property Name="homepage" Type="String" MaxLength="255" Unicode="false" FixedLength="false" />
+    <Property Name="is_public" Type="Boolean" Nullable="false" />
+    <Property Name="parent_id" Type="Int32" />
+    <Property Name="created_on" Type="DateTime" />
+    <Property Name="updated_on" Type="DateTime" />
+    <Property Name="identifier" Type="String" MaxLength="255" Unicode="false" FixedLength="false" />
+    <Property Name="status" Type="Int32" Nullable="false" />
+    <Property Name="lft" Type="Int32" />
+    <Property Name="rgt" Type="Int32" />
+    <Property Name="inherit_members" Type="Boolean" Nullable="false" />
+  </EntityType>
+  <EntityType Name="projects_trackers">
+    <Key>
+      <PropertyRef Name="project_id" />
+      <PropertyRef Name="tracker_id" />
+    </Key>
+    <Property Name="project_id" Type="Int32" Nullable="false" />
+    <Property Name="tracker_id" Type="Int32" Nullable="false" />
+  </EntityType>
+  <EntityType Name="queries">
+    <Key>
+      <PropertyRef Name="id" />
+    </Key>
+    <Property Name="id" Type="Int32" Nullable="false" p1:StoreGeneratedPattern="Identity" />
+    <Property Name="project_id" Type="Int32" />
+    <Property Name="name" Type="String" Nullable="false" MaxLength="255" Unicode="false" FixedLength="false" />
+    <Property Name="filters" Type="String" MaxLength="65535" Unicode="false" FixedLength="false" />
+    <Property Name="user_id" Type="Int32" Nullable="false" />
+    <Property Name="is_public" Type="Boolean" Nullable="false" />
+    <Property Name="column_names" Type="String" MaxLength="65535" Unicode="false" FixedLength="false" />
+    <Property Name="sort_criteria" Type="String" MaxLength="65535" Unicode="false" FixedLength="false" />
+    <Property Name="group_by" Type="String" MaxLength="255" Unicode="false" FixedLength="false" />
+    <Property Name="type" Type="String" MaxLength="255" Unicode="false" FixedLength="false" />
+  </EntityType>
+  <EntityType Name="ratings">
+    <Key>
+      <PropertyRef Name="id" />
+    </Key>
+    <Property Name="id" Type="Int32" Nullable="false" p1:StoreGeneratedPattern="Identity" />
+    <Property Name="rated_id" Type="Int32" />
+    <Property Name="rated_type" Type="String" MaxLength="255" Unicode="false" FixedLength="false" />
+    <Property Name="rating" Type="Decimal" />
+  </EntityType>
+  <EntityType Name="repositories">
+    <Key>
+      <PropertyRef Name="id" />
+    </Key>
+    <Property Name="id" Type="Int32" Nullable="false" p1:StoreGeneratedPattern="Identity" />
+    <Property Name="project_id" Type="Int32" Nullable="false" />
+    <Property Name="url" Type="String" Nullable="false" MaxLength="255" Unicode="false" FixedLength="false" />
+    <Property Name="login" Type="String" MaxLength="60" Unicode="false" FixedLength="false" />
+    <Property Name="password" Type="String" MaxLength="255" Unicode="false" FixedLength="false" />
+    <Property Name="root_url" Type="String" MaxLength="255" Unicode="false" FixedLength="false" />
+    <Property Name="type" Type="String" MaxLength="255" Unicode="false" FixedLength="false" />
+    <Property Name="path_encoding" Type="String" MaxLength="64" Unicode="false" FixedLength="false" />
+    <Property Name="log_encoding" Type="String" MaxLength="64" Unicode="false" FixedLength="false" />
+    <Property Name="extra_info" Type="String" MaxLength="65535" Unicode="false" FixedLength="false" />
+    <Property Name="identifier" Type="String" MaxLength="255" Unicode="false" FixedLength="false" />
+    <Property Name="is_default" Type="Boolean" />
+  </EntityType>
+  <EntityType Name="roles">
+    <Key>
+      <PropertyRef Name="id" />
+    </Key>
+    <Property Name="id" Type="Int32" Nullable="false" p1:StoreGeneratedPattern="Identity" />
+    <Property Name="name" Type="String" Nullable="false" MaxLength="30" Unicode="false" FixedLength="false" />
+    <Property Name="position" Type="Int32" />
+    <Property Name="assignable" Type="Boolean" />
+    <Property Name="builtin" Type="Int32" Nullable="false" />
+    <Property Name="permissions" Type="String" MaxLength="65535" Unicode="false" FixedLength="false" />
+    <Property Name="issues_visibility" Type="String" Nullable="false" MaxLength="30" Unicode="false" FixedLength="false" />
+  </EntityType>
+  <EntityType Name="schema_migrations">
+    <Key>
+      <PropertyRef Name="version" />
+    </Key>
+    <Property Name="version" Type="String" Nullable="false" MaxLength="255" Unicode="false" FixedLength="false" />
+  </EntityType>
+  <EntityType Name="settings">
+    <Key>
+      <PropertyRef Name="id" />
+    </Key>
+    <Property Name="id" Type="Int32" Nullable="false" p1:StoreGeneratedPattern="Identity" />
+    <Property Name="name" Type="String" Nullable="false" MaxLength="255" Unicode="false" FixedLength="false" />
+    <Property Name="value" Type="String" MaxLength="65535" Unicode="false" FixedLength="false" />
+    <Property Name="updated_on" Type="DateTime" />
+  </EntityType>
+  <EntityType Name="taggings">
+    <Key>
+      <PropertyRef Name="id" />
+    </Key>
+    <Property Name="id" Type="Int32" Nullable="false" p1:StoreGeneratedPattern="Identity" />
+    <Property Name="tag_id" Type="Int32" />
+    <Property Name="taggable_id" Type="Int32" />
+    <Property Name="taggable_type" Type="String" MaxLength="255" Unicode="false" FixedLength="false" />
+    <Property Name="tagger_id" Type="Int32" />
+    <Property Name="tagger_type" Type="String" MaxLength="255" Unicode="false" FixedLength="false" />
+    <Property Name="context" Type="String" MaxLength="128" Unicode="false" FixedLength="false" />
+    <Property Name="created_at" Type="DateTime" />
+  </EntityType>
+  <EntityType Name="tags">
+    <Key>
+      <PropertyRef Name="id" />
+    </Key>
+    <Property Name="id" Type="Int32" Nullable="false" p1:StoreGeneratedPattern="Identity" />
+    <Property Name="name" Type="String" MaxLength="255" Unicode="false" FixedLength="false" />
+  </EntityType>
+  <EntityType Name="time_entries">
+    <Key>
+      <PropertyRef Name="id" />
+    </Key>
+    <Property Name="id" Type="Int32" Nullable="false" p1:StoreGeneratedPattern="Identity" />
+    <Property Name="project_id" Type="Int32" Nullable="false" />
+    <Property Name="user_id" Type="Int32" Nullable="false" />
+    <Property Name="issue_id" Type="Int32" />
+    <Property Name="hours" Type="Single" Nullable="false" />
+    <Property Name="comments" Type="String" MaxLength="255" Unicode="false" FixedLength="false" />
+    <Property Name="activity_id" Type="Int32" Nullable="false" />
+    <Property Name="spent_on" Type="DateTime" Nullable="false" />
+    <Property Name="tyear" Type="Int32" Nullable="false" />
+    <Property Name="tmonth" Type="Int32" Nullable="false" />
+    <Property Name="tweek" Type="Int32" Nullable="false" />
+    <Property Name="created_on" Type="DateTime" Nullable="false" />
+    <Property Name="updated_on" Type="DateTime" Nullable="false" />
+  </EntityType>
+  <EntityType Name="tokens">
+    <Key>
+      <PropertyRef Name="id" />
+    </Key>
+    <Property Name="id" Type="Int32" Nullable="false" p1:StoreGeneratedPattern="Identity" />
+    <Property Name="user_id" Type="Int32" Nullable="false" />
+    <Property Name="action" Type="String" Nullable="false" MaxLength="30" Unicode="false" FixedLength="false" />
+    <Property Name="value" Type="String" Nullable="false" MaxLength="40" Unicode="false" FixedLength="false" />
+    <Property Name="created_on" Type="DateTime" Nullable="false" />
+  </EntityType>
+  <EntityType Name="trackers">
+    <Key>
+      <PropertyRef Name="id" />
+    </Key>
+    <Property Name="id" Type="Int32" Nullable="false" p1:StoreGeneratedPattern="Identity" />
+    <Property Name="name" Type="String" Nullable="false" MaxLength="30" Unicode="false" FixedLength="false" />
+    <Property Name="is_in_chlog" Type="Boolean" Nullable="false" />
+    <Property Name="position" Type="Int32" />
+    <Property Name="is_in_roadmap" Type="Boolean" Nullable="false" />
+    <Property Name="fields_bits" Type="Int32" />
+  </EntityType>
+  <EntityType Name="user_preferences">
+    <Key>
+      <PropertyRef Name="id" />
+    </Key>
+    <Property Name="id" Type="Int32" Nullable="false" p1:StoreGeneratedPattern="Identity" />
+    <Property Name="user_id" Type="Int32" Nullable="false" />
+    <Property Name="others" Type="String" MaxLength="65535" Unicode="false" FixedLength="false" />
+    <Property Name="hide_mail" Type="Boolean" />
+    <Property Name="time_zone" Type="String" MaxLength="255" Unicode="false" FixedLength="false" />
+  </EntityType>
+  <EntityType Name="users">
+    <Key>
+      <PropertyRef Name="id" />
+    </Key>
+    <Property Name="id" Type="Int32" Nullable="false" p1:StoreGeneratedPattern="Identity" />
+    <Property Name="login" Type="String" Nullable="false" MaxLength="255" Unicode="false" FixedLength="false" />
+    <Property Name="hashed_password" Type="String" Nullable="false" MaxLength="40" Unicode="false" FixedLength="false" />
+    <Property Name="firstname" Type="String" Nullable="false" MaxLength="30" Unicode="false" FixedLength="false" />
+    <Property Name="lastname" Type="String" Nullable="false" MaxLength="30" Unicode="false" FixedLength="false" />
+    <Property Name="mail" Type="String" Nullable="false" MaxLength="60" Unicode="false" FixedLength="false" />
+    <Property Name="admin" Type="Boolean" Nullable="false" />
+    <Property Name="status" Type="Int32" Nullable="false" />
+    <Property Name="last_login_on" Type="DateTime" />
+    <Property Name="language" Type="String" MaxLength="5" Unicode="false" FixedLength="false" />
+    <Property Name="auth_source_id" Type="Int32" />
+    <Property Name="created_on" Type="DateTime" />
+    <Property Name="updated_on" Type="DateTime" />
+    <Property Name="type" Type="String" MaxLength="255" Unicode="false" FixedLength="false" />
+    <Property Name="identity_url" Type="String" MaxLength="255" Unicode="false" FixedLength="false" />
+    <Property Name="mail_notification" Type="String" Nullable="false" MaxLength="255" Unicode="false" FixedLength="false" />
+    <Property Name="salt" Type="String" MaxLength="64" Unicode="false" FixedLength="false" />
+  </EntityType>
+  <EntityType Name="versions">
+    <Key>
+      <PropertyRef Name="id" />
+    </Key>
+    <Property Name="id" Type="Int32" Nullable="false" p1:StoreGeneratedPattern="Identity" />
+    <Property Name="project_id" Type="Int32" Nullable="false" />
+    <Property Name="name" Type="String" Nullable="false" MaxLength="255" Unicode="false" FixedLength="false" />
+    <Property Name="description" Type="String" MaxLength="255" Unicode="false" FixedLength="false" />
+    <Property Name="effective_date" Type="DateTime" />
+    <Property Name="created_on" Type="DateTime" />
+    <Property Name="updated_on" Type="DateTime" />
+    <Property Name="wiki_page_title" Type="String" MaxLength="255" Unicode="false" FixedLength="false" />
+    <Property Name="status" Type="String" MaxLength="255" Unicode="false" FixedLength="false" />
+    <Property Name="sharing" Type="String" Nullable="false" MaxLength="255" Unicode="false" FixedLength="false" />
+  </EntityType>
+  <EntityType Name="viewings">
+    <Key>
+      <PropertyRef Name="id" />
+    </Key>
+    <Property Name="id" Type="Int32" Nullable="false" p1:StoreGeneratedPattern="Identity" />
+    <Property Name="viewer_id" Type="Int32" />
+    <Property Name="viewed_id" Type="Int32" />
+    <Property Name="viewed_type" Type="String" MaxLength="255" Unicode="false" FixedLength="false" />
+    <Property Name="ip" Type="String" MaxLength="24" Unicode="false" FixedLength="false" />
+    <Property Name="created_at" Type="DateTime" />
+  </EntityType>
+  <EntityType Name="watchers">
+    <Key>
+      <PropertyRef Name="id" />
+    </Key>
+    <Property Name="id" Type="Int32" Nullable="false" p1:StoreGeneratedPattern="Identity" />
+    <Property Name="watchable_type" Type="String" Nullable="false" MaxLength="255" Unicode="false" FixedLength="false" />
+    <Property Name="watchable_id" Type="Int32" Nullable="false" />
+    <Property Name="user_id" Type="Int32" />
+  </EntityType>
+  <EntityType Name="wiki_content_versions">
+    <Key>
+      <PropertyRef Name="id" />
+    </Key>
+    <Property Name="id" Type="Int32" Nullable="false" p1:StoreGeneratedPattern="Identity" />
+    <Property Name="wiki_content_id" Type="Int32" Nullable="false" />
+    <Property Name="page_id" Type="Int32" Nullable="false" />
+    <Property Name="author_id" Type="Int32" />
+    <Property Name="data" Type="Binary" MaxLength="Max" FixedLength="false" />
+    <Property Name="compression" Type="String" MaxLength="6" Unicode="false" FixedLength="false" />
+    <Property Name="comments" Type="String" MaxLength="255" Unicode="false" FixedLength="false" />
+    <Property Name="updated_on" Type="DateTime" Nullable="false" />
+    <Property Name="version" Type="Int32" Nullable="false" />
+  </EntityType>
+  <EntityType Name="wiki_contents">
+    <Key>
+      <PropertyRef Name="id" />
+    </Key>
+    <Property Name="id" Type="Int32" Nullable="false" p1:StoreGeneratedPattern="Identity" />
+    <Property Name="page_id" Type="Int32" Nullable="false" />
+    <Property Name="author_id" Type="Int32" />
+    <Property Name="text" Type="String" MaxLength="1073741823" Unicode="false" FixedLength="false" />
+    <Property Name="comments" Type="String" MaxLength="255" Unicode="false" FixedLength="false" />
+    <Property Name="updated_on" Type="DateTime" Nullable="false" />
+    <Property Name="version" Type="Int32" Nullable="false" />
+  </EntityType>
+  <EntityType Name="wiki_pages">
+    <Key>
+      <PropertyRef Name="id" />
+    </Key>
+    <Property Name="id" Type="Int32" Nullable="false" p1:StoreGeneratedPattern="Identity" />
+    <Property Name="wiki_id" Type="Int32" Nullable="false" />
+    <Property Name="title" Type="String" Nullable="false" MaxLength="255" Unicode="false" FixedLength="false" />
+    <Property Name="created_on" Type="DateTime" Nullable="false" />
+    <Property Name="protected" Type="Boolean" Nullable="false" />
+    <Property Name="parent_id" Type="Int32" />
+  </EntityType>
+  <EntityType Name="wiki_redirects">
+    <Key>
+      <PropertyRef Name="id" />
+    </Key>
+    <Property Name="id" Type="Int32" Nullable="false" p1:StoreGeneratedPattern="Identity" />
+    <Property Name="wiki_id" Type="Int32" Nullable="false" />
+    <Property Name="title" Type="String" MaxLength="255" Unicode="false" FixedLength="false" />
+    <Property Name="redirects_to" Type="String" MaxLength="255" Unicode="false" FixedLength="false" />
+    <Property Name="created_on" Type="DateTime" Nullable="false" />
+  </EntityType>
+  <EntityType Name="wikis">
+    <Key>
+      <PropertyRef Name="id" />
+    </Key>
+    <Property Name="id" Type="Int32" Nullable="false" p1:StoreGeneratedPattern="Identity" />
+    <Property Name="project_id" Type="Int32" Nullable="false" />
+    <Property Name="start_page" Type="String" Nullable="false" MaxLength="255" Unicode="false" FixedLength="false" />
+    <Property Name="status" Type="Int32" Nullable="false" />
+  </EntityType>
+  <EntityType Name="workflows">
+    <Key>
+      <PropertyRef Name="id" />
+    </Key>
+    <Property Name="id" Type="Int32" Nullable="false" p1:StoreGeneratedPattern="Identity" />
+    <Property Name="tracker_id" Type="Int32" Nullable="false" />
+    <Property Name="old_status_id" Type="Int32" Nullable="false" />
+    <Property Name="new_status_id" Type="Int32" Nullable="false" />
+    <Property Name="role_id" Type="Int32" Nullable="false" />
+    <Property Name="assignee" Type="Boolean" Nullable="false" />
+    <Property Name="author" Type="Boolean" Nullable="false" />
+    <Property Name="type" Type="String" MaxLength="30" Unicode="false" FixedLength="false" />
+    <Property Name="field_name" Type="String" MaxLength="30" Unicode="false" FixedLength="false" />
+    <Property Name="rule" Type="String" MaxLength="30" Unicode="false" FixedLength="false" />
+  </EntityType>
+</Schema>
