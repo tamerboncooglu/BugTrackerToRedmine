@@ -33,6 +33,7 @@
             this.label1 = new System.Windows.Forms.Label();
             this.lstConsole = new System.Windows.Forms.ListBox();
             this.btnClearConsole = new System.Windows.Forms.Button();
+            this.chkSelectAll = new System.Windows.Forms.CheckBox();
             ((System.ComponentModel.ISupportInitialize)(this.grdBTBugs)).BeginInit();
             this.SuspendLayout();
             // 
@@ -86,11 +87,23 @@
             this.btnClearConsole.UseVisualStyleBackColor = true;
             this.btnClearConsole.Click += new System.EventHandler(this.btnClearConsole_Click);
             // 
+            // chkSelectAll
+            // 
+            this.chkSelectAll.AutoSize = true;
+            this.chkSelectAll.Location = new System.Drawing.Point(74, 9);
+            this.chkSelectAll.Name = "chkSelectAll";
+            this.chkSelectAll.Size = new System.Drawing.Size(128, 17);
+            this.chkSelectAll.TabIndex = 15;
+            this.chkSelectAll.Text = "Select  / UnSelect All";
+            this.chkSelectAll.UseVisualStyleBackColor = true;
+            this.chkSelectAll.CheckedChanged += new System.EventHandler(this.chkSelectAll_CheckedChanged);
+            // 
             // FrmTransferBugs
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(1081, 644);
+            this.Controls.Add(this.chkSelectAll);
             this.Controls.Add(this.btnClearConsole);
             this.Controls.Add(this.lstConsole);
             this.Controls.Add(this.btnTransferSelectedBugs);
@@ -112,5 +125,6 @@
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.ListBox lstConsole;
         private System.Windows.Forms.Button btnClearConsole;
+        private System.Windows.Forms.CheckBox chkSelectAll;
     }
 }
