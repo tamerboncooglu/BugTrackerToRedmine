@@ -30,7 +30,11 @@
         {
             this.label1 = new System.Windows.Forms.Label();
             this.grdBTUsers = new System.Windows.Forms.DataGridView();
+            this.label2 = new System.Windows.Forms.Label();
+            this.grdRUsers = new System.Windows.Forms.DataGridView();
+            this.btnTransferSelectedUsers = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.grdBTUsers)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.grdRUsers)).BeginInit();
             this.SuspendLayout();
             // 
             // label1
@@ -53,17 +57,52 @@
             this.grdBTUsers.Size = new System.Drawing.Size(785, 168);
             this.grdBTUsers.TabIndex = 1;
             // 
+            // label2
+            // 
+            this.label2.AutoSize = true;
+            this.label2.Location = new System.Drawing.Point(12, 254);
+            this.label2.Name = "label2";
+            this.label2.Size = new System.Drawing.Size(79, 13);
+            this.label2.TabIndex = 2;
+            this.label2.Text = "Redmine Users";
+            // 
+            // grdRUsers
+            // 
+            this.grdRUsers.AllowUserToAddRows = false;
+            this.grdRUsers.AllowUserToDeleteRows = false;
+            this.grdRUsers.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.grdRUsers.Location = new System.Drawing.Point(9, 283);
+            this.grdRUsers.Name = "grdRUsers";
+            this.grdRUsers.ReadOnly = true;
+            this.grdRUsers.Size = new System.Drawing.Size(785, 168);
+            this.grdRUsers.TabIndex = 3;
+            // 
+            // btnTransferSelectedUsers
+            // 
+            this.btnTransferSelectedUsers.Location = new System.Drawing.Point(624, 229);
+            this.btnTransferSelectedUsers.Name = "btnTransferSelectedUsers";
+            this.btnTransferSelectedUsers.Size = new System.Drawing.Size(171, 36);
+            this.btnTransferSelectedUsers.TabIndex = 4;
+            this.btnTransferSelectedUsers.Text = "Transfer Selected Users";
+            this.btnTransferSelectedUsers.UseVisualStyleBackColor = true;
+            this.btnTransferSelectedUsers.Click += new System.EventHandler(this.btnTransferSelectedUsers_Click);
+            // 
             // FrmTransferUsers
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(807, 491);
+            this.Controls.Add(this.btnTransferSelectedUsers);
+            this.Controls.Add(this.grdRUsers);
+            this.Controls.Add(this.label2);
             this.Controls.Add(this.grdBTUsers);
             this.Controls.Add(this.label1);
             this.Name = "FrmTransferUsers";
+            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Transfer Users";
             this.Load += new System.EventHandler(this.FrmTransferUsers_Load);
             ((System.ComponentModel.ISupportInitialize)(this.grdBTUsers)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.grdRUsers)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -73,5 +112,8 @@
 
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.DataGridView grdBTUsers;
+        private System.Windows.Forms.Label label2;
+        private System.Windows.Forms.DataGridView grdRUsers;
+        private System.Windows.Forms.Button btnTransferSelectedUsers;
     }
 }

@@ -29,6 +29,8 @@
         private void InitializeComponent()
         {
             this.btnTransferUsers = new System.Windows.Forms.Button();
+            this.btnTransferStatuses = new System.Windows.Forms.Button();
+            this.btnTransferBugs = new System.Windows.Forms.Button();
             this.SuspendLayout();
             // 
             // btnTransferUsers
@@ -41,13 +43,36 @@
             this.btnTransferUsers.UseVisualStyleBackColor = true;
             this.btnTransferUsers.Click += new System.EventHandler(this.btnTransferUsers_Click);
             // 
+            // btnTransferStatuses
+            // 
+            this.btnTransferStatuses.Location = new System.Drawing.Point(38, 86);
+            this.btnTransferStatuses.Name = "btnTransferStatuses";
+            this.btnTransferStatuses.Size = new System.Drawing.Size(141, 41);
+            this.btnTransferStatuses.TabIndex = 1;
+            this.btnTransferStatuses.Text = "Transfer Statuses";
+            this.btnTransferStatuses.UseVisualStyleBackColor = true;
+            this.btnTransferStatuses.Click += new System.EventHandler(this.btnTransferStatuses_Click);
+            // 
+            // btnTransferBugs
+            // 
+            this.btnTransferBugs.Location = new System.Drawing.Point(421, 27);
+            this.btnTransferBugs.Name = "btnTransferBugs";
+            this.btnTransferBugs.Size = new System.Drawing.Size(141, 41);
+            this.btnTransferBugs.TabIndex = 2;
+            this.btnTransferBugs.Text = "Transfer Bugs";
+            this.btnTransferBugs.UseVisualStyleBackColor = true;
+            this.btnTransferBugs.Click += new System.EventHandler(this.btnTransferBugs_Click);
+            // 
             // FrmMain
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(613, 371);
+            this.Controls.Add(this.btnTransferBugs);
+            this.Controls.Add(this.btnTransferStatuses);
             this.Controls.Add(this.btnTransferUsers);
             this.Name = "FrmMain";
+            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "BugTracker 2 Redmine";
             this.ResumeLayout(false);
 
@@ -56,6 +81,8 @@
         #endregion
 
         private System.Windows.Forms.Button btnTransferUsers;
+        private System.Windows.Forms.Button btnTransferStatuses;
+        private System.Windows.Forms.Button btnTransferBugs;
     }
 }
 

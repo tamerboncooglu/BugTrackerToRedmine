@@ -1,0 +1,912 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Schema Namespace="redmineModel.Store" Alias="Self" Provider="MySql.Data.MySqlClient" ProviderManifestToken="5.5" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns="http://schemas.microsoft.com/ado/2009/11/edm/ssdl">
+  <EntityContainer Name="redmineModelStoreContainer">
+    <EntitySet Name="attachments" EntityType="redmineModel.Store.attachments" store:Type="Tables" Schema="redmine" />
+    <EntitySet Name="auth_sources" EntityType="redmineModel.Store.auth_sources" store:Type="Tables" Schema="redmine" />
+    <EntitySet Name="boards" EntityType="redmineModel.Store.boards" store:Type="Tables" Schema="redmine" />
+    <EntitySet Name="changes" EntityType="redmineModel.Store.changes" store:Type="Tables" Schema="redmine" />
+    <EntitySet Name="changeset_parents" EntityType="redmineModel.Store.changeset_parents" store:Type="Tables" store:Schema="redmine" store:Name="changeset_parents">
+      <DefiningQuery>SELECT
+      `changeset_parents`.`changeset_id`, 
+      `changeset_parents`.`parent_id`
+      FROM `changeset_parents` AS `changeset_parents`</DefiningQuery>
+    </EntitySet>
+    <EntitySet Name="changesets" EntityType="redmineModel.Store.changesets" store:Type="Tables" Schema="redmine" />
+    <EntitySet Name="changesets_issues" EntityType="redmineModel.Store.changesets_issues" store:Type="Tables" store:Schema="redmine" store:Name="changesets_issues">
+      <DefiningQuery>SELECT
+      `changesets_issues`.`changeset_id`, 
+      `changesets_issues`.`issue_id`
+      FROM `changesets_issues` AS `changesets_issues`</DefiningQuery>
+    </EntitySet>
+    <EntitySet Name="chart_done_ratios" EntityType="redmineModel.Store.chart_done_ratios" store:Type="Tables" Schema="redmine" />
+    <EntitySet Name="chart_issue_statuses" EntityType="redmineModel.Store.chart_issue_statuses" store:Type="Tables" Schema="redmine" />
+    <EntitySet Name="chart_saved_conditions" EntityType="redmineModel.Store.chart_saved_conditions" store:Type="Tables" Schema="redmine" />
+    <EntitySet Name="chart_time_entries" EntityType="redmineModel.Store.chart_time_entries" store:Type="Tables" Schema="redmine" />
+    <EntitySet Name="chats" EntityType="redmineModel.Store.chats" store:Type="Tables" Schema="redmine" />
+    <EntitySet Name="code_review_assignments" EntityType="redmineModel.Store.code_review_assignments" store:Type="Tables" Schema="redmine" />
+    <EntitySet Name="code_review_project_settings" EntityType="redmineModel.Store.code_review_project_settings" store:Type="Tables" Schema="redmine" />
+    <EntitySet Name="code_review_user_settings" EntityType="redmineModel.Store.code_review_user_settings" store:Type="Tables" Schema="redmine" />
+    <EntitySet Name="code_reviews" EntityType="redmineModel.Store.code_reviews" store:Type="Tables" Schema="redmine" />
+    <EntitySet Name="comments" EntityType="redmineModel.Store.comments" store:Type="Tables" Schema="redmine" />
+    <EntitySet Name="custom_fields" EntityType="redmineModel.Store.custom_fields" store:Type="Tables" Schema="redmine" />
+    <EntitySet Name="custom_fields_projects" EntityType="redmineModel.Store.custom_fields_projects" store:Type="Tables" store:Schema="redmine" store:Name="custom_fields_projects">
+      <DefiningQuery>SELECT
+      `custom_fields_projects`.`custom_field_id`, 
+      `custom_fields_projects`.`project_id`
+      FROM `custom_fields_projects` AS `custom_fields_projects`</DefiningQuery>
+    </EntitySet>
+    <EntitySet Name="custom_fields_trackers" EntityType="redmineModel.Store.custom_fields_trackers" store:Type="Tables" store:Schema="redmine" store:Name="custom_fields_trackers">
+      <DefiningQuery>SELECT
+      `custom_fields_trackers`.`custom_field_id`, 
+      `custom_fields_trackers`.`tracker_id`
+      FROM `custom_fields_trackers` AS `custom_fields_trackers`</DefiningQuery>
+    </EntitySet>
+    <EntitySet Name="custom_values" EntityType="redmineModel.Store.custom_values" store:Type="Tables" Schema="redmine" />
+    <EntitySet Name="documents" EntityType="redmineModel.Store.documents" store:Type="Tables" Schema="redmine" />
+    <EntitySet Name="enabled_modules" EntityType="redmineModel.Store.enabled_modules" store:Type="Tables" Schema="redmine" />
+    <EntitySet Name="enumerations" EntityType="redmineModel.Store.enumerations" store:Type="Tables" Schema="redmine" />
+    <EntitySet Name="groups_users" EntityType="redmineModel.Store.groups_users" store:Type="Tables" store:Schema="redmine" store:Name="groups_users">
+      <DefiningQuery>SELECT
+      `groups_users`.`group_id`, 
+      `groups_users`.`user_id`
+      FROM `groups_users` AS `groups_users`</DefiningQuery>
+    </EntitySet>
+    <EntitySet Name="issue_categories" EntityType="redmineModel.Store.issue_categories" store:Type="Tables" Schema="redmine" />
+    <EntitySet Name="issue_relations" EntityType="redmineModel.Store.issue_relations" store:Type="Tables" Schema="redmine" />
+    <EntitySet Name="issue_statuses" EntityType="redmineModel.Store.issue_statuses" store:Type="Tables" Schema="redmine" />
+    <EntitySet Name="issues" EntityType="redmineModel.Store.issues" store:Type="Tables" Schema="redmine" />
+    <EntitySet Name="journal_details" EntityType="redmineModel.Store.journal_details" store:Type="Tables" Schema="redmine" />
+    <EntitySet Name="journals" EntityType="redmineModel.Store.journals" store:Type="Tables" Schema="redmine" />
+    <EntitySet Name="kb_articles" EntityType="redmineModel.Store.kb_articles" store:Type="Tables" Schema="redmine" />
+    <EntitySet Name="kb_categories" EntityType="redmineModel.Store.kb_categories" store:Type="Tables" Schema="redmine" />
+    <EntitySet Name="member_roles" EntityType="redmineModel.Store.member_roles" store:Type="Tables" Schema="redmine" />
+    <EntitySet Name="members" EntityType="redmineModel.Store.members" store:Type="Tables" Schema="redmine" />
+    <EntitySet Name="messages" EntityType="redmineModel.Store.messages" store:Type="Tables" Schema="redmine" />
+    <EntitySet Name="news" EntityType="redmineModel.Store.news" store:Type="Tables" Schema="redmine" />
+    <EntitySet Name="open_id_authentication_associations" EntityType="redmineModel.Store.open_id_authentication_associations" store:Type="Tables" Schema="redmine" />
+    <EntitySet Name="open_id_authentication_nonces" EntityType="redmineModel.Store.open_id_authentication_nonces" store:Type="Tables" Schema="redmine" />
+    <EntitySet Name="projects" EntityType="redmineModel.Store.projects" store:Type="Tables" Schema="redmine" />
+    <EntitySet Name="projects_trackers" EntityType="redmineModel.Store.projects_trackers" store:Type="Tables" store:Schema="redmine" store:Name="projects_trackers">
+      <DefiningQuery>SELECT
+      `projects_trackers`.`project_id`, 
+      `projects_trackers`.`tracker_id`
+      FROM `projects_trackers` AS `projects_trackers`</DefiningQuery>
+    </EntitySet>
+    <EntitySet Name="queries" EntityType="redmineModel.Store.queries" store:Type="Tables" Schema="redmine" />
+    <EntitySet Name="ratings" EntityType="redmineModel.Store.ratings" store:Type="Tables" Schema="redmine" />
+    <EntitySet Name="repositories" EntityType="redmineModel.Store.repositories" store:Type="Tables" Schema="redmine" />
+    <EntitySet Name="roles" EntityType="redmineModel.Store.roles" store:Type="Tables" Schema="redmine" />
+    <EntitySet Name="schema_migrations" EntityType="redmineModel.Store.schema_migrations" store:Type="Tables" store:Schema="redmine" store:Name="schema_migrations">
+      <DefiningQuery>SELECT
+      `schema_migrations`.`version`
+      FROM `schema_migrations` AS `schema_migrations`</DefiningQuery>
+    </EntitySet>
+    <EntitySet Name="settings" EntityType="redmineModel.Store.settings" store:Type="Tables" Schema="redmine" />
+    <EntitySet Name="taggings" EntityType="redmineModel.Store.taggings" store:Type="Tables" Schema="redmine" />
+    <EntitySet Name="tags" EntityType="redmineModel.Store.tags" store:Type="Tables" Schema="redmine" />
+    <EntitySet Name="time_entries" EntityType="redmineModel.Store.time_entries" store:Type="Tables" Schema="redmine" />
+    <EntitySet Name="tokens" EntityType="redmineModel.Store.tokens" store:Type="Tables" Schema="redmine" />
+    <EntitySet Name="trackers" EntityType="redmineModel.Store.trackers" store:Type="Tables" Schema="redmine" />
+    <EntitySet Name="user_preferences" EntityType="redmineModel.Store.user_preferences" store:Type="Tables" Schema="redmine" />
+    <EntitySet Name="users" EntityType="redmineModel.Store.users" store:Type="Tables" Schema="redmine" />
+    <EntitySet Name="versions" EntityType="redmineModel.Store.versions" store:Type="Tables" Schema="redmine" />
+    <EntitySet Name="viewings" EntityType="redmineModel.Store.viewings" store:Type="Tables" Schema="redmine" />
+    <EntitySet Name="watchers" EntityType="redmineModel.Store.watchers" store:Type="Tables" Schema="redmine" />
+    <EntitySet Name="wiki_content_versions" EntityType="redmineModel.Store.wiki_content_versions" store:Type="Tables" Schema="redmine" />
+    <EntitySet Name="wiki_contents" EntityType="redmineModel.Store.wiki_contents" store:Type="Tables" Schema="redmine" />
+    <EntitySet Name="wiki_pages" EntityType="redmineModel.Store.wiki_pages" store:Type="Tables" Schema="redmine" />
+    <EntitySet Name="wiki_redirects" EntityType="redmineModel.Store.wiki_redirects" store:Type="Tables" Schema="redmine" />
+    <EntitySet Name="wikis" EntityType="redmineModel.Store.wikis" store:Type="Tables" Schema="redmine" />
+    <EntitySet Name="workflows" EntityType="redmineModel.Store.workflows" store:Type="Tables" Schema="redmine" />
+  </EntityContainer>
+  <EntityType Name="attachments">
+    <Key>
+      <PropertyRef Name="id" />
+    </Key>
+    <Property Name="id" Type="int" Nullable="false" StoreGeneratedPattern="Identity" />
+    <Property Name="container_id" Type="int" />
+    <Property Name="container_type" Type="varchar" MaxLength="30" />
+    <Property Name="filename" Type="varchar" Nullable="false" MaxLength="255" />
+    <Property Name="disk_filename" Type="varchar" Nullable="false" MaxLength="255" />
+    <Property Name="filesize" Type="int" Nullable="false" />
+    <Property Name="content_type" Type="varchar" MaxLength="255" />
+    <Property Name="digest" Type="varchar" Nullable="false" MaxLength="40" />
+    <Property Name="downloads" Type="int" Nullable="false" />
+    <Property Name="author_id" Type="int" Nullable="false" />
+    <Property Name="created_on" Type="datetime" />
+    <Property Name="description" Type="varchar" MaxLength="255" />
+    <Property Name="disk_directory" Type="varchar" MaxLength="255" />
+  </EntityType>
+  <EntityType Name="auth_sources">
+    <Key>
+      <PropertyRef Name="id" />
+    </Key>
+    <Property Name="id" Type="int" Nullable="false" StoreGeneratedPattern="Identity" />
+    <Property Name="type" Type="varchar" Nullable="false" MaxLength="30" />
+    <Property Name="name" Type="varchar" Nullable="false" MaxLength="60" />
+    <Property Name="host" Type="varchar" MaxLength="60" />
+    <Property Name="port" Type="int" />
+    <Property Name="account" Type="varchar" MaxLength="255" />
+    <Property Name="account_password" Type="varchar" MaxLength="255" />
+    <Property Name="base_dn" Type="varchar" MaxLength="255" />
+    <Property Name="attr_login" Type="varchar" MaxLength="30" />
+    <Property Name="attr_firstname" Type="varchar" MaxLength="30" />
+    <Property Name="attr_lastname" Type="varchar" MaxLength="30" />
+    <Property Name="attr_mail" Type="varchar" MaxLength="30" />
+    <Property Name="onthefly_register" Type="bool" Nullable="false" />
+    <Property Name="tls" Type="bool" Nullable="false" />
+    <Property Name="filter" Type="varchar" MaxLength="255" />
+    <Property Name="timeout" Type="int" />
+  </EntityType>
+  <EntityType Name="boards">
+    <Key>
+      <PropertyRef Name="id" />
+    </Key>
+    <Property Name="id" Type="int" Nullable="false" StoreGeneratedPattern="Identity" />
+    <Property Name="project_id" Type="int" Nullable="false" />
+    <Property Name="name" Type="varchar" Nullable="false" MaxLength="255" />
+    <Property Name="description" Type="varchar" MaxLength="255" />
+    <Property Name="position" Type="int" />
+    <Property Name="topics_count" Type="int" Nullable="false" />
+    <Property Name="messages_count" Type="int" Nullable="false" />
+    <Property Name="last_message_id" Type="int" />
+    <Property Name="parent_id" Type="int" />
+  </EntityType>
+  <EntityType Name="changes">
+    <Key>
+      <PropertyRef Name="id" />
+    </Key>
+    <Property Name="id" Type="int" Nullable="false" StoreGeneratedPattern="Identity" />
+    <Property Name="changeset_id" Type="int" Nullable="false" />
+    <Property Name="action" Type="varchar" Nullable="false" MaxLength="1" />
+    <Property Name="path" Type="text" Nullable="false" />
+    <Property Name="from_path" Type="text" />
+    <Property Name="from_revision" Type="varchar" MaxLength="255" />
+    <Property Name="revision" Type="varchar" MaxLength="255" />
+    <Property Name="branch" Type="varchar" MaxLength="255" />
+  </EntityType>
+  <!--Errors Found During Generation:
+      warning 6002: The table/view 'def.redmine.changeset_parents' does not have a primary key defined. The key has been inferred and the definition was created as a read-only table/view.
+      -->
+  <EntityType Name="changeset_parents">
+    <Key>
+      <PropertyRef Name="changeset_id" />
+      <PropertyRef Name="parent_id" />
+    </Key>
+    <Property Name="changeset_id" Type="int" Nullable="false" />
+    <Property Name="parent_id" Type="int" Nullable="false" />
+  </EntityType>
+  <EntityType Name="changesets">
+    <Key>
+      <PropertyRef Name="id" />
+    </Key>
+    <Property Name="id" Type="int" Nullable="false" StoreGeneratedPattern="Identity" />
+    <Property Name="repository_id" Type="int" Nullable="false" />
+    <Property Name="revision" Type="varchar" Nullable="false" MaxLength="255" />
+    <Property Name="committer" Type="varchar" MaxLength="255" />
+    <Property Name="committed_on" Type="datetime" Nullable="false" />
+    <Property Name="comments" Type="text" />
+    <Property Name="commit_date" Type="date" />
+    <Property Name="scmid" Type="varchar" MaxLength="255" />
+    <Property Name="user_id" Type="int" />
+  </EntityType>
+  <!--Errors Found During Generation:
+      warning 6002: The table/view 'def.redmine.changesets_issues' does not have a primary key defined. The key has been inferred and the definition was created as a read-only table/view.
+      -->
+  <EntityType Name="changesets_issues">
+    <Key>
+      <PropertyRef Name="changeset_id" />
+      <PropertyRef Name="issue_id" />
+    </Key>
+    <Property Name="changeset_id" Type="int" Nullable="false" />
+    <Property Name="issue_id" Type="int" Nullable="false" />
+  </EntityType>
+  <EntityType Name="chart_done_ratios">
+    <Key>
+      <PropertyRef Name="id" />
+    </Key>
+    <Property Name="id" Type="int" Nullable="false" StoreGeneratedPattern="Identity" />
+    <Property Name="day" Type="int" Nullable="false" />
+    <Property Name="week" Type="int" Nullable="false" />
+    <Property Name="month" Type="int" Nullable="false" />
+    <Property Name="project_id" Type="int" Nullable="false" />
+    <Property Name="issue_id" Type="int" Nullable="false" />
+    <Property Name="done_ratio" Type="int" Nullable="false" />
+  </EntityType>
+  <EntityType Name="chart_issue_statuses">
+    <Key>
+      <PropertyRef Name="id" />
+    </Key>
+    <Property Name="id" Type="int" Nullable="false" StoreGeneratedPattern="Identity" />
+    <Property Name="day" Type="int" Nullable="false" />
+    <Property Name="week" Type="int" Nullable="false" />
+    <Property Name="month" Type="int" Nullable="false" />
+    <Property Name="project_id" Type="int" Nullable="false" />
+    <Property Name="issue_id" Type="int" Nullable="false" />
+    <Property Name="status_id" Type="int" Nullable="false" />
+  </EntityType>
+  <EntityType Name="chart_saved_conditions">
+    <Key>
+      <PropertyRef Name="id" />
+    </Key>
+    <Property Name="id" Type="int" Nullable="false" StoreGeneratedPattern="Identity" />
+    <Property Name="name" Type="varchar" Nullable="false" MaxLength="255" />
+    <Property Name="project_id" Type="int" />
+    <Property Name="conditions" Type="varchar" Nullable="false" MaxLength="255" />
+    <Property Name="chart" Type="varchar" Nullable="false" MaxLength="255" />
+  </EntityType>
+  <EntityType Name="chart_time_entries">
+    <Key>
+      <PropertyRef Name="id" />
+    </Key>
+    <Property Name="id" Type="int" Nullable="false" StoreGeneratedPattern="Identity" />
+    <Property Name="day" Type="int" Nullable="false" />
+    <Property Name="week" Type="int" Nullable="false" />
+    <Property Name="month" Type="int" Nullable="false" />
+    <Property Name="logged_hours" Type="float" Nullable="false" />
+    <Property Name="entries" Type="int" Nullable="false" />
+    <Property Name="user_id" Type="int" Nullable="false" />
+    <Property Name="issue_id" Type="int" />
+    <Property Name="activity_id" Type="int" />
+    <Property Name="project_id" Type="int" Nullable="false" />
+  </EntityType>
+  <EntityType Name="chats">
+    <Key>
+      <PropertyRef Name="id" />
+    </Key>
+    <Property Name="id" Type="int" Nullable="false" StoreGeneratedPattern="Identity" />
+    <Property Name="message" Type="varchar" MaxLength="255" />
+    <Property Name="user" Type="int" />
+    <Property Name="created_at" Type="datetime" />
+  </EntityType>
+  <EntityType Name="code_review_assignments">
+    <Key>
+      <PropertyRef Name="id" />
+    </Key>
+    <Property Name="id" Type="int" Nullable="false" StoreGeneratedPattern="Identity" />
+    <Property Name="issue_id" Type="int" />
+    <Property Name="change_id" Type="int" />
+    <Property Name="attachment_id" Type="int" />
+    <Property Name="file_path" Type="varchar" MaxLength="255" />
+    <Property Name="rev" Type="varchar" MaxLength="255" />
+    <Property Name="rev_to" Type="varchar" MaxLength="255" />
+    <Property Name="action_type" Type="varchar" MaxLength="255" />
+    <Property Name="changeset_id" Type="int" />
+  </EntityType>
+  <EntityType Name="code_review_project_settings">
+    <Key>
+      <PropertyRef Name="id" />
+    </Key>
+    <Property Name="id" Type="int" Nullable="false" StoreGeneratedPattern="Identity" />
+    <Property Name="project_id" Type="int" />
+    <Property Name="tracker_id" Type="int" />
+    <Property Name="created_at" Type="datetime" />
+    <Property Name="updated_at" Type="datetime" />
+    <Property Name="updated_by" Type="int" />
+    <Property Name="hide_code_review_tab" Type="bool" />
+    <Property Name="auto_relation" Type="int" />
+    <Property Name="assignment_tracker_id" Type="int" />
+    <Property Name="auto_assign" Type="text" />
+    <Property Name="lock_version" Type="int" Nullable="false" />
+    <Property Name="tracker_in_review_dialog" Type="bool" />
+  </EntityType>
+  <EntityType Name="code_review_user_settings">
+    <Key>
+      <PropertyRef Name="id" />
+    </Key>
+    <Property Name="id" Type="int" Nullable="false" StoreGeneratedPattern="Identity" />
+    <Property Name="user_id" Type="int" Nullable="false" />
+    <Property Name="mail_notification" Type="int" Nullable="false" />
+    <Property Name="created_at" Type="datetime" />
+    <Property Name="updated_at" Type="datetime" />
+  </EntityType>
+  <EntityType Name="code_reviews">
+    <Key>
+      <PropertyRef Name="id" />
+    </Key>
+    <Property Name="id" Type="int" Nullable="false" StoreGeneratedPattern="Identity" />
+    <Property Name="project_id" Type="int" />
+    <Property Name="change_id" Type="int" />
+    <Property Name="created_at" Type="datetime" />
+    <Property Name="updated_at" Type="datetime" />
+    <Property Name="line" Type="int" />
+    <Property Name="updated_by_id" Type="int" />
+    <Property Name="lock_version" Type="int" Nullable="false" />
+    <Property Name="status_changed_from" Type="int" />
+    <Property Name="status_changed_to" Type="int" />
+    <Property Name="issue_id" Type="int" />
+    <Property Name="action_type" Type="varchar" MaxLength="255" />
+    <Property Name="file_path" Type="varchar" MaxLength="255" />
+    <Property Name="rev" Type="varchar" MaxLength="255" />
+    <Property Name="rev_to" Type="varchar" MaxLength="255" />
+    <Property Name="attachment_id" Type="int" />
+    <Property Name="file_count" Type="int" Nullable="false" />
+  </EntityType>
+  <EntityType Name="comments">
+    <Key>
+      <PropertyRef Name="id" />
+    </Key>
+    <Property Name="id" Type="int" Nullable="false" StoreGeneratedPattern="Identity" />
+    <Property Name="commented_type" Type="varchar" Nullable="false" MaxLength="30" />
+    <Property Name="commented_id" Type="int" Nullable="false" />
+    <Property Name="author_id" Type="int" Nullable="false" />
+    <Property Name="comments" Type="text" />
+    <Property Name="created_on" Type="datetime" Nullable="false" />
+    <Property Name="updated_on" Type="datetime" Nullable="false" />
+  </EntityType>
+  <EntityType Name="custom_fields">
+    <Key>
+      <PropertyRef Name="id" />
+    </Key>
+    <Property Name="id" Type="int" Nullable="false" StoreGeneratedPattern="Identity" />
+    <Property Name="type" Type="varchar" Nullable="false" MaxLength="30" />
+    <Property Name="name" Type="varchar" Nullable="false" MaxLength="30" />
+    <Property Name="field_format" Type="varchar" Nullable="false" MaxLength="30" />
+    <Property Name="possible_values" Type="text" />
+    <Property Name="regexp" Type="varchar" MaxLength="255" />
+    <Property Name="min_length" Type="int" Nullable="false" />
+    <Property Name="max_length" Type="int" Nullable="false" />
+    <Property Name="is_required" Type="bool" Nullable="false" />
+    <Property Name="is_for_all" Type="bool" Nullable="false" />
+    <Property Name="is_filter" Type="bool" Nullable="false" />
+    <Property Name="position" Type="int" />
+    <Property Name="searchable" Type="bool" />
+    <Property Name="default_value" Type="text" />
+    <Property Name="editable" Type="bool" />
+    <Property Name="visible" Type="bool" Nullable="false" />
+    <Property Name="multiple" Type="bool" />
+  </EntityType>
+  <!--Errors Found During Generation:
+      warning 6002: The table/view 'def.redmine.custom_fields_projects' does not have a primary key defined. The key has been inferred and the definition was created as a read-only table/view.
+      -->
+  <EntityType Name="custom_fields_projects">
+    <Key>
+      <PropertyRef Name="custom_field_id" />
+      <PropertyRef Name="project_id" />
+    </Key>
+    <Property Name="custom_field_id" Type="int" Nullable="false" />
+    <Property Name="project_id" Type="int" Nullable="false" />
+  </EntityType>
+  <!--Errors Found During Generation:
+      warning 6002: The table/view 'def.redmine.custom_fields_trackers' does not have a primary key defined. The key has been inferred and the definition was created as a read-only table/view.
+      -->
+  <EntityType Name="custom_fields_trackers">
+    <Key>
+      <PropertyRef Name="custom_field_id" />
+      <PropertyRef Name="tracker_id" />
+    </Key>
+    <Property Name="custom_field_id" Type="int" Nullable="false" />
+    <Property Name="tracker_id" Type="int" Nullable="false" />
+  </EntityType>
+  <EntityType Name="custom_values">
+    <Key>
+      <PropertyRef Name="id" />
+    </Key>
+    <Property Name="id" Type="int" Nullable="false" StoreGeneratedPattern="Identity" />
+    <Property Name="customized_type" Type="varchar" Nullable="false" MaxLength="30" />
+    <Property Name="customized_id" Type="int" Nullable="false" />
+    <Property Name="custom_field_id" Type="int" Nullable="false" />
+    <Property Name="value" Type="text" />
+  </EntityType>
+  <EntityType Name="documents">
+    <Key>
+      <PropertyRef Name="id" />
+    </Key>
+    <Property Name="id" Type="int" Nullable="false" StoreGeneratedPattern="Identity" />
+    <Property Name="project_id" Type="int" Nullable="false" />
+    <Property Name="category_id" Type="int" Nullable="false" />
+    <Property Name="title" Type="varchar" Nullable="false" MaxLength="60" />
+    <Property Name="description" Type="text" />
+    <Property Name="created_on" Type="datetime" />
+  </EntityType>
+  <EntityType Name="enabled_modules">
+    <Key>
+      <PropertyRef Name="id" />
+    </Key>
+    <Property Name="id" Type="int" Nullable="false" StoreGeneratedPattern="Identity" />
+    <Property Name="project_id" Type="int" />
+    <Property Name="name" Type="varchar" Nullable="false" MaxLength="255" />
+  </EntityType>
+  <EntityType Name="enumerations">
+    <Key>
+      <PropertyRef Name="id" />
+    </Key>
+    <Property Name="id" Type="int" Nullable="false" StoreGeneratedPattern="Identity" />
+    <Property Name="name" Type="varchar" Nullable="false" MaxLength="30" />
+    <Property Name="position" Type="int" />
+    <Property Name="is_default" Type="bool" Nullable="false" />
+    <Property Name="type" Type="varchar" MaxLength="255" />
+    <Property Name="active" Type="bool" Nullable="false" />
+    <Property Name="project_id" Type="int" />
+    <Property Name="parent_id" Type="int" />
+    <Property Name="position_name" Type="varchar" MaxLength="30" />
+  </EntityType>
+  <!--Errors Found During Generation:
+      warning 6002: The table/view 'def.redmine.groups_users' does not have a primary key defined. The key has been inferred and the definition was created as a read-only table/view.
+      -->
+  <EntityType Name="groups_users">
+    <Key>
+      <PropertyRef Name="group_id" />
+      <PropertyRef Name="user_id" />
+    </Key>
+    <Property Name="group_id" Type="int" Nullable="false" />
+    <Property Name="user_id" Type="int" Nullable="false" />
+  </EntityType>
+  <EntityType Name="issue_categories">
+    <Key>
+      <PropertyRef Name="id" />
+    </Key>
+    <Property Name="id" Type="int" Nullable="false" StoreGeneratedPattern="Identity" />
+    <Property Name="project_id" Type="int" Nullable="false" />
+    <Property Name="name" Type="varchar" Nullable="false" MaxLength="30" />
+    <Property Name="assigned_to_id" Type="int" />
+  </EntityType>
+  <EntityType Name="issue_relations">
+    <Key>
+      <PropertyRef Name="id" />
+    </Key>
+    <Property Name="id" Type="int" Nullable="false" StoreGeneratedPattern="Identity" />
+    <Property Name="issue_from_id" Type="int" Nullable="false" />
+    <Property Name="issue_to_id" Type="int" Nullable="false" />
+    <Property Name="relation_type" Type="varchar" Nullable="false" MaxLength="255" />
+    <Property Name="delay" Type="int" />
+  </EntityType>
+  <EntityType Name="issue_statuses">
+    <Key>
+      <PropertyRef Name="id" />
+    </Key>
+    <Property Name="id" Type="int" Nullable="false" StoreGeneratedPattern="Identity" />
+    <Property Name="name" Type="varchar" Nullable="false" MaxLength="30" />
+    <Property Name="is_closed" Type="bool" Nullable="false" />
+    <Property Name="is_default" Type="bool" Nullable="false" />
+    <Property Name="position" Type="int" />
+    <Property Name="default_done_ratio" Type="int" />
+  </EntityType>
+  <EntityType Name="issues">
+    <Key>
+      <PropertyRef Name="id" />
+    </Key>
+    <Property Name="id" Type="int" Nullable="false" StoreGeneratedPattern="Identity" />
+    <Property Name="tracker_id" Type="int" Nullable="false" />
+    <Property Name="project_id" Type="int" Nullable="false" />
+    <Property Name="subject" Type="varchar" Nullable="false" MaxLength="255" />
+    <Property Name="description" Type="text" />
+    <Property Name="due_date" Type="date" />
+    <Property Name="category_id" Type="int" />
+    <Property Name="status_id" Type="int" Nullable="false" />
+    <Property Name="assigned_to_id" Type="int" />
+    <Property Name="priority_id" Type="int" Nullable="false" />
+    <Property Name="fixed_version_id" Type="int" />
+    <Property Name="author_id" Type="int" Nullable="false" />
+    <Property Name="lock_version" Type="int" Nullable="false" />
+    <Property Name="created_on" Type="datetime" />
+    <Property Name="updated_on" Type="datetime" />
+    <Property Name="start_date" Type="date" />
+    <Property Name="done_ratio" Type="int" Nullable="false" />
+    <Property Name="estimated_hours" Type="float" />
+    <Property Name="parent_id" Type="int" />
+    <Property Name="root_id" Type="int" />
+    <Property Name="lft" Type="int" />
+    <Property Name="rgt" Type="int" />
+    <Property Name="is_private" Type="bool" Nullable="false" />
+  </EntityType>
+  <EntityType Name="journal_details">
+    <Key>
+      <PropertyRef Name="id" />
+    </Key>
+    <Property Name="id" Type="int" Nullable="false" StoreGeneratedPattern="Identity" />
+    <Property Name="journal_id" Type="int" Nullable="false" />
+    <Property Name="property" Type="varchar" Nullable="false" MaxLength="30" />
+    <Property Name="prop_key" Type="varchar" Nullable="false" MaxLength="30" />
+    <Property Name="old_value" Type="text" />
+    <Property Name="value" Type="text" />
+  </EntityType>
+  <EntityType Name="journals">
+    <Key>
+      <PropertyRef Name="id" />
+    </Key>
+    <Property Name="id" Type="int" Nullable="false" StoreGeneratedPattern="Identity" />
+    <Property Name="journalized_id" Type="int" Nullable="false" />
+    <Property Name="journalized_type" Type="varchar" Nullable="false" MaxLength="30" />
+    <Property Name="user_id" Type="int" Nullable="false" />
+    <Property Name="notes" Type="text" />
+    <Property Name="created_on" Type="datetime" Nullable="false" />
+    <Property Name="private_notes" Type="bool" Nullable="false" />
+  </EntityType>
+  <EntityType Name="kb_articles">
+    <Key>
+      <PropertyRef Name="id" />
+    </Key>
+    <Property Name="id" Type="int" Nullable="false" StoreGeneratedPattern="Identity" />
+    <Property Name="category_id" Type="int" Nullable="false" />
+    <Property Name="title" Type="varchar" Nullable="false" MaxLength="255" />
+    <Property Name="summary" Type="text" />
+    <Property Name="content" Type="text" />
+    <Property Name="created_at" Type="datetime" Nullable="false" />
+    <Property Name="updated_at" Type="datetime" Nullable="false" />
+    <Property Name="author_id" Type="int" Nullable="false" />
+    <Property Name="comments_count" Type="int" />
+    <Property Name="project_id" Type="int" />
+    <Property Name="updater_id" Type="int" Nullable="false" />
+  </EntityType>
+  <EntityType Name="kb_categories">
+    <Key>
+      <PropertyRef Name="id" />
+    </Key>
+    <Property Name="id" Type="int" Nullable="false" StoreGeneratedPattern="Identity" />
+    <Property Name="title" Type="varchar" Nullable="false" MaxLength="255" />
+    <Property Name="description" Type="text" />
+    <Property Name="created_at" Type="datetime" Nullable="false" />
+    <Property Name="updated_at" Type="datetime" Nullable="false" />
+    <Property Name="parent_id" Type="int" />
+    <Property Name="lft" Type="int" />
+    <Property Name="rgt" Type="int" />
+  </EntityType>
+  <EntityType Name="member_roles">
+    <Key>
+      <PropertyRef Name="id" />
+    </Key>
+    <Property Name="id" Type="int" Nullable="false" StoreGeneratedPattern="Identity" />
+    <Property Name="member_id" Type="int" Nullable="false" />
+    <Property Name="role_id" Type="int" Nullable="false" />
+    <Property Name="inherited_from" Type="int" />
+  </EntityType>
+  <EntityType Name="members">
+    <Key>
+      <PropertyRef Name="id" />
+    </Key>
+    <Property Name="id" Type="int" Nullable="false" StoreGeneratedPattern="Identity" />
+    <Property Name="user_id" Type="int" Nullable="false" />
+    <Property Name="project_id" Type="int" Nullable="false" />
+    <Property Name="created_on" Type="datetime" />
+    <Property Name="mail_notification" Type="bool" Nullable="false" />
+  </EntityType>
+  <EntityType Name="messages">
+    <Key>
+      <PropertyRef Name="id" />
+    </Key>
+    <Property Name="id" Type="int" Nullable="false" StoreGeneratedPattern="Identity" />
+    <Property Name="board_id" Type="int" Nullable="false" />
+    <Property Name="parent_id" Type="int" />
+    <Property Name="subject" Type="varchar" Nullable="false" MaxLength="255" />
+    <Property Name="content" Type="text" />
+    <Property Name="author_id" Type="int" />
+    <Property Name="replies_count" Type="int" Nullable="false" />
+    <Property Name="last_reply_id" Type="int" />
+    <Property Name="created_on" Type="datetime" Nullable="false" />
+    <Property Name="updated_on" Type="datetime" Nullable="false" />
+    <Property Name="locked" Type="bool" />
+    <Property Name="sticky" Type="int" />
+  </EntityType>
+  <EntityType Name="news">
+    <Key>
+      <PropertyRef Name="id" />
+    </Key>
+    <Property Name="id" Type="int" Nullable="false" StoreGeneratedPattern="Identity" />
+    <Property Name="project_id" Type="int" />
+    <Property Name="title" Type="varchar" Nullable="false" MaxLength="60" />
+    <Property Name="summary" Type="varchar" MaxLength="255" />
+    <Property Name="description" Type="text" />
+    <Property Name="author_id" Type="int" Nullable="false" />
+    <Property Name="created_on" Type="datetime" />
+    <Property Name="comments_count" Type="int" Nullable="false" />
+  </EntityType>
+  <EntityType Name="open_id_authentication_associations">
+    <Key>
+      <PropertyRef Name="id" />
+    </Key>
+    <Property Name="id" Type="int" Nullable="false" StoreGeneratedPattern="Identity" />
+    <Property Name="issued" Type="int" />
+    <Property Name="lifetime" Type="int" />
+    <Property Name="handle" Type="varchar" MaxLength="255" />
+    <Property Name="assoc_type" Type="varchar" MaxLength="255" />
+    <Property Name="server_url" Type="blob" />
+    <Property Name="secret" Type="blob" />
+  </EntityType>
+  <EntityType Name="open_id_authentication_nonces">
+    <Key>
+      <PropertyRef Name="id" />
+    </Key>
+    <Property Name="id" Type="int" Nullable="false" StoreGeneratedPattern="Identity" />
+    <Property Name="timestamp" Type="int" Nullable="false" />
+    <Property Name="server_url" Type="varchar" MaxLength="255" />
+    <Property Name="salt" Type="varchar" Nullable="false" MaxLength="255" />
+  </EntityType>
+  <EntityType Name="projects">
+    <Key>
+      <PropertyRef Name="id" />
+    </Key>
+    <Property Name="id" Type="int" Nullable="false" StoreGeneratedPattern="Identity" />
+    <Property Name="name" Type="varchar" Nullable="false" MaxLength="255" />
+    <Property Name="description" Type="text" />
+    <Property Name="homepage" Type="varchar" MaxLength="255" />
+    <Property Name="is_public" Type="bool" Nullable="false" />
+    <Property Name="parent_id" Type="int" />
+    <Property Name="created_on" Type="datetime" />
+    <Property Name="updated_on" Type="datetime" />
+    <Property Name="identifier" Type="varchar" MaxLength="255" />
+    <Property Name="status" Type="int" Nullable="false" />
+    <Property Name="lft" Type="int" />
+    <Property Name="rgt" Type="int" />
+    <Property Name="inherit_members" Type="bool" Nullable="false" />
+  </EntityType>
+  <!--Errors Found During Generation:
+      warning 6002: The table/view 'def.redmine.projects_trackers' does not have a primary key defined. The key has been inferred and the definition was created as a read-only table/view.
+      -->
+  <EntityType Name="projects_trackers">
+    <Key>
+      <PropertyRef Name="project_id" />
+      <PropertyRef Name="tracker_id" />
+    </Key>
+    <Property Name="project_id" Type="int" Nullable="false" />
+    <Property Name="tracker_id" Type="int" Nullable="false" />
+  </EntityType>
+  <EntityType Name="queries">
+    <Key>
+      <PropertyRef Name="id" />
+    </Key>
+    <Property Name="id" Type="int" Nullable="false" StoreGeneratedPattern="Identity" />
+    <Property Name="project_id" Type="int" />
+    <Property Name="name" Type="varchar" Nullable="false" MaxLength="255" />
+    <Property Name="filters" Type="text" />
+    <Property Name="user_id" Type="int" Nullable="false" />
+    <Property Name="is_public" Type="bool" Nullable="false" />
+    <Property Name="column_names" Type="text" />
+    <Property Name="sort_criteria" Type="text" />
+    <Property Name="group_by" Type="varchar" MaxLength="255" />
+    <Property Name="type" Type="varchar" MaxLength="255" />
+  </EntityType>
+  <EntityType Name="ratings">
+    <Key>
+      <PropertyRef Name="id" />
+    </Key>
+    <Property Name="id" Type="int" Nullable="false" StoreGeneratedPattern="Identity" />
+    <Property Name="rated_id" Type="int" />
+    <Property Name="rated_type" Type="varchar" MaxLength="255" />
+    <Property Name="rating" Type="decimal" />
+  </EntityType>
+  <EntityType Name="repositories">
+    <Key>
+      <PropertyRef Name="id" />
+    </Key>
+    <Property Name="id" Type="int" Nullable="false" StoreGeneratedPattern="Identity" />
+    <Property Name="project_id" Type="int" Nullable="false" />
+    <Property Name="url" Type="varchar" Nullable="false" MaxLength="255" />
+    <Property Name="login" Type="varchar" MaxLength="60" />
+    <Property Name="password" Type="varchar" MaxLength="255" />
+    <Property Name="root_url" Type="varchar" MaxLength="255" />
+    <Property Name="type" Type="varchar" MaxLength="255" />
+    <Property Name="path_encoding" Type="varchar" MaxLength="64" />
+    <Property Name="log_encoding" Type="varchar" MaxLength="64" />
+    <Property Name="extra_info" Type="text" />
+    <Property Name="identifier" Type="varchar" MaxLength="255" />
+    <Property Name="is_default" Type="bool" />
+  </EntityType>
+  <EntityType Name="roles">
+    <Key>
+      <PropertyRef Name="id" />
+    </Key>
+    <Property Name="id" Type="int" Nullable="false" StoreGeneratedPattern="Identity" />
+    <Property Name="name" Type="varchar" Nullable="false" MaxLength="30" />
+    <Property Name="position" Type="int" />
+    <Property Name="assignable" Type="bool" />
+    <Property Name="builtin" Type="int" Nullable="false" />
+    <Property Name="permissions" Type="text" />
+    <Property Name="issues_visibility" Type="varchar" Nullable="false" MaxLength="30" />
+  </EntityType>
+  <!--Errors Found During Generation:
+      warning 6002: The table/view 'def.redmine.schema_migrations' does not have a primary key defined. The key has been inferred and the definition was created as a read-only table/view.
+      -->
+  <EntityType Name="schema_migrations">
+    <Key>
+      <PropertyRef Name="version" />
+    </Key>
+    <Property Name="version" Type="varchar" Nullable="false" MaxLength="255" />
+  </EntityType>
+  <EntityType Name="settings">
+    <Key>
+      <PropertyRef Name="id" />
+    </Key>
+    <Property Name="id" Type="int" Nullable="false" StoreGeneratedPattern="Identity" />
+    <Property Name="name" Type="varchar" Nullable="false" MaxLength="255" />
+    <Property Name="value" Type="text" />
+    <Property Name="updated_on" Type="datetime" />
+  </EntityType>
+  <EntityType Name="taggings">
+    <Key>
+      <PropertyRef Name="id" />
+    </Key>
+    <Property Name="id" Type="int" Nullable="false" StoreGeneratedPattern="Identity" />
+    <Property Name="tag_id" Type="int" />
+    <Property Name="taggable_id" Type="int" />
+    <Property Name="taggable_type" Type="varchar" MaxLength="255" />
+    <Property Name="tagger_id" Type="int" />
+    <Property Name="tagger_type" Type="varchar" MaxLength="255" />
+    <Property Name="context" Type="varchar" MaxLength="128" />
+    <Property Name="created_at" Type="datetime" />
+  </EntityType>
+  <EntityType Name="tags">
+    <Key>
+      <PropertyRef Name="id" />
+    </Key>
+    <Property Name="id" Type="int" Nullable="false" StoreGeneratedPattern="Identity" />
+    <Property Name="name" Type="varchar" MaxLength="255" />
+  </EntityType>
+  <EntityType Name="time_entries">
+    <Key>
+      <PropertyRef Name="id" />
+    </Key>
+    <Property Name="id" Type="int" Nullable="false" StoreGeneratedPattern="Identity" />
+    <Property Name="project_id" Type="int" Nullable="false" />
+    <Property Name="user_id" Type="int" Nullable="false" />
+    <Property Name="issue_id" Type="int" />
+    <Property Name="hours" Type="float" Nullable="false" />
+    <Property Name="comments" Type="varchar" MaxLength="255" />
+    <Property Name="activity_id" Type="int" Nullable="false" />
+    <Property Name="spent_on" Type="date" Nullable="false" />
+    <Property Name="tyear" Type="int" Nullable="false" />
+    <Property Name="tmonth" Type="int" Nullable="false" />
+    <Property Name="tweek" Type="int" Nullable="false" />
+    <Property Name="created_on" Type="datetime" Nullable="false" />
+    <Property Name="updated_on" Type="datetime" Nullable="false" />
+  </EntityType>
+  <EntityType Name="tokens">
+    <Key>
+      <PropertyRef Name="id" />
+    </Key>
+    <Property Name="id" Type="int" Nullable="false" StoreGeneratedPattern="Identity" />
+    <Property Name="user_id" Type="int" Nullable="false" />
+    <Property Name="action" Type="varchar" Nullable="false" MaxLength="30" />
+    <Property Name="value" Type="varchar" Nullable="false" MaxLength="40" />
+    <Property Name="created_on" Type="datetime" Nullable="false" />
+  </EntityType>
+  <EntityType Name="trackers">
+    <Key>
+      <PropertyRef Name="id" />
+    </Key>
+    <Property Name="id" Type="int" Nullable="false" StoreGeneratedPattern="Identity" />
+    <Property Name="name" Type="varchar" Nullable="false" MaxLength="30" />
+    <Property Name="is_in_chlog" Type="bool" Nullable="false" />
+    <Property Name="position" Type="int" />
+    <Property Name="is_in_roadmap" Type="bool" Nullable="false" />
+    <Property Name="fields_bits" Type="int" />
+  </EntityType>
+  <EntityType Name="user_preferences">
+    <Key>
+      <PropertyRef Name="id" />
+    </Key>
+    <Property Name="id" Type="int" Nullable="false" StoreGeneratedPattern="Identity" />
+    <Property Name="user_id" Type="int" Nullable="false" />
+    <Property Name="others" Type="text" />
+    <Property Name="hide_mail" Type="bool" />
+    <Property Name="time_zone" Type="varchar" MaxLength="255" />
+  </EntityType>
+  <EntityType Name="users">
+    <Key>
+      <PropertyRef Name="id" />
+    </Key>
+    <Property Name="id" Type="int" Nullable="false" StoreGeneratedPattern="Identity" />
+    <Property Name="login" Type="varchar" Nullable="false" MaxLength="255" />
+    <Property Name="hashed_password" Type="varchar" Nullable="false" MaxLength="40" />
+    <Property Name="firstname" Type="varchar" Nullable="false" MaxLength="30" />
+    <Property Name="lastname" Type="varchar" Nullable="false" MaxLength="30" />
+    <Property Name="mail" Type="varchar" Nullable="false" MaxLength="60" />
+    <Property Name="admin" Type="bool" Nullable="false" />
+    <Property Name="status" Type="int" Nullable="false" />
+    <Property Name="last_login_on" Type="datetime" />
+    <Property Name="language" Type="varchar" MaxLength="5" />
+    <Property Name="auth_source_id" Type="int" />
+    <Property Name="created_on" Type="datetime" />
+    <Property Name="updated_on" Type="datetime" />
+    <Property Name="type" Type="varchar" MaxLength="255" />
+    <Property Name="identity_url" Type="varchar" MaxLength="255" />
+    <Property Name="mail_notification" Type="varchar" Nullable="false" MaxLength="255" />
+    <Property Name="salt" Type="varchar" MaxLength="64" />
+  </EntityType>
+  <EntityType Name="versions">
+    <Key>
+      <PropertyRef Name="id" />
+    </Key>
+    <Property Name="id" Type="int" Nullable="false" StoreGeneratedPattern="Identity" />
+    <Property Name="project_id" Type="int" Nullable="false" />
+    <Property Name="name" Type="varchar" Nullable="false" MaxLength="255" />
+    <Property Name="description" Type="varchar" MaxLength="255" />
+    <Property Name="effective_date" Type="date" />
+    <Property Name="created_on" Type="datetime" />
+    <Property Name="updated_on" Type="datetime" />
+    <Property Name="wiki_page_title" Type="varchar" MaxLength="255" />
+    <Property Name="status" Type="varchar" MaxLength="255" />
+    <Property Name="sharing" Type="varchar" Nullable="false" MaxLength="255" />
+  </EntityType>
+  <EntityType Name="viewings">
+    <Key>
+      <PropertyRef Name="id" />
+    </Key>
+    <Property Name="id" Type="int" Nullable="false" StoreGeneratedPattern="Identity" />
+    <Property Name="viewer_id" Type="int" />
+    <Property Name="viewed_id" Type="int" />
+    <Property Name="viewed_type" Type="varchar" MaxLength="255" />
+    <Property Name="ip" Type="varchar" MaxLength="24" />
+    <Property Name="created_at" Type="datetime" />
+  </EntityType>
+  <EntityType Name="watchers">
+    <Key>
+      <PropertyRef Name="id" />
+    </Key>
+    <Property Name="id" Type="int" Nullable="false" StoreGeneratedPattern="Identity" />
+    <Property Name="watchable_type" Type="varchar" Nullable="false" MaxLength="255" />
+    <Property Name="watchable_id" Type="int" Nullable="false" />
+    <Property Name="user_id" Type="int" />
+  </EntityType>
+  <EntityType Name="wiki_content_versions">
+    <Key>
+      <PropertyRef Name="id" />
+    </Key>
+    <Property Name="id" Type="int" Nullable="false" StoreGeneratedPattern="Identity" />
+    <Property Name="wiki_content_id" Type="int" Nullable="false" />
+    <Property Name="page_id" Type="int" Nullable="false" />
+    <Property Name="author_id" Type="int" />
+    <Property Name="data" Type="longblob" />
+    <Property Name="compression" Type="varchar" MaxLength="6" />
+    <Property Name="comments" Type="varchar" MaxLength="255" />
+    <Property Name="updated_on" Type="datetime" Nullable="false" />
+    <Property Name="version" Type="int" Nullable="false" />
+  </EntityType>
+  <EntityType Name="wiki_contents">
+    <Key>
+      <PropertyRef Name="id" />
+    </Key>
+    <Property Name="id" Type="int" Nullable="false" StoreGeneratedPattern="Identity" />
+    <Property Name="page_id" Type="int" Nullable="false" />
+    <Property Name="author_id" Type="int" />
+    <Property Name="text" Type="longtext" />
+    <Property Name="comments" Type="varchar" MaxLength="255" />
+    <Property Name="updated_on" Type="datetime" Nullable="false" />
+    <Property Name="version" Type="int" Nullable="false" />
+  </EntityType>
+  <EntityType Name="wiki_pages">
+    <Key>
+      <PropertyRef Name="id" />
+    </Key>
+    <Property Name="id" Type="int" Nullable="false" StoreGeneratedPattern="Identity" />
+    <Property Name="wiki_id" Type="int" Nullable="false" />
+    <Property Name="title" Type="varchar" Nullable="false" MaxLength="255" />
+    <Property Name="created_on" Type="datetime" Nullable="false" />
+    <Property Name="protected" Type="bool" Nullable="false" />
+    <Property Name="parent_id" Type="int" />
+  </EntityType>
+  <EntityType Name="wiki_redirects">
+    <Key>
+      <PropertyRef Name="id" />
+    </Key>
+    <Property Name="id" Type="int" Nullable="false" StoreGeneratedPattern="Identity" />
+    <Property Name="wiki_id" Type="int" Nullable="false" />
+    <Property Name="title" Type="varchar" MaxLength="255" />
+    <Property Name="redirects_to" Type="varchar" MaxLength="255" />
+    <Property Name="created_on" Type="datetime" Nullable="false" />
+  </EntityType>
+  <EntityType Name="wikis">
+    <Key>
+      <PropertyRef Name="id" />
+    </Key>
+    <Property Name="id" Type="int" Nullable="false" StoreGeneratedPattern="Identity" />
+    <Property Name="project_id" Type="int" Nullable="false" />
+    <Property Name="start_page" Type="varchar" Nullable="false" MaxLength="255" />
+    <Property Name="status" Type="int" Nullable="false" />
+  </EntityType>
+  <EntityType Name="workflows">
+    <Key>
+      <PropertyRef Name="id" />
+    </Key>
+    <Property Name="id" Type="int" Nullable="false" StoreGeneratedPattern="Identity" />
+    <Property Name="tracker_id" Type="int" Nullable="false" />
+    <Property Name="old_status_id" Type="int" Nullable="false" />
+    <Property Name="new_status_id" Type="int" Nullable="false" />
+    <Property Name="role_id" Type="int" Nullable="false" />
+    <Property Name="assignee" Type="bool" Nullable="false" />
+    <Property Name="author" Type="bool" Nullable="false" />
+    <Property Name="type" Type="varchar" MaxLength="30" />
+    <Property Name="field_name" Type="varchar" MaxLength="30" />
+    <Property Name="rule" Type="varchar" MaxLength="30" />
+  </EntityType>
+</Schema>

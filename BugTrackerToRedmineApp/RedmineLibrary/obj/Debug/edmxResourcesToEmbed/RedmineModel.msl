@@ -1,0 +1,851 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Mapping Space="C-S" xmlns="http://schemas.microsoft.com/ado/2009/11/mapping/cs">
+  <EntityContainerMapping StorageEntityContainer="redmineModelStoreContainer" CdmEntityContainer="redmineEntities">
+    <EntitySetMapping Name="attachments">
+      <EntityTypeMapping TypeName="redmineModel.attachments">
+        <MappingFragment StoreEntitySet="attachments">
+          <ScalarProperty Name="id" ColumnName="id" />
+          <ScalarProperty Name="container_id" ColumnName="container_id" />
+          <ScalarProperty Name="container_type" ColumnName="container_type" />
+          <ScalarProperty Name="filename" ColumnName="filename" />
+          <ScalarProperty Name="disk_filename" ColumnName="disk_filename" />
+          <ScalarProperty Name="filesize" ColumnName="filesize" />
+          <ScalarProperty Name="content_type" ColumnName="content_type" />
+          <ScalarProperty Name="digest" ColumnName="digest" />
+          <ScalarProperty Name="downloads" ColumnName="downloads" />
+          <ScalarProperty Name="author_id" ColumnName="author_id" />
+          <ScalarProperty Name="created_on" ColumnName="created_on" />
+          <ScalarProperty Name="description" ColumnName="description" />
+          <ScalarProperty Name="disk_directory" ColumnName="disk_directory" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="auth_sources">
+      <EntityTypeMapping TypeName="redmineModel.auth_sources">
+        <MappingFragment StoreEntitySet="auth_sources">
+          <ScalarProperty Name="id" ColumnName="id" />
+          <ScalarProperty Name="type" ColumnName="type" />
+          <ScalarProperty Name="name" ColumnName="name" />
+          <ScalarProperty Name="host" ColumnName="host" />
+          <ScalarProperty Name="port" ColumnName="port" />
+          <ScalarProperty Name="account" ColumnName="account" />
+          <ScalarProperty Name="account_password" ColumnName="account_password" />
+          <ScalarProperty Name="base_dn" ColumnName="base_dn" />
+          <ScalarProperty Name="attr_login" ColumnName="attr_login" />
+          <ScalarProperty Name="attr_firstname" ColumnName="attr_firstname" />
+          <ScalarProperty Name="attr_lastname" ColumnName="attr_lastname" />
+          <ScalarProperty Name="attr_mail" ColumnName="attr_mail" />
+          <ScalarProperty Name="onthefly_register" ColumnName="onthefly_register" />
+          <ScalarProperty Name="tls" ColumnName="tls" />
+          <ScalarProperty Name="filter" ColumnName="filter" />
+          <ScalarProperty Name="timeout" ColumnName="timeout" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="boards">
+      <EntityTypeMapping TypeName="redmineModel.boards">
+        <MappingFragment StoreEntitySet="boards">
+          <ScalarProperty Name="id" ColumnName="id" />
+          <ScalarProperty Name="project_id" ColumnName="project_id" />
+          <ScalarProperty Name="name" ColumnName="name" />
+          <ScalarProperty Name="description" ColumnName="description" />
+          <ScalarProperty Name="position" ColumnName="position" />
+          <ScalarProperty Name="topics_count" ColumnName="topics_count" />
+          <ScalarProperty Name="messages_count" ColumnName="messages_count" />
+          <ScalarProperty Name="last_message_id" ColumnName="last_message_id" />
+          <ScalarProperty Name="parent_id" ColumnName="parent_id" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="changes">
+      <EntityTypeMapping TypeName="redmineModel.changes">
+        <MappingFragment StoreEntitySet="changes">
+          <ScalarProperty Name="id" ColumnName="id" />
+          <ScalarProperty Name="changeset_id" ColumnName="changeset_id" />
+          <ScalarProperty Name="action" ColumnName="action" />
+          <ScalarProperty Name="path" ColumnName="path" />
+          <ScalarProperty Name="from_path" ColumnName="from_path" />
+          <ScalarProperty Name="from_revision" ColumnName="from_revision" />
+          <ScalarProperty Name="revision" ColumnName="revision" />
+          <ScalarProperty Name="branch" ColumnName="branch" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="changeset_parents">
+      <EntityTypeMapping TypeName="redmineModel.changeset_parents">
+        <MappingFragment StoreEntitySet="changeset_parents">
+          <ScalarProperty Name="changeset_id" ColumnName="changeset_id" />
+          <ScalarProperty Name="parent_id" ColumnName="parent_id" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="changesets">
+      <EntityTypeMapping TypeName="redmineModel.changesets">
+        <MappingFragment StoreEntitySet="changesets">
+          <ScalarProperty Name="id" ColumnName="id" />
+          <ScalarProperty Name="repository_id" ColumnName="repository_id" />
+          <ScalarProperty Name="revision" ColumnName="revision" />
+          <ScalarProperty Name="committer" ColumnName="committer" />
+          <ScalarProperty Name="committed_on" ColumnName="committed_on" />
+          <ScalarProperty Name="comments" ColumnName="comments" />
+          <ScalarProperty Name="commit_date" ColumnName="commit_date" />
+          <ScalarProperty Name="scmid" ColumnName="scmid" />
+          <ScalarProperty Name="user_id" ColumnName="user_id" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="changesets_issues">
+      <EntityTypeMapping TypeName="redmineModel.changesets_issues">
+        <MappingFragment StoreEntitySet="changesets_issues">
+          <ScalarProperty Name="changeset_id" ColumnName="changeset_id" />
+          <ScalarProperty Name="issue_id" ColumnName="issue_id" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="chart_done_ratios">
+      <EntityTypeMapping TypeName="redmineModel.chart_done_ratios">
+        <MappingFragment StoreEntitySet="chart_done_ratios">
+          <ScalarProperty Name="id" ColumnName="id" />
+          <ScalarProperty Name="day" ColumnName="day" />
+          <ScalarProperty Name="week" ColumnName="week" />
+          <ScalarProperty Name="month" ColumnName="month" />
+          <ScalarProperty Name="project_id" ColumnName="project_id" />
+          <ScalarProperty Name="issue_id" ColumnName="issue_id" />
+          <ScalarProperty Name="done_ratio" ColumnName="done_ratio" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="chart_issue_statuses">
+      <EntityTypeMapping TypeName="redmineModel.chart_issue_statuses">
+        <MappingFragment StoreEntitySet="chart_issue_statuses">
+          <ScalarProperty Name="id" ColumnName="id" />
+          <ScalarProperty Name="day" ColumnName="day" />
+          <ScalarProperty Name="week" ColumnName="week" />
+          <ScalarProperty Name="month" ColumnName="month" />
+          <ScalarProperty Name="project_id" ColumnName="project_id" />
+          <ScalarProperty Name="issue_id" ColumnName="issue_id" />
+          <ScalarProperty Name="status_id" ColumnName="status_id" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="chart_saved_conditions">
+      <EntityTypeMapping TypeName="redmineModel.chart_saved_conditions">
+        <MappingFragment StoreEntitySet="chart_saved_conditions">
+          <ScalarProperty Name="id" ColumnName="id" />
+          <ScalarProperty Name="name" ColumnName="name" />
+          <ScalarProperty Name="project_id" ColumnName="project_id" />
+          <ScalarProperty Name="conditions" ColumnName="conditions" />
+          <ScalarProperty Name="chart" ColumnName="chart" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="chart_time_entries">
+      <EntityTypeMapping TypeName="redmineModel.chart_time_entries">
+        <MappingFragment StoreEntitySet="chart_time_entries">
+          <ScalarProperty Name="id" ColumnName="id" />
+          <ScalarProperty Name="day" ColumnName="day" />
+          <ScalarProperty Name="week" ColumnName="week" />
+          <ScalarProperty Name="month" ColumnName="month" />
+          <ScalarProperty Name="logged_hours" ColumnName="logged_hours" />
+          <ScalarProperty Name="entries" ColumnName="entries" />
+          <ScalarProperty Name="user_id" ColumnName="user_id" />
+          <ScalarProperty Name="issue_id" ColumnName="issue_id" />
+          <ScalarProperty Name="activity_id" ColumnName="activity_id" />
+          <ScalarProperty Name="project_id" ColumnName="project_id" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="chats">
+      <EntityTypeMapping TypeName="redmineModel.chats">
+        <MappingFragment StoreEntitySet="chats">
+          <ScalarProperty Name="id" ColumnName="id" />
+          <ScalarProperty Name="message" ColumnName="message" />
+          <ScalarProperty Name="user" ColumnName="user" />
+          <ScalarProperty Name="created_at" ColumnName="created_at" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="code_review_assignments">
+      <EntityTypeMapping TypeName="redmineModel.code_review_assignments">
+        <MappingFragment StoreEntitySet="code_review_assignments">
+          <ScalarProperty Name="id" ColumnName="id" />
+          <ScalarProperty Name="issue_id" ColumnName="issue_id" />
+          <ScalarProperty Name="change_id" ColumnName="change_id" />
+          <ScalarProperty Name="attachment_id" ColumnName="attachment_id" />
+          <ScalarProperty Name="file_path" ColumnName="file_path" />
+          <ScalarProperty Name="rev" ColumnName="rev" />
+          <ScalarProperty Name="rev_to" ColumnName="rev_to" />
+          <ScalarProperty Name="action_type" ColumnName="action_type" />
+          <ScalarProperty Name="changeset_id" ColumnName="changeset_id" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="code_review_project_settings">
+      <EntityTypeMapping TypeName="redmineModel.code_review_project_settings">
+        <MappingFragment StoreEntitySet="code_review_project_settings">
+          <ScalarProperty Name="id" ColumnName="id" />
+          <ScalarProperty Name="project_id" ColumnName="project_id" />
+          <ScalarProperty Name="tracker_id" ColumnName="tracker_id" />
+          <ScalarProperty Name="created_at" ColumnName="created_at" />
+          <ScalarProperty Name="updated_at" ColumnName="updated_at" />
+          <ScalarProperty Name="updated_by" ColumnName="updated_by" />
+          <ScalarProperty Name="hide_code_review_tab" ColumnName="hide_code_review_tab" />
+          <ScalarProperty Name="auto_relation" ColumnName="auto_relation" />
+          <ScalarProperty Name="assignment_tracker_id" ColumnName="assignment_tracker_id" />
+          <ScalarProperty Name="auto_assign" ColumnName="auto_assign" />
+          <ScalarProperty Name="lock_version" ColumnName="lock_version" />
+          <ScalarProperty Name="tracker_in_review_dialog" ColumnName="tracker_in_review_dialog" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="code_review_user_settings">
+      <EntityTypeMapping TypeName="redmineModel.code_review_user_settings">
+        <MappingFragment StoreEntitySet="code_review_user_settings">
+          <ScalarProperty Name="id" ColumnName="id" />
+          <ScalarProperty Name="user_id" ColumnName="user_id" />
+          <ScalarProperty Name="mail_notification" ColumnName="mail_notification" />
+          <ScalarProperty Name="created_at" ColumnName="created_at" />
+          <ScalarProperty Name="updated_at" ColumnName="updated_at" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="code_reviews">
+      <EntityTypeMapping TypeName="redmineModel.code_reviews">
+        <MappingFragment StoreEntitySet="code_reviews">
+          <ScalarProperty Name="id" ColumnName="id" />
+          <ScalarProperty Name="project_id" ColumnName="project_id" />
+          <ScalarProperty Name="change_id" ColumnName="change_id" />
+          <ScalarProperty Name="created_at" ColumnName="created_at" />
+          <ScalarProperty Name="updated_at" ColumnName="updated_at" />
+          <ScalarProperty Name="line" ColumnName="line" />
+          <ScalarProperty Name="updated_by_id" ColumnName="updated_by_id" />
+          <ScalarProperty Name="lock_version" ColumnName="lock_version" />
+          <ScalarProperty Name="status_changed_from" ColumnName="status_changed_from" />
+          <ScalarProperty Name="status_changed_to" ColumnName="status_changed_to" />
+          <ScalarProperty Name="issue_id" ColumnName="issue_id" />
+          <ScalarProperty Name="action_type" ColumnName="action_type" />
+          <ScalarProperty Name="file_path" ColumnName="file_path" />
+          <ScalarProperty Name="rev" ColumnName="rev" />
+          <ScalarProperty Name="rev_to" ColumnName="rev_to" />
+          <ScalarProperty Name="attachment_id" ColumnName="attachment_id" />
+          <ScalarProperty Name="file_count" ColumnName="file_count" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="comments">
+      <EntityTypeMapping TypeName="redmineModel.comments">
+        <MappingFragment StoreEntitySet="comments">
+          <ScalarProperty Name="id" ColumnName="id" />
+          <ScalarProperty Name="commented_type" ColumnName="commented_type" />
+          <ScalarProperty Name="commented_id" ColumnName="commented_id" />
+          <ScalarProperty Name="author_id" ColumnName="author_id" />
+          <ScalarProperty Name="comments1" ColumnName="comments" />
+          <ScalarProperty Name="created_on" ColumnName="created_on" />
+          <ScalarProperty Name="updated_on" ColumnName="updated_on" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="custom_fields">
+      <EntityTypeMapping TypeName="redmineModel.custom_fields">
+        <MappingFragment StoreEntitySet="custom_fields">
+          <ScalarProperty Name="id" ColumnName="id" />
+          <ScalarProperty Name="type" ColumnName="type" />
+          <ScalarProperty Name="name" ColumnName="name" />
+          <ScalarProperty Name="field_format" ColumnName="field_format" />
+          <ScalarProperty Name="possible_values" ColumnName="possible_values" />
+          <ScalarProperty Name="regexp" ColumnName="regexp" />
+          <ScalarProperty Name="min_length" ColumnName="min_length" />
+          <ScalarProperty Name="max_length" ColumnName="max_length" />
+          <ScalarProperty Name="is_required" ColumnName="is_required" />
+          <ScalarProperty Name="is_for_all" ColumnName="is_for_all" />
+          <ScalarProperty Name="is_filter" ColumnName="is_filter" />
+          <ScalarProperty Name="position" ColumnName="position" />
+          <ScalarProperty Name="searchable" ColumnName="searchable" />
+          <ScalarProperty Name="default_value" ColumnName="default_value" />
+          <ScalarProperty Name="editable" ColumnName="editable" />
+          <ScalarProperty Name="visible" ColumnName="visible" />
+          <ScalarProperty Name="multiple" ColumnName="multiple" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="custom_fields_projects">
+      <EntityTypeMapping TypeName="redmineModel.custom_fields_projects">
+        <MappingFragment StoreEntitySet="custom_fields_projects">
+          <ScalarProperty Name="custom_field_id" ColumnName="custom_field_id" />
+          <ScalarProperty Name="project_id" ColumnName="project_id" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="custom_fields_trackers">
+      <EntityTypeMapping TypeName="redmineModel.custom_fields_trackers">
+        <MappingFragment StoreEntitySet="custom_fields_trackers">
+          <ScalarProperty Name="custom_field_id" ColumnName="custom_field_id" />
+          <ScalarProperty Name="tracker_id" ColumnName="tracker_id" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="custom_values">
+      <EntityTypeMapping TypeName="redmineModel.custom_values">
+        <MappingFragment StoreEntitySet="custom_values">
+          <ScalarProperty Name="id" ColumnName="id" />
+          <ScalarProperty Name="customized_type" ColumnName="customized_type" />
+          <ScalarProperty Name="customized_id" ColumnName="customized_id" />
+          <ScalarProperty Name="custom_field_id" ColumnName="custom_field_id" />
+          <ScalarProperty Name="value" ColumnName="value" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="documents">
+      <EntityTypeMapping TypeName="redmineModel.documents">
+        <MappingFragment StoreEntitySet="documents">
+          <ScalarProperty Name="id" ColumnName="id" />
+          <ScalarProperty Name="project_id" ColumnName="project_id" />
+          <ScalarProperty Name="category_id" ColumnName="category_id" />
+          <ScalarProperty Name="title" ColumnName="title" />
+          <ScalarProperty Name="description" ColumnName="description" />
+          <ScalarProperty Name="created_on" ColumnName="created_on" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="enabled_modules">
+      <EntityTypeMapping TypeName="redmineModel.enabled_modules">
+        <MappingFragment StoreEntitySet="enabled_modules">
+          <ScalarProperty Name="id" ColumnName="id" />
+          <ScalarProperty Name="project_id" ColumnName="project_id" />
+          <ScalarProperty Name="name" ColumnName="name" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="enumerations">
+      <EntityTypeMapping TypeName="redmineModel.enumerations">
+        <MappingFragment StoreEntitySet="enumerations">
+          <ScalarProperty Name="id" ColumnName="id" />
+          <ScalarProperty Name="name" ColumnName="name" />
+          <ScalarProperty Name="position" ColumnName="position" />
+          <ScalarProperty Name="is_default" ColumnName="is_default" />
+          <ScalarProperty Name="type" ColumnName="type" />
+          <ScalarProperty Name="active" ColumnName="active" />
+          <ScalarProperty Name="project_id" ColumnName="project_id" />
+          <ScalarProperty Name="parent_id" ColumnName="parent_id" />
+          <ScalarProperty Name="position_name" ColumnName="position_name" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="groups_users">
+      <EntityTypeMapping TypeName="redmineModel.groups_users">
+        <MappingFragment StoreEntitySet="groups_users">
+          <ScalarProperty Name="group_id" ColumnName="group_id" />
+          <ScalarProperty Name="user_id" ColumnName="user_id" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="issue_categories">
+      <EntityTypeMapping TypeName="redmineModel.issue_categories">
+        <MappingFragment StoreEntitySet="issue_categories">
+          <ScalarProperty Name="id" ColumnName="id" />
+          <ScalarProperty Name="project_id" ColumnName="project_id" />
+          <ScalarProperty Name="name" ColumnName="name" />
+          <ScalarProperty Name="assigned_to_id" ColumnName="assigned_to_id" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="issue_relations">
+      <EntityTypeMapping TypeName="redmineModel.issue_relations">
+        <MappingFragment StoreEntitySet="issue_relations">
+          <ScalarProperty Name="id" ColumnName="id" />
+          <ScalarProperty Name="issue_from_id" ColumnName="issue_from_id" />
+          <ScalarProperty Name="issue_to_id" ColumnName="issue_to_id" />
+          <ScalarProperty Name="relation_type" ColumnName="relation_type" />
+          <ScalarProperty Name="delay" ColumnName="delay" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="issue_statuses">
+      <EntityTypeMapping TypeName="redmineModel.issue_statuses">
+        <MappingFragment StoreEntitySet="issue_statuses">
+          <ScalarProperty Name="id" ColumnName="id" />
+          <ScalarProperty Name="name" ColumnName="name" />
+          <ScalarProperty Name="is_closed" ColumnName="is_closed" />
+          <ScalarProperty Name="is_default" ColumnName="is_default" />
+          <ScalarProperty Name="position" ColumnName="position" />
+          <ScalarProperty Name="default_done_ratio" ColumnName="default_done_ratio" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="issues">
+      <EntityTypeMapping TypeName="redmineModel.issues">
+        <MappingFragment StoreEntitySet="issues">
+          <ScalarProperty Name="id" ColumnName="id" />
+          <ScalarProperty Name="tracker_id" ColumnName="tracker_id" />
+          <ScalarProperty Name="project_id" ColumnName="project_id" />
+          <ScalarProperty Name="subject" ColumnName="subject" />
+          <ScalarProperty Name="description" ColumnName="description" />
+          <ScalarProperty Name="due_date" ColumnName="due_date" />
+          <ScalarProperty Name="category_id" ColumnName="category_id" />
+          <ScalarProperty Name="status_id" ColumnName="status_id" />
+          <ScalarProperty Name="assigned_to_id" ColumnName="assigned_to_id" />
+          <ScalarProperty Name="priority_id" ColumnName="priority_id" />
+          <ScalarProperty Name="fixed_version_id" ColumnName="fixed_version_id" />
+          <ScalarProperty Name="author_id" ColumnName="author_id" />
+          <ScalarProperty Name="lock_version" ColumnName="lock_version" />
+          <ScalarProperty Name="created_on" ColumnName="created_on" />
+          <ScalarProperty Name="updated_on" ColumnName="updated_on" />
+          <ScalarProperty Name="start_date" ColumnName="start_date" />
+          <ScalarProperty Name="done_ratio" ColumnName="done_ratio" />
+          <ScalarProperty Name="estimated_hours" ColumnName="estimated_hours" />
+          <ScalarProperty Name="parent_id" ColumnName="parent_id" />
+          <ScalarProperty Name="root_id" ColumnName="root_id" />
+          <ScalarProperty Name="lft" ColumnName="lft" />
+          <ScalarProperty Name="rgt" ColumnName="rgt" />
+          <ScalarProperty Name="is_private" ColumnName="is_private" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="journal_details">
+      <EntityTypeMapping TypeName="redmineModel.journal_details">
+        <MappingFragment StoreEntitySet="journal_details">
+          <ScalarProperty Name="id" ColumnName="id" />
+          <ScalarProperty Name="journal_id" ColumnName="journal_id" />
+          <ScalarProperty Name="property" ColumnName="property" />
+          <ScalarProperty Name="prop_key" ColumnName="prop_key" />
+          <ScalarProperty Name="old_value" ColumnName="old_value" />
+          <ScalarProperty Name="value" ColumnName="value" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="journals">
+      <EntityTypeMapping TypeName="redmineModel.journals">
+        <MappingFragment StoreEntitySet="journals">
+          <ScalarProperty Name="id" ColumnName="id" />
+          <ScalarProperty Name="journalized_id" ColumnName="journalized_id" />
+          <ScalarProperty Name="journalized_type" ColumnName="journalized_type" />
+          <ScalarProperty Name="user_id" ColumnName="user_id" />
+          <ScalarProperty Name="notes" ColumnName="notes" />
+          <ScalarProperty Name="created_on" ColumnName="created_on" />
+          <ScalarProperty Name="private_notes" ColumnName="private_notes" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="kb_articles">
+      <EntityTypeMapping TypeName="redmineModel.kb_articles">
+        <MappingFragment StoreEntitySet="kb_articles">
+          <ScalarProperty Name="id" ColumnName="id" />
+          <ScalarProperty Name="category_id" ColumnName="category_id" />
+          <ScalarProperty Name="title" ColumnName="title" />
+          <ScalarProperty Name="summary" ColumnName="summary" />
+          <ScalarProperty Name="content" ColumnName="content" />
+          <ScalarProperty Name="created_at" ColumnName="created_at" />
+          <ScalarProperty Name="updated_at" ColumnName="updated_at" />
+          <ScalarProperty Name="author_id" ColumnName="author_id" />
+          <ScalarProperty Name="comments_count" ColumnName="comments_count" />
+          <ScalarProperty Name="project_id" ColumnName="project_id" />
+          <ScalarProperty Name="updater_id" ColumnName="updater_id" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="kb_categories">
+      <EntityTypeMapping TypeName="redmineModel.kb_categories">
+        <MappingFragment StoreEntitySet="kb_categories">
+          <ScalarProperty Name="id" ColumnName="id" />
+          <ScalarProperty Name="title" ColumnName="title" />
+          <ScalarProperty Name="description" ColumnName="description" />
+          <ScalarProperty Name="created_at" ColumnName="created_at" />
+          <ScalarProperty Name="updated_at" ColumnName="updated_at" />
+          <ScalarProperty Name="parent_id" ColumnName="parent_id" />
+          <ScalarProperty Name="lft" ColumnName="lft" />
+          <ScalarProperty Name="rgt" ColumnName="rgt" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="member_roles">
+      <EntityTypeMapping TypeName="redmineModel.member_roles">
+        <MappingFragment StoreEntitySet="member_roles">
+          <ScalarProperty Name="id" ColumnName="id" />
+          <ScalarProperty Name="member_id" ColumnName="member_id" />
+          <ScalarProperty Name="role_id" ColumnName="role_id" />
+          <ScalarProperty Name="inherited_from" ColumnName="inherited_from" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="members">
+      <EntityTypeMapping TypeName="redmineModel.members">
+        <MappingFragment StoreEntitySet="members">
+          <ScalarProperty Name="id" ColumnName="id" />
+          <ScalarProperty Name="user_id" ColumnName="user_id" />
+          <ScalarProperty Name="project_id" ColumnName="project_id" />
+          <ScalarProperty Name="created_on" ColumnName="created_on" />
+          <ScalarProperty Name="mail_notification" ColumnName="mail_notification" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="messages">
+      <EntityTypeMapping TypeName="redmineModel.messages">
+        <MappingFragment StoreEntitySet="messages">
+          <ScalarProperty Name="id" ColumnName="id" />
+          <ScalarProperty Name="board_id" ColumnName="board_id" />
+          <ScalarProperty Name="parent_id" ColumnName="parent_id" />
+          <ScalarProperty Name="subject" ColumnName="subject" />
+          <ScalarProperty Name="content" ColumnName="content" />
+          <ScalarProperty Name="author_id" ColumnName="author_id" />
+          <ScalarProperty Name="replies_count" ColumnName="replies_count" />
+          <ScalarProperty Name="last_reply_id" ColumnName="last_reply_id" />
+          <ScalarProperty Name="created_on" ColumnName="created_on" />
+          <ScalarProperty Name="updated_on" ColumnName="updated_on" />
+          <ScalarProperty Name="locked" ColumnName="locked" />
+          <ScalarProperty Name="sticky" ColumnName="sticky" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="news">
+      <EntityTypeMapping TypeName="redmineModel.news">
+        <MappingFragment StoreEntitySet="news">
+          <ScalarProperty Name="id" ColumnName="id" />
+          <ScalarProperty Name="project_id" ColumnName="project_id" />
+          <ScalarProperty Name="title" ColumnName="title" />
+          <ScalarProperty Name="summary" ColumnName="summary" />
+          <ScalarProperty Name="description" ColumnName="description" />
+          <ScalarProperty Name="author_id" ColumnName="author_id" />
+          <ScalarProperty Name="created_on" ColumnName="created_on" />
+          <ScalarProperty Name="comments_count" ColumnName="comments_count" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="open_id_authentication_associations">
+      <EntityTypeMapping TypeName="redmineModel.open_id_authentication_associations">
+        <MappingFragment StoreEntitySet="open_id_authentication_associations">
+          <ScalarProperty Name="id" ColumnName="id" />
+          <ScalarProperty Name="issued" ColumnName="issued" />
+          <ScalarProperty Name="lifetime" ColumnName="lifetime" />
+          <ScalarProperty Name="handle" ColumnName="handle" />
+          <ScalarProperty Name="assoc_type" ColumnName="assoc_type" />
+          <ScalarProperty Name="server_url" ColumnName="server_url" />
+          <ScalarProperty Name="secret" ColumnName="secret" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="open_id_authentication_nonces">
+      <EntityTypeMapping TypeName="redmineModel.open_id_authentication_nonces">
+        <MappingFragment StoreEntitySet="open_id_authentication_nonces">
+          <ScalarProperty Name="id" ColumnName="id" />
+          <ScalarProperty Name="timestamp" ColumnName="timestamp" />
+          <ScalarProperty Name="server_url" ColumnName="server_url" />
+          <ScalarProperty Name="salt" ColumnName="salt" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="projects">
+      <EntityTypeMapping TypeName="redmineModel.projects">
+        <MappingFragment StoreEntitySet="projects">
+          <ScalarProperty Name="id" ColumnName="id" />
+          <ScalarProperty Name="name" ColumnName="name" />
+          <ScalarProperty Name="description" ColumnName="description" />
+          <ScalarProperty Name="homepage" ColumnName="homepage" />
+          <ScalarProperty Name="is_public" ColumnName="is_public" />
+          <ScalarProperty Name="parent_id" ColumnName="parent_id" />
+          <ScalarProperty Name="created_on" ColumnName="created_on" />
+          <ScalarProperty Name="updated_on" ColumnName="updated_on" />
+          <ScalarProperty Name="identifier" ColumnName="identifier" />
+          <ScalarProperty Name="status" ColumnName="status" />
+          <ScalarProperty Name="lft" ColumnName="lft" />
+          <ScalarProperty Name="rgt" ColumnName="rgt" />
+          <ScalarProperty Name="inherit_members" ColumnName="inherit_members" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="projects_trackers">
+      <EntityTypeMapping TypeName="redmineModel.projects_trackers">
+        <MappingFragment StoreEntitySet="projects_trackers">
+          <ScalarProperty Name="project_id" ColumnName="project_id" />
+          <ScalarProperty Name="tracker_id" ColumnName="tracker_id" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="queries">
+      <EntityTypeMapping TypeName="redmineModel.queries">
+        <MappingFragment StoreEntitySet="queries">
+          <ScalarProperty Name="id" ColumnName="id" />
+          <ScalarProperty Name="project_id" ColumnName="project_id" />
+          <ScalarProperty Name="name" ColumnName="name" />
+          <ScalarProperty Name="filters" ColumnName="filters" />
+          <ScalarProperty Name="user_id" ColumnName="user_id" />
+          <ScalarProperty Name="is_public" ColumnName="is_public" />
+          <ScalarProperty Name="column_names" ColumnName="column_names" />
+          <ScalarProperty Name="sort_criteria" ColumnName="sort_criteria" />
+          <ScalarProperty Name="group_by" ColumnName="group_by" />
+          <ScalarProperty Name="type" ColumnName="type" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="ratings">
+      <EntityTypeMapping TypeName="redmineModel.ratings">
+        <MappingFragment StoreEntitySet="ratings">
+          <ScalarProperty Name="id" ColumnName="id" />
+          <ScalarProperty Name="rated_id" ColumnName="rated_id" />
+          <ScalarProperty Name="rated_type" ColumnName="rated_type" />
+          <ScalarProperty Name="rating" ColumnName="rating" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="repositories">
+      <EntityTypeMapping TypeName="redmineModel.repositories">
+        <MappingFragment StoreEntitySet="repositories">
+          <ScalarProperty Name="id" ColumnName="id" />
+          <ScalarProperty Name="project_id" ColumnName="project_id" />
+          <ScalarProperty Name="url" ColumnName="url" />
+          <ScalarProperty Name="login" ColumnName="login" />
+          <ScalarProperty Name="password" ColumnName="password" />
+          <ScalarProperty Name="root_url" ColumnName="root_url" />
+          <ScalarProperty Name="type" ColumnName="type" />
+          <ScalarProperty Name="path_encoding" ColumnName="path_encoding" />
+          <ScalarProperty Name="log_encoding" ColumnName="log_encoding" />
+          <ScalarProperty Name="extra_info" ColumnName="extra_info" />
+          <ScalarProperty Name="identifier" ColumnName="identifier" />
+          <ScalarProperty Name="is_default" ColumnName="is_default" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="roles">
+      <EntityTypeMapping TypeName="redmineModel.roles">
+        <MappingFragment StoreEntitySet="roles">
+          <ScalarProperty Name="id" ColumnName="id" />
+          <ScalarProperty Name="name" ColumnName="name" />
+          <ScalarProperty Name="position" ColumnName="position" />
+          <ScalarProperty Name="assignable" ColumnName="assignable" />
+          <ScalarProperty Name="builtin" ColumnName="builtin" />
+          <ScalarProperty Name="permissions" ColumnName="permissions" />
+          <ScalarProperty Name="issues_visibility" ColumnName="issues_visibility" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="schema_migrations">
+      <EntityTypeMapping TypeName="redmineModel.schema_migrations">
+        <MappingFragment StoreEntitySet="schema_migrations">
+          <ScalarProperty Name="version" ColumnName="version" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="settings">
+      <EntityTypeMapping TypeName="redmineModel.settings">
+        <MappingFragment StoreEntitySet="settings">
+          <ScalarProperty Name="id" ColumnName="id" />
+          <ScalarProperty Name="name" ColumnName="name" />
+          <ScalarProperty Name="value" ColumnName="value" />
+          <ScalarProperty Name="updated_on" ColumnName="updated_on" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="taggings">
+      <EntityTypeMapping TypeName="redmineModel.taggings">
+        <MappingFragment StoreEntitySet="taggings">
+          <ScalarProperty Name="id" ColumnName="id" />
+          <ScalarProperty Name="tag_id" ColumnName="tag_id" />
+          <ScalarProperty Name="taggable_id" ColumnName="taggable_id" />
+          <ScalarProperty Name="taggable_type" ColumnName="taggable_type" />
+          <ScalarProperty Name="tagger_id" ColumnName="tagger_id" />
+          <ScalarProperty Name="tagger_type" ColumnName="tagger_type" />
+          <ScalarProperty Name="context" ColumnName="context" />
+          <ScalarProperty Name="created_at" ColumnName="created_at" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="tags">
+      <EntityTypeMapping TypeName="redmineModel.tags">
+        <MappingFragment StoreEntitySet="tags">
+          <ScalarProperty Name="id" ColumnName="id" />
+          <ScalarProperty Name="name" ColumnName="name" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="time_entries">
+      <EntityTypeMapping TypeName="redmineModel.time_entries">
+        <MappingFragment StoreEntitySet="time_entries">
+          <ScalarProperty Name="id" ColumnName="id" />
+          <ScalarProperty Name="project_id" ColumnName="project_id" />
+          <ScalarProperty Name="user_id" ColumnName="user_id" />
+          <ScalarProperty Name="issue_id" ColumnName="issue_id" />
+          <ScalarProperty Name="hours" ColumnName="hours" />
+          <ScalarProperty Name="comments" ColumnName="comments" />
+          <ScalarProperty Name="activity_id" ColumnName="activity_id" />
+          <ScalarProperty Name="spent_on" ColumnName="spent_on" />
+          <ScalarProperty Name="tyear" ColumnName="tyear" />
+          <ScalarProperty Name="tmonth" ColumnName="tmonth" />
+          <ScalarProperty Name="tweek" ColumnName="tweek" />
+          <ScalarProperty Name="created_on" ColumnName="created_on" />
+          <ScalarProperty Name="updated_on" ColumnName="updated_on" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="tokens">
+      <EntityTypeMapping TypeName="redmineModel.tokens">
+        <MappingFragment StoreEntitySet="tokens">
+          <ScalarProperty Name="id" ColumnName="id" />
+          <ScalarProperty Name="user_id" ColumnName="user_id" />
+          <ScalarProperty Name="action" ColumnName="action" />
+          <ScalarProperty Name="value" ColumnName="value" />
+          <ScalarProperty Name="created_on" ColumnName="created_on" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="trackers">
+      <EntityTypeMapping TypeName="redmineModel.trackers">
+        <MappingFragment StoreEntitySet="trackers">
+          <ScalarProperty Name="id" ColumnName="id" />
+          <ScalarProperty Name="name" ColumnName="name" />
+          <ScalarProperty Name="is_in_chlog" ColumnName="is_in_chlog" />
+          <ScalarProperty Name="position" ColumnName="position" />
+          <ScalarProperty Name="is_in_roadmap" ColumnName="is_in_roadmap" />
+          <ScalarProperty Name="fields_bits" ColumnName="fields_bits" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="user_preferences">
+      <EntityTypeMapping TypeName="redmineModel.user_preferences">
+        <MappingFragment StoreEntitySet="user_preferences">
+          <ScalarProperty Name="id" ColumnName="id" />
+          <ScalarProperty Name="user_id" ColumnName="user_id" />
+          <ScalarProperty Name="others" ColumnName="others" />
+          <ScalarProperty Name="hide_mail" ColumnName="hide_mail" />
+          <ScalarProperty Name="time_zone" ColumnName="time_zone" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="users">
+      <EntityTypeMapping TypeName="redmineModel.users">
+        <MappingFragment StoreEntitySet="users">
+          <ScalarProperty Name="id" ColumnName="id" />
+          <ScalarProperty Name="login" ColumnName="login" />
+          <ScalarProperty Name="hashed_password" ColumnName="hashed_password" />
+          <ScalarProperty Name="firstname" ColumnName="firstname" />
+          <ScalarProperty Name="lastname" ColumnName="lastname" />
+          <ScalarProperty Name="mail" ColumnName="mail" />
+          <ScalarProperty Name="admin" ColumnName="admin" />
+          <ScalarProperty Name="status" ColumnName="status" />
+          <ScalarProperty Name="last_login_on" ColumnName="last_login_on" />
+          <ScalarProperty Name="language" ColumnName="language" />
+          <ScalarProperty Name="auth_source_id" ColumnName="auth_source_id" />
+          <ScalarProperty Name="created_on" ColumnName="created_on" />
+          <ScalarProperty Name="updated_on" ColumnName="updated_on" />
+          <ScalarProperty Name="type" ColumnName="type" />
+          <ScalarProperty Name="identity_url" ColumnName="identity_url" />
+          <ScalarProperty Name="mail_notification" ColumnName="mail_notification" />
+          <ScalarProperty Name="salt" ColumnName="salt" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="versions">
+      <EntityTypeMapping TypeName="redmineModel.versions">
+        <MappingFragment StoreEntitySet="versions">
+          <ScalarProperty Name="id" ColumnName="id" />
+          <ScalarProperty Name="project_id" ColumnName="project_id" />
+          <ScalarProperty Name="name" ColumnName="name" />
+          <ScalarProperty Name="description" ColumnName="description" />
+          <ScalarProperty Name="effective_date" ColumnName="effective_date" />
+          <ScalarProperty Name="created_on" ColumnName="created_on" />
+          <ScalarProperty Name="updated_on" ColumnName="updated_on" />
+          <ScalarProperty Name="wiki_page_title" ColumnName="wiki_page_title" />
+          <ScalarProperty Name="status" ColumnName="status" />
+          <ScalarProperty Name="sharing" ColumnName="sharing" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="viewings">
+      <EntityTypeMapping TypeName="redmineModel.viewings">
+        <MappingFragment StoreEntitySet="viewings">
+          <ScalarProperty Name="id" ColumnName="id" />
+          <ScalarProperty Name="viewer_id" ColumnName="viewer_id" />
+          <ScalarProperty Name="viewed_id" ColumnName="viewed_id" />
+          <ScalarProperty Name="viewed_type" ColumnName="viewed_type" />
+          <ScalarProperty Name="ip" ColumnName="ip" />
+          <ScalarProperty Name="created_at" ColumnName="created_at" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="watchers">
+      <EntityTypeMapping TypeName="redmineModel.watchers">
+        <MappingFragment StoreEntitySet="watchers">
+          <ScalarProperty Name="id" ColumnName="id" />
+          <ScalarProperty Name="watchable_type" ColumnName="watchable_type" />
+          <ScalarProperty Name="watchable_id" ColumnName="watchable_id" />
+          <ScalarProperty Name="user_id" ColumnName="user_id" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="wiki_content_versions">
+      <EntityTypeMapping TypeName="redmineModel.wiki_content_versions">
+        <MappingFragment StoreEntitySet="wiki_content_versions">
+          <ScalarProperty Name="id" ColumnName="id" />
+          <ScalarProperty Name="wiki_content_id" ColumnName="wiki_content_id" />
+          <ScalarProperty Name="page_id" ColumnName="page_id" />
+          <ScalarProperty Name="author_id" ColumnName="author_id" />
+          <ScalarProperty Name="data" ColumnName="data" />
+          <ScalarProperty Name="compression" ColumnName="compression" />
+          <ScalarProperty Name="comments" ColumnName="comments" />
+          <ScalarProperty Name="updated_on" ColumnName="updated_on" />
+          <ScalarProperty Name="version" ColumnName="version" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="wiki_contents">
+      <EntityTypeMapping TypeName="redmineModel.wiki_contents">
+        <MappingFragment StoreEntitySet="wiki_contents">
+          <ScalarProperty Name="id" ColumnName="id" />
+          <ScalarProperty Name="page_id" ColumnName="page_id" />
+          <ScalarProperty Name="author_id" ColumnName="author_id" />
+          <ScalarProperty Name="text" ColumnName="text" />
+          <ScalarProperty Name="comments" ColumnName="comments" />
+          <ScalarProperty Name="updated_on" ColumnName="updated_on" />
+          <ScalarProperty Name="version" ColumnName="version" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="wiki_pages">
+      <EntityTypeMapping TypeName="redmineModel.wiki_pages">
+        <MappingFragment StoreEntitySet="wiki_pages">
+          <ScalarProperty Name="id" ColumnName="id" />
+          <ScalarProperty Name="wiki_id" ColumnName="wiki_id" />
+          <ScalarProperty Name="title" ColumnName="title" />
+          <ScalarProperty Name="created_on" ColumnName="created_on" />
+          <ScalarProperty Name="protected" ColumnName="protected" />
+          <ScalarProperty Name="parent_id" ColumnName="parent_id" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="wiki_redirects">
+      <EntityTypeMapping TypeName="redmineModel.wiki_redirects">
+        <MappingFragment StoreEntitySet="wiki_redirects">
+          <ScalarProperty Name="id" ColumnName="id" />
+          <ScalarProperty Name="wiki_id" ColumnName="wiki_id" />
+          <ScalarProperty Name="title" ColumnName="title" />
+          <ScalarProperty Name="redirects_to" ColumnName="redirects_to" />
+          <ScalarProperty Name="created_on" ColumnName="created_on" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="wikis">
+      <EntityTypeMapping TypeName="redmineModel.wikis">
+        <MappingFragment StoreEntitySet="wikis">
+          <ScalarProperty Name="id" ColumnName="id" />
+          <ScalarProperty Name="project_id" ColumnName="project_id" />
+          <ScalarProperty Name="start_page" ColumnName="start_page" />
+          <ScalarProperty Name="status" ColumnName="status" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="workflows">
+      <EntityTypeMapping TypeName="redmineModel.workflows">
+        <MappingFragment StoreEntitySet="workflows">
+          <ScalarProperty Name="id" ColumnName="id" />
+          <ScalarProperty Name="tracker_id" ColumnName="tracker_id" />
+          <ScalarProperty Name="old_status_id" ColumnName="old_status_id" />
+          <ScalarProperty Name="new_status_id" ColumnName="new_status_id" />
+          <ScalarProperty Name="role_id" ColumnName="role_id" />
+          <ScalarProperty Name="assignee" ColumnName="assignee" />
+          <ScalarProperty Name="author" ColumnName="author" />
+          <ScalarProperty Name="type" ColumnName="type" />
+          <ScalarProperty Name="field_name" ColumnName="field_name" />
+          <ScalarProperty Name="rule" ColumnName="rule" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+  </EntityContainerMapping>
+</Mapping>

@@ -12,3 +12,12 @@ C:\Users\unknown\Documents\Visual Studio 2012\Projects\BugTrackerToRedmine\BugTr
 C:\Users\unknown\Documents\Visual Studio 2012\Projects\BugTrackerToRedmine\BugTrackerToRedmineApp\obj\Debug\BugTrackerToRedmineApp.csproj.GenerateResource.Cache
 C:\Users\unknown\Documents\Visual Studio 2012\Projects\BugTrackerToRedmine\BugTrackerToRedmineApp\obj\Debug\BugTrackerToRedmineApp.exe
 C:\Users\unknown\Documents\Visual Studio 2012\Projects\BugTrackerToRedmine\BugTrackerToRedmineApp\obj\Debug\BugTrackerToRedmineApp.pdb
+C:\Users\unknown\Documents\Visual Studio 2012\Projects\BugTrackerToRedmine\BugTrackerToRedmineApp\bin\Debug\BugTrackerLibrary.dll
+C:\Users\unknown\Documents\Visual Studio 2012\Projects\BugTrackerToRedmine\BugTrackerToRedmineApp\bin\Debug\BugTrackerLibrary.pdb
+C:\Users\unknown\Documents\Visual Studio 2012\Projects\BugTrackerToRedmine\BugTrackerToRedmineApp\bin\Debug\RedmineLibrary.dll
+C:\Users\unknown\Documents\Visual Studio 2012\Projects\BugTrackerToRedmine\BugTrackerToRedmineApp\bin\Debug\RedmineLibrary.pdb
+C:\Users\unknown\Documents\Visual Studio 2012\Projects\BugTrackerToRedmine\BugTrackerToRedmineApp\obj\Debug\BugTrackerToRedmineApp.FrmTransferStatuses.resources
+C:\Users\unknown\Documents\Visual Studio 2012\Projects\BugTrackerToRedmine\BugTrackerToRedmineApp\obj\Debug\BugTrackerToRedmineApp.FrmTransferBugs.resources
+C:\Users\unknown\Documents\Visual Studio 2012\Projects\BugTrackerToRedmine\BugTrackerToRedmineApp\bin\Debug\Tamir.SharpSSH.dll
+C:\Users\unknown\Documents\Visual Studio 2012\Projects\BugTrackerToRedmine\BugTrackerToRedmineApp\bin\Debug\DiffieHellman.dll
+C:\Users\unknown\Documents\Visual Studio 2012\Projects\BugTrackerToRedmine\BugTrackerToRedmineApp\bin\Debug\Org.Mentalis.Security.dll

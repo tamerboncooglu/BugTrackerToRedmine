@@ -1,0 +1,434 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Mapping Space="C-S" xmlns="http://schemas.microsoft.com/ado/2009/11/mapping/cs">
+  <EntityContainerMapping StorageEntityContainer="BugTrackerModelStoreContainer" CdmEntityContainer="BugTrackerEntities">
+    <EntitySetMapping Name="bug_post_attachments">
+      <EntityTypeMapping TypeName="BugTrackerModel.bug_post_attachments">
+        <MappingFragment StoreEntitySet="bug_post_attachments">
+          <ScalarProperty Name="bpa_id" ColumnName="bpa_id" />
+          <ScalarProperty Name="bpa_post" ColumnName="bpa_post" />
+          <ScalarProperty Name="bpa_content" ColumnName="bpa_content" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="bug_posts">
+      <EntityTypeMapping TypeName="BugTrackerModel.bug_posts">
+        <MappingFragment StoreEntitySet="bug_posts">
+          <ScalarProperty Name="bp_id" ColumnName="bp_id" />
+          <ScalarProperty Name="bp_bug" ColumnName="bp_bug" />
+          <ScalarProperty Name="bp_type" ColumnName="bp_type" />
+          <ScalarProperty Name="bp_user" ColumnName="bp_user" />
+          <ScalarProperty Name="bp_date" ColumnName="bp_date" />
+          <ScalarProperty Name="bp_comment" ColumnName="bp_comment" />
+          <ScalarProperty Name="bp_comment_search" ColumnName="bp_comment_search" />
+          <ScalarProperty Name="bp_email_from" ColumnName="bp_email_from" />
+          <ScalarProperty Name="bp_email_to" ColumnName="bp_email_to" />
+          <ScalarProperty Name="bp_file" ColumnName="bp_file" />
+          <ScalarProperty Name="bp_size" ColumnName="bp_size" />
+          <ScalarProperty Name="bp_content_type" ColumnName="bp_content_type" />
+          <ScalarProperty Name="bp_parent" ColumnName="bp_parent" />
+          <ScalarProperty Name="bp_original_comment_id" ColumnName="bp_original_comment_id" />
+          <ScalarProperty Name="bp_hidden_from_external_users" ColumnName="bp_hidden_from_external_users" />
+          <ScalarProperty Name="bp_email_cc" ColumnName="bp_email_cc" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="bug_relationships">
+      <EntityTypeMapping TypeName="BugTrackerModel.bug_relationships">
+        <MappingFragment StoreEntitySet="bug_relationships">
+          <ScalarProperty Name="re_id" ColumnName="re_id" />
+          <ScalarProperty Name="re_bug1" ColumnName="re_bug1" />
+          <ScalarProperty Name="re_bug2" ColumnName="re_bug2" />
+          <ScalarProperty Name="re_type" ColumnName="re_type" />
+          <ScalarProperty Name="re_direction" ColumnName="re_direction" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="bug_subscriptions">
+      <EntityTypeMapping TypeName="BugTrackerModel.bug_subscriptions">
+        <MappingFragment StoreEntitySet="bug_subscriptions">
+          <ScalarProperty Name="bs_bug" ColumnName="bs_bug" />
+          <ScalarProperty Name="bs_user" ColumnName="bs_user" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="bug_tasks">
+      <EntityTypeMapping TypeName="BugTrackerModel.bug_tasks">
+        <MappingFragment StoreEntitySet="bug_tasks">
+          <ScalarProperty Name="tsk_id" ColumnName="tsk_id" />
+          <ScalarProperty Name="tsk_bug" ColumnName="tsk_bug" />
+          <ScalarProperty Name="tsk_created_user" ColumnName="tsk_created_user" />
+          <ScalarProperty Name="tsk_created_date" ColumnName="tsk_created_date" />
+          <ScalarProperty Name="tsk_last_updated_user" ColumnName="tsk_last_updated_user" />
+          <ScalarProperty Name="tsk_last_updated_date" ColumnName="tsk_last_updated_date" />
+          <ScalarProperty Name="tsk_assigned_to_user" ColumnName="tsk_assigned_to_user" />
+          <ScalarProperty Name="tsk_planned_start_date" ColumnName="tsk_planned_start_date" />
+          <ScalarProperty Name="tsk_actual_start_date" ColumnName="tsk_actual_start_date" />
+          <ScalarProperty Name="tsk_planned_end_date" ColumnName="tsk_planned_end_date" />
+          <ScalarProperty Name="tsk_actual_end_date" ColumnName="tsk_actual_end_date" />
+          <ScalarProperty Name="tsk_planned_duration" ColumnName="tsk_planned_duration" />
+          <ScalarProperty Name="tsk_actual_duration" ColumnName="tsk_actual_duration" />
+          <ScalarProperty Name="tsk_duration_units" ColumnName="tsk_duration_units" />
+          <ScalarProperty Name="tsk_percent_complete" ColumnName="tsk_percent_complete" />
+          <ScalarProperty Name="tsk_status" ColumnName="tsk_status" />
+          <ScalarProperty Name="tsk_sort_sequence" ColumnName="tsk_sort_sequence" />
+          <ScalarProperty Name="tsk_description" ColumnName="tsk_description" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="bug_user">
+      <EntityTypeMapping TypeName="BugTrackerModel.bug_user">
+        <MappingFragment StoreEntitySet="bug_user">
+          <ScalarProperty Name="bu_bug" ColumnName="bu_bug" />
+          <ScalarProperty Name="bu_user" ColumnName="bu_user" />
+          <ScalarProperty Name="bu_flag" ColumnName="bu_flag" />
+          <ScalarProperty Name="bu_flag_datetime" ColumnName="bu_flag_datetime" />
+          <ScalarProperty Name="bu_seen" ColumnName="bu_seen" />
+          <ScalarProperty Name="bu_seen_datetime" ColumnName="bu_seen_datetime" />
+          <ScalarProperty Name="bu_vote" ColumnName="bu_vote" />
+          <ScalarProperty Name="bu_vote_datetime" ColumnName="bu_vote_datetime" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="bugs">
+      <EntityTypeMapping TypeName="BugTrackerModel.bugs">
+        <MappingFragment StoreEntitySet="bugs">
+          <ScalarProperty Name="bg_id" ColumnName="bg_id" />
+          <ScalarProperty Name="bg_short_desc" ColumnName="bg_short_desc" />
+          <ScalarProperty Name="bg_reported_user" ColumnName="bg_reported_user" />
+          <ScalarProperty Name="bg_reported_date" ColumnName="bg_reported_date" />
+          <ScalarProperty Name="bg_status" ColumnName="bg_status" />
+          <ScalarProperty Name="bg_priority" ColumnName="bg_priority" />
+          <ScalarProperty Name="bg_org" ColumnName="bg_org" />
+          <ScalarProperty Name="bg_category" ColumnName="bg_category" />
+          <ScalarProperty Name="bg_project" ColumnName="bg_project" />
+          <ScalarProperty Name="bg_assigned_to_user" ColumnName="bg_assigned_to_user" />
+          <ScalarProperty Name="bg_last_updated_user" ColumnName="bg_last_updated_user" />
+          <ScalarProperty Name="bg_last_updated_date" ColumnName="bg_last_updated_date" />
+          <ScalarProperty Name="bg_user_defined_attribute" ColumnName="bg_user_defined_attribute" />
+          <ScalarProperty Name="bg_project_custom_dropdown_value1" ColumnName="bg_project_custom_dropdown_value1" />
+          <ScalarProperty Name="bg_project_custom_dropdown_value2" ColumnName="bg_project_custom_dropdown_value2" />
+          <ScalarProperty Name="bg_project_custom_dropdown_value3" ColumnName="bg_project_custom_dropdown_value3" />
+          <ScalarProperty Name="bg_tags" ColumnName="bg_tags" />
+          <ScalarProperty Name="Bildiren" ColumnName="Bildiren" />
+          <ScalarProperty Name="Nasıl_oluşturuluyor" ColumnName="Nasıl oluşturuluyor" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="categories">
+      <EntityTypeMapping TypeName="BugTrackerModel.categories">
+        <MappingFragment StoreEntitySet="categories">
+          <ScalarProperty Name="ct_id" ColumnName="ct_id" />
+          <ScalarProperty Name="ct_name" ColumnName="ct_name" />
+          <ScalarProperty Name="ct_sort_seq" ColumnName="ct_sort_seq" />
+          <ScalarProperty Name="ct_default" ColumnName="ct_default" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="custom_col_metadata">
+      <EntityTypeMapping TypeName="BugTrackerModel.custom_col_metadata">
+        <MappingFragment StoreEntitySet="custom_col_metadata">
+          <ScalarProperty Name="ccm_colorder" ColumnName="ccm_colorder" />
+          <ScalarProperty Name="ccm_dropdown_vals" ColumnName="ccm_dropdown_vals" />
+          <ScalarProperty Name="ccm_sort_seq" ColumnName="ccm_sort_seq" />
+          <ScalarProperty Name="ccm_dropdown_type" ColumnName="ccm_dropdown_type" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="dashboard_items">
+      <EntityTypeMapping TypeName="BugTrackerModel.dashboard_items">
+        <MappingFragment StoreEntitySet="dashboard_items">
+          <ScalarProperty Name="ds_id" ColumnName="ds_id" />
+          <ScalarProperty Name="ds_user" ColumnName="ds_user" />
+          <ScalarProperty Name="ds_report" ColumnName="ds_report" />
+          <ScalarProperty Name="ds_chart_type" ColumnName="ds_chart_type" />
+          <ScalarProperty Name="ds_col" ColumnName="ds_col" />
+          <ScalarProperty Name="ds_row" ColumnName="ds_row" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="emailed_links">
+      <EntityTypeMapping TypeName="BugTrackerModel.emailed_links">
+        <MappingFragment StoreEntitySet="emailed_links">
+          <ScalarProperty Name="el_id" ColumnName="el_id" />
+          <ScalarProperty Name="el_date" ColumnName="el_date" />
+          <ScalarProperty Name="el_email" ColumnName="el_email" />
+          <ScalarProperty Name="el_action" ColumnName="el_action" />
+          <ScalarProperty Name="el_username" ColumnName="el_username" />
+          <ScalarProperty Name="el_user_id" ColumnName="el_user_id" />
+          <ScalarProperty Name="el_salt" ColumnName="el_salt" />
+          <ScalarProperty Name="el_password" ColumnName="el_password" />
+          <ScalarProperty Name="el_firstname" ColumnName="el_firstname" />
+          <ScalarProperty Name="el_lastname" ColumnName="el_lastname" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="git_affected_paths">
+      <EntityTypeMapping TypeName="BugTrackerModel.git_affected_paths">
+        <MappingFragment StoreEntitySet="git_affected_paths">
+          <ScalarProperty Name="gitap_id" ColumnName="gitap_id" />
+          <ScalarProperty Name="gitap_gitcom_id" ColumnName="gitap_gitcom_id" />
+          <ScalarProperty Name="gitap_action" ColumnName="gitap_action" />
+          <ScalarProperty Name="gitap_path" ColumnName="gitap_path" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="git_commits">
+      <EntityTypeMapping TypeName="BugTrackerModel.git_commits">
+        <MappingFragment StoreEntitySet="git_commits">
+          <ScalarProperty Name="gitcom_id" ColumnName="gitcom_id" />
+          <ScalarProperty Name="gitcom_commit" ColumnName="gitcom_commit" />
+          <ScalarProperty Name="gitcom_bug" ColumnName="gitcom_bug" />
+          <ScalarProperty Name="gitcom_repository" ColumnName="gitcom_repository" />
+          <ScalarProperty Name="gitcom_author" ColumnName="gitcom_author" />
+          <ScalarProperty Name="gitcom_git_date" ColumnName="gitcom_git_date" />
+          <ScalarProperty Name="gitcom_btnet_date" ColumnName="gitcom_btnet_date" />
+          <ScalarProperty Name="gitcom_msg" ColumnName="gitcom_msg" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="hg_affected_paths">
+      <EntityTypeMapping TypeName="BugTrackerModel.hg_affected_paths">
+        <MappingFragment StoreEntitySet="hg_affected_paths">
+          <ScalarProperty Name="hgap_id" ColumnName="hgap_id" />
+          <ScalarProperty Name="hgap_hgrev_id" ColumnName="hgap_hgrev_id" />
+          <ScalarProperty Name="hgap_action" ColumnName="hgap_action" />
+          <ScalarProperty Name="hgap_path" ColumnName="hgap_path" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="hg_revisions">
+      <EntityTypeMapping TypeName="BugTrackerModel.hg_revisions">
+        <MappingFragment StoreEntitySet="hg_revisions">
+          <ScalarProperty Name="hgrev_id" ColumnName="hgrev_id" />
+          <ScalarProperty Name="hgrev_revision" ColumnName="hgrev_revision" />
+          <ScalarProperty Name="hgrev_bug" ColumnName="hgrev_bug" />
+          <ScalarProperty Name="hgrev_repository" ColumnName="hgrev_repository" />
+          <ScalarProperty Name="hgrev_author" ColumnName="hgrev_author" />
+          <ScalarProperty Name="hgrev_hg_date" ColumnName="hgrev_hg_date" />
+          <ScalarProperty Name="hgrev_btnet_date" ColumnName="hgrev_btnet_date" />
+          <ScalarProperty Name="hgrev_msg" ColumnName="hgrev_msg" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="orgs">
+      <EntityTypeMapping TypeName="BugTrackerModel.orgs">
+        <MappingFragment StoreEntitySet="orgs">
+          <ScalarProperty Name="og_id" ColumnName="og_id" />
+          <ScalarProperty Name="og_name" ColumnName="og_name" />
+          <ScalarProperty Name="og_domain" ColumnName="og_domain" />
+          <ScalarProperty Name="og_non_admins_can_use" ColumnName="og_non_admins_can_use" />
+          <ScalarProperty Name="og_external_user" ColumnName="og_external_user" />
+          <ScalarProperty Name="og_can_be_assigned_to" ColumnName="og_can_be_assigned_to" />
+          <ScalarProperty Name="og_can_only_see_own_reported" ColumnName="og_can_only_see_own_reported" />
+          <ScalarProperty Name="og_can_edit_sql" ColumnName="og_can_edit_sql" />
+          <ScalarProperty Name="og_can_delete_bug" ColumnName="og_can_delete_bug" />
+          <ScalarProperty Name="og_can_edit_and_delete_posts" ColumnName="og_can_edit_and_delete_posts" />
+          <ScalarProperty Name="og_can_merge_bugs" ColumnName="og_can_merge_bugs" />
+          <ScalarProperty Name="og_can_mass_edit_bugs" ColumnName="og_can_mass_edit_bugs" />
+          <ScalarProperty Name="og_can_use_reports" ColumnName="og_can_use_reports" />
+          <ScalarProperty Name="og_can_edit_reports" ColumnName="og_can_edit_reports" />
+          <ScalarProperty Name="og_can_view_tasks" ColumnName="og_can_view_tasks" />
+          <ScalarProperty Name="og_can_edit_tasks" ColumnName="og_can_edit_tasks" />
+          <ScalarProperty Name="og_can_search" ColumnName="og_can_search" />
+          <ScalarProperty Name="og_other_orgs_permission_level" ColumnName="og_other_orgs_permission_level" />
+          <ScalarProperty Name="og_can_assign_to_internal_users" ColumnName="og_can_assign_to_internal_users" />
+          <ScalarProperty Name="og_category_field_permission_level" ColumnName="og_category_field_permission_level" />
+          <ScalarProperty Name="og_priority_field_permission_level" ColumnName="og_priority_field_permission_level" />
+          <ScalarProperty Name="og_assigned_to_field_permission_level" ColumnName="og_assigned_to_field_permission_level" />
+          <ScalarProperty Name="og_status_field_permission_level" ColumnName="og_status_field_permission_level" />
+          <ScalarProperty Name="og_project_field_permission_level" ColumnName="og_project_field_permission_level" />
+          <ScalarProperty Name="og_org_field_permission_level" ColumnName="og_org_field_permission_level" />
+          <ScalarProperty Name="og_udf_field_permission_level" ColumnName="og_udf_field_permission_level" />
+          <ScalarProperty Name="og_tags_field_permission_level" ColumnName="og_tags_field_permission_level" />
+          <ScalarProperty Name="og_active" ColumnName="og_active" />
+          <ScalarProperty Name="og_Bildiren_field_permission_level" ColumnName="og_Bildiren_field_permission_level" />
+          <ScalarProperty Name="og_Nasıl_oluşturuluyor_field_permission_level" ColumnName="og_Nasıl oluşturuluyor_field_permission_level" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="priorities">
+      <EntityTypeMapping TypeName="BugTrackerModel.priorities">
+        <MappingFragment StoreEntitySet="priorities">
+          <ScalarProperty Name="pr_id" ColumnName="pr_id" />
+          <ScalarProperty Name="pr_name" ColumnName="pr_name" />
+          <ScalarProperty Name="pr_sort_seq" ColumnName="pr_sort_seq" />
+          <ScalarProperty Name="pr_background_color" ColumnName="pr_background_color" />
+          <ScalarProperty Name="pr_style" ColumnName="pr_style" />
+          <ScalarProperty Name="pr_default" ColumnName="pr_default" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="project_user_xref">
+      <EntityTypeMapping TypeName="BugTrackerModel.project_user_xref">
+        <MappingFragment StoreEntitySet="project_user_xref">
+          <ScalarProperty Name="pu_id" ColumnName="pu_id" />
+          <ScalarProperty Name="pu_project" ColumnName="pu_project" />
+          <ScalarProperty Name="pu_user" ColumnName="pu_user" />
+          <ScalarProperty Name="pu_auto_subscribe" ColumnName="pu_auto_subscribe" />
+          <ScalarProperty Name="pu_permission_level" ColumnName="pu_permission_level" />
+          <ScalarProperty Name="pu_admin" ColumnName="pu_admin" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="projects">
+      <EntityTypeMapping TypeName="BugTrackerModel.projects">
+        <MappingFragment StoreEntitySet="projects">
+          <ScalarProperty Name="pj_id" ColumnName="pj_id" />
+          <ScalarProperty Name="pj_name" ColumnName="pj_name" />
+          <ScalarProperty Name="pj_active" ColumnName="pj_active" />
+          <ScalarProperty Name="pj_default_user" ColumnName="pj_default_user" />
+          <ScalarProperty Name="pj_auto_assign_default_user" ColumnName="pj_auto_assign_default_user" />
+          <ScalarProperty Name="pj_auto_subscribe_default_user" ColumnName="pj_auto_subscribe_default_user" />
+          <ScalarProperty Name="pj_enable_pop3" ColumnName="pj_enable_pop3" />
+          <ScalarProperty Name="pj_pop3_username" ColumnName="pj_pop3_username" />
+          <ScalarProperty Name="pj_pop3_password" ColumnName="pj_pop3_password" />
+          <ScalarProperty Name="pj_pop3_email_from" ColumnName="pj_pop3_email_from" />
+          <ScalarProperty Name="pj_enable_custom_dropdown1" ColumnName="pj_enable_custom_dropdown1" />
+          <ScalarProperty Name="pj_enable_custom_dropdown2" ColumnName="pj_enable_custom_dropdown2" />
+          <ScalarProperty Name="pj_enable_custom_dropdown3" ColumnName="pj_enable_custom_dropdown3" />
+          <ScalarProperty Name="pj_custom_dropdown_label1" ColumnName="pj_custom_dropdown_label1" />
+          <ScalarProperty Name="pj_custom_dropdown_label2" ColumnName="pj_custom_dropdown_label2" />
+          <ScalarProperty Name="pj_custom_dropdown_label3" ColumnName="pj_custom_dropdown_label3" />
+          <ScalarProperty Name="pj_custom_dropdown_values1" ColumnName="pj_custom_dropdown_values1" />
+          <ScalarProperty Name="pj_custom_dropdown_values2" ColumnName="pj_custom_dropdown_values2" />
+          <ScalarProperty Name="pj_custom_dropdown_values3" ColumnName="pj_custom_dropdown_values3" />
+          <ScalarProperty Name="pj_default" ColumnName="pj_default" />
+          <ScalarProperty Name="pj_description" ColumnName="pj_description" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="queries">
+      <EntityTypeMapping TypeName="BugTrackerModel.queries">
+        <MappingFragment StoreEntitySet="queries">
+          <ScalarProperty Name="qu_id" ColumnName="qu_id" />
+          <ScalarProperty Name="qu_desc" ColumnName="qu_desc" />
+          <ScalarProperty Name="qu_sql" ColumnName="qu_sql" />
+          <ScalarProperty Name="qu_default" ColumnName="qu_default" />
+          <ScalarProperty Name="qu_user" ColumnName="qu_user" />
+          <ScalarProperty Name="qu_org" ColumnName="qu_org" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="queued_notifications">
+      <EntityTypeMapping TypeName="BugTrackerModel.queued_notifications">
+        <MappingFragment StoreEntitySet="queued_notifications">
+          <ScalarProperty Name="qn_id" ColumnName="qn_id" />
+          <ScalarProperty Name="qn_date_created" ColumnName="qn_date_created" />
+          <ScalarProperty Name="qn_bug" ColumnName="qn_bug" />
+          <ScalarProperty Name="qn_user" ColumnName="qn_user" />
+          <ScalarProperty Name="qn_status" ColumnName="qn_status" />
+          <ScalarProperty Name="qn_retries" ColumnName="qn_retries" />
+          <ScalarProperty Name="qn_last_exception" ColumnName="qn_last_exception" />
+          <ScalarProperty Name="qn_to" ColumnName="qn_to" />
+          <ScalarProperty Name="qn_from" ColumnName="qn_from" />
+          <ScalarProperty Name="qn_subject" ColumnName="qn_subject" />
+          <ScalarProperty Name="qn_body" ColumnName="qn_body" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="reports">
+      <EntityTypeMapping TypeName="BugTrackerModel.reports">
+        <MappingFragment StoreEntitySet="reports">
+          <ScalarProperty Name="rp_id" ColumnName="rp_id" />
+          <ScalarProperty Name="rp_desc" ColumnName="rp_desc" />
+          <ScalarProperty Name="rp_sql" ColumnName="rp_sql" />
+          <ScalarProperty Name="rp_chart_type" ColumnName="rp_chart_type" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="sessions">
+      <EntityTypeMapping TypeName="BugTrackerModel.sessions">
+        <MappingFragment StoreEntitySet="sessions">
+          <ScalarProperty Name="se_id" ColumnName="se_id" />
+          <ScalarProperty Name="se_date" ColumnName="se_date" />
+          <ScalarProperty Name="se_user" ColumnName="se_user" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="statuses">
+      <EntityTypeMapping TypeName="BugTrackerModel.statuses">
+        <MappingFragment StoreEntitySet="statuses">
+          <ScalarProperty Name="st_id" ColumnName="st_id" />
+          <ScalarProperty Name="st_name" ColumnName="st_name" />
+          <ScalarProperty Name="st_sort_seq" ColumnName="st_sort_seq" />
+          <ScalarProperty Name="st_style" ColumnName="st_style" />
+          <ScalarProperty Name="st_default" ColumnName="st_default" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="svn_affected_paths">
+      <EntityTypeMapping TypeName="BugTrackerModel.svn_affected_paths">
+        <MappingFragment StoreEntitySet="svn_affected_paths">
+          <ScalarProperty Name="svnap_id" ColumnName="svnap_id" />
+          <ScalarProperty Name="svnap_svnrev_id" ColumnName="svnap_svnrev_id" />
+          <ScalarProperty Name="svnap_action" ColumnName="svnap_action" />
+          <ScalarProperty Name="svnap_path" ColumnName="svnap_path" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="svn_revisions">
+      <EntityTypeMapping TypeName="BugTrackerModel.svn_revisions">
+        <MappingFragment StoreEntitySet="svn_revisions">
+          <ScalarProperty Name="svnrev_id" ColumnName="svnrev_id" />
+          <ScalarProperty Name="svnrev_revision" ColumnName="svnrev_revision" />
+          <ScalarProperty Name="svnrev_bug" ColumnName="svnrev_bug" />
+          <ScalarProperty Name="svnrev_repository" ColumnName="svnrev_repository" />
+          <ScalarProperty Name="svnrev_author" ColumnName="svnrev_author" />
+          <ScalarProperty Name="svnrev_svn_date" ColumnName="svnrev_svn_date" />
+          <ScalarProperty Name="svnrev_btnet_date" ColumnName="svnrev_btnet_date" />
+          <ScalarProperty Name="svnrev_msg" ColumnName="svnrev_msg" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="user_defined_attribute">
+      <EntityTypeMapping TypeName="BugTrackerModel.user_defined_attribute">
+        <MappingFragment StoreEntitySet="user_defined_attribute">
+          <ScalarProperty Name="udf_id" ColumnName="udf_id" />
+          <ScalarProperty Name="udf_name" ColumnName="udf_name" />
+          <ScalarProperty Name="udf_sort_seq" ColumnName="udf_sort_seq" />
+          <ScalarProperty Name="udf_default" ColumnName="udf_default" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="users">
+      <EntityTypeMapping TypeName="BugTrackerModel.users">
+        <MappingFragment StoreEntitySet="users">
+          <ScalarProperty Name="us_id" ColumnName="us_id" />
+          <ScalarProperty Name="us_username" ColumnName="us_username" />
+          <ScalarProperty Name="us_salt" ColumnName="us_salt" />
+          <ScalarProperty Name="us_password" ColumnName="us_password" />
+          <ScalarProperty Name="us_firstname" ColumnName="us_firstname" />
+          <ScalarProperty Name="us_lastname" ColumnName="us_lastname" />
+          <ScalarProperty Name="us_email" ColumnName="us_email" />
+          <ScalarProperty Name="us_admin" ColumnName="us_admin" />
+          <ScalarProperty Name="us_default_query" ColumnName="us_default_query" />
+          <ScalarProperty Name="us_enable_notifications" ColumnName="us_enable_notifications" />
+          <ScalarProperty Name="us_auto_subscribe" ColumnName="us_auto_subscribe" />
+          <ScalarProperty Name="us_auto_subscribe_own_bugs" ColumnName="us_auto_subscribe_own_bugs" />
+          <ScalarProperty Name="us_auto_subscribe_reported_bugs" ColumnName="us_auto_subscribe_reported_bugs" />
+          <ScalarProperty Name="us_send_notifications_to_self" ColumnName="us_send_notifications_to_self" />
+          <ScalarProperty Name="us_active" ColumnName="us_active" />
+          <ScalarProperty Name="us_bugs_per_page" ColumnName="us_bugs_per_page" />
+          <ScalarProperty Name="us_forced_project" ColumnName="us_forced_project" />
+          <ScalarProperty Name="us_reported_notifications" ColumnName="us_reported_notifications" />
+          <ScalarProperty Name="us_assigned_notifications" ColumnName="us_assigned_notifications" />
+          <ScalarProperty Name="us_subscribed_notifications" ColumnName="us_subscribed_notifications" />
+          <ScalarProperty Name="us_signature" ColumnName="us_signature" />
+          <ScalarProperty Name="us_use_fckeditor" ColumnName="us_use_fckeditor" />
+          <ScalarProperty Name="us_enable_bug_list_popups" ColumnName="us_enable_bug_list_popups" />
+          <ScalarProperty Name="us_created_user" ColumnName="us_created_user" />
+          <ScalarProperty Name="us_org" ColumnName="us_org" />
+          <ScalarProperty Name="us_most_recent_login_datetime" ColumnName="us_most_recent_login_datetime" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="votes_view">
+      <EntityTypeMapping TypeName="BugTrackerModel.votes_view">
+        <MappingFragment StoreEntitySet="votes_view">
+          <ScalarProperty Name="vote_bug" ColumnName="vote_bug" />
+          <ScalarProperty Name="vote_total" ColumnName="vote_total" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+  </EntityContainerMapping>
+</Mapping>

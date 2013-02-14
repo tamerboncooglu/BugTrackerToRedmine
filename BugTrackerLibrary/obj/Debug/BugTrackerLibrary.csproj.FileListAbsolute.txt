@@ -1,0 +1,8 @@
+C:\Users\unknown\Documents\Visual Studio 2012\Projects\BugTrackerToRedmine\BugTrackerLibrary\bin\Debug\BugTrackerLibrary.dll.config
+C:\Users\unknown\Documents\Visual Studio 2012\Projects\BugTrackerToRedmine\BugTrackerLibrary\bin\Debug\BugTrackerLibrary.dll
+C:\Users\unknown\Documents\Visual Studio 2012\Projects\BugTrackerToRedmine\BugTrackerLibrary\bin\Debug\BugTrackerLibrary.pdb
+C:\Users\unknown\Documents\Visual Studio 2012\Projects\BugTrackerToRedmine\BugTrackerLibrary\bin\Debug\EntityFramework.dll
+C:\Users\unknown\Documents\Visual Studio 2012\Projects\BugTrackerToRedmine\BugTrackerLibrary\bin\Debug\EntityFramework.xml
+C:\Users\unknown\Documents\Visual Studio 2012\Projects\BugTrackerToRedmine\BugTrackerLibrary\obj\Debug\BugTrackerLibrary.csprojResolveAssemblyReference.cache
+C:\Users\unknown\Documents\Visual Studio 2012\Projects\BugTrackerToRedmine\BugTrackerLibrary\obj\Debug\BugTrackerLibrary.dll
+C:\Users\unknown\Documents\Visual Studio 2012\Projects\BugTrackerToRedmine\BugTrackerLibrary\obj\Debug\BugTrackerLibrary.pdb

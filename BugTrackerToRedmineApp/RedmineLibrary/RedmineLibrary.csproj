@@ -1,0 +1,292 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="4.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProjectGuid>{11CB9161-A286-4590-A8BE-ACD236AD1B01}</ProjectGuid>
+    <OutputType>Library</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>RedmineLibrary</RootNamespace>
+    <AssemblyName>RedmineLibrary</AssemblyName>
+    <TargetFrameworkVersion>v4.5</TargetFrameworkVersion>
+    <FileAlignment>512</FileAlignment>
+    <SolutionDir Condition="$(SolutionDir) == '' Or $(SolutionDir) == '*Undefined*'">..\</SolutionDir>
+    <RestorePackages>true</RestorePackages>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="EntityFramework">
+      <HintPath>..\packages\EntityFramework.5.0.0\lib\net45\EntityFramework.dll</HintPath>
+    </Reference>
+    <Reference Include="System" />
+    <Reference Include="System.ComponentModel.DataAnnotations" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.Data.Entity" />
+    <Reference Include="System.Runtime.Serialization" />
+    <Reference Include="System.Security" />
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="Microsoft.CSharp" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Xml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="attachments.cs">
+      <DependentUpon>RedmineModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="auth_sources.cs">
+      <DependentUpon>RedmineModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="boards.cs">
+      <DependentUpon>RedmineModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="changes.cs">
+      <DependentUpon>RedmineModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="changesets.cs">
+      <DependentUpon>RedmineModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="changesets_issues.cs">
+      <DependentUpon>RedmineModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="changeset_parents.cs">
+      <DependentUpon>RedmineModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="chart_done_ratios.cs">
+      <DependentUpon>RedmineModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="chart_issue_statuses.cs">
+      <DependentUpon>RedmineModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="chart_saved_conditions.cs">
+      <DependentUpon>RedmineModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="chart_time_entries.cs">
+      <DependentUpon>RedmineModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="chats.cs">
+      <DependentUpon>RedmineModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="code_reviews.cs">
+      <DependentUpon>RedmineModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="code_review_assignments.cs">
+      <DependentUpon>RedmineModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="code_review_project_settings.cs">
+      <DependentUpon>RedmineModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="code_review_user_settings.cs">
+      <DependentUpon>RedmineModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="comments.cs">
+      <DependentUpon>RedmineModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="custom_fields.cs">
+      <DependentUpon>RedmineModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="custom_fields_projects.cs">
+      <DependentUpon>RedmineModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="custom_fields_trackers.cs">
+      <DependentUpon>RedmineModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="custom_values.cs">
+      <DependentUpon>RedmineModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="documents.cs">
+      <DependentUpon>RedmineModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="enabled_modules.cs">
+      <DependentUpon>RedmineModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="enumerations.cs">
+      <DependentUpon>RedmineModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="groups_users.cs">
+      <DependentUpon>RedmineModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="issues.cs">
+      <DependentUpon>RedmineModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="issue_categories.cs">
+      <DependentUpon>RedmineModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="issue_relations.cs">
+      <DependentUpon>RedmineModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="issue_statuses.cs">
+      <DependentUpon>RedmineModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="journals.cs">
+      <DependentUpon>RedmineModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="journal_details.cs">
+      <DependentUpon>RedmineModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="kb_articles.cs">
+      <DependentUpon>RedmineModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="kb_categories.cs">
+      <DependentUpon>RedmineModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="members.cs">
+      <DependentUpon>RedmineModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="member_roles.cs">
+      <DependentUpon>RedmineModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="messages.cs">
+      <DependentUpon>RedmineModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="news.cs">
+      <DependentUpon>RedmineModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="open_id_authentication_associations.cs">
+      <DependentUpon>RedmineModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="open_id_authentication_nonces.cs">
+      <DependentUpon>RedmineModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="projects.cs">
+      <DependentUpon>RedmineModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="projects_trackers.cs">
+      <DependentUpon>RedmineModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="queries.cs">
+      <DependentUpon>RedmineModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="ratings.cs">
+      <DependentUpon>RedmineModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="RedmineModel.Context.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>RedmineModel.Context.tt</DependentUpon>
+    </Compile>
+    <Compile Include="RedmineModel.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>RedmineModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="RedmineModel.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>RedmineModel.edmx</DependentUpon>
+    </Compile>
+    <Compile Include="repositories.cs">
+      <DependentUpon>RedmineModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="roles.cs">
+      <DependentUpon>RedmineModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="schema_migrations.cs">
+      <DependentUpon>RedmineModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="settings.cs">
+      <DependentUpon>RedmineModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="taggings.cs">
+      <DependentUpon>RedmineModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="tags.cs">
+      <DependentUpon>RedmineModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="time_entries.cs">
+      <DependentUpon>RedmineModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="tokens.cs">
+      <DependentUpon>RedmineModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="trackers.cs">
+      <DependentUpon>RedmineModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="users.cs">
+      <DependentUpon>RedmineModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="user_preferences.cs">
+      <DependentUpon>RedmineModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="versions.cs">
+      <DependentUpon>RedmineModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="viewings.cs">
+      <DependentUpon>RedmineModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="watchers.cs">
+      <DependentUpon>RedmineModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="wikis.cs">
+      <DependentUpon>RedmineModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="wiki_contents.cs">
+      <DependentUpon>RedmineModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="wiki_content_versions.cs">
+      <DependentUpon>RedmineModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="wiki_pages.cs">
+      <DependentUpon>RedmineModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="wiki_redirects.cs">
+      <DependentUpon>RedmineModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="workflows.cs">
+      <DependentUpon>RedmineModel.tt</DependentUpon>
+    </Compile>
+  </ItemGroup>
+  <ItemGroup>
+    <EntityDeploy Include="RedmineModel.edmx">
+      <Generator>EntityModelCodeGenerator</Generator>
+      <LastGenOutput>RedmineModel.Designer.cs</LastGenOutput>
+    </EntityDeploy>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="App.Config" />
+    <None Include="packages.config" />
+    <None Include="RedmineModel.Context.tt">
+      <Generator>TextTemplatingFileGenerator</Generator>
+      <LastGenOutput>RedmineModel.Context.cs</LastGenOutput>
+      <DependentUpon>RedmineModel.edmx</DependentUpon>
+    </None>
+    <None Include="RedmineModel.edmx.diagram">
+      <DependentUpon>RedmineModel.edmx</DependentUpon>
+    </None>
+    <None Include="RedmineModel.tt">
+      <Generator>TextTemplatingFileGenerator</Generator>
+      <DependentUpon>RedmineModel.edmx</DependentUpon>
+      <LastGenOutput>RedmineModel.cs</LastGenOutput>
+    </None>
+  </ItemGroup>
+  <ItemGroup>
+    <Service Include="{508349B6-6B84-4DF5-91F0-309BEEBAD82D}" />
+  </ItemGroup>
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+  <Import Project="$(SolutionDir)\.nuget\nuget.targets" />
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
+       Other similar extension points exist, see Microsoft.Common.targets.
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target>
+  -->
+</Project>
