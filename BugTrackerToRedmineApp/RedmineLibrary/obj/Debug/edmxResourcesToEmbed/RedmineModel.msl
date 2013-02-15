@@ -375,6 +375,7 @@
     <EntitySetMapping Name="issues">
       <EntityTypeMapping TypeName="redmineModel.issues">
         <MappingFragment StoreEntitySet="issues">
+          <ScalarProperty Name="source_id" ColumnName="source_id" />
           <ScalarProperty Name="id" ColumnName="id" />
           <ScalarProperty Name="tracker_id" ColumnName="tracker_id" />
           <ScalarProperty Name="project_id" ColumnName="project_id" />
@@ -416,6 +417,7 @@
     <EntitySetMapping Name="journals">
       <EntityTypeMapping TypeName="redmineModel.journals">
         <MappingFragment StoreEntitySet="journals">
+          <ScalarProperty Name="source_id" ColumnName="source_id" />
           <ScalarProperty Name="id" ColumnName="id" />
           <ScalarProperty Name="journalized_id" ColumnName="journalized_id" />
           <ScalarProperty Name="journalized_type" ColumnName="journalized_type" />

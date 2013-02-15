@@ -21,5 +21,6 @@ namespace RedmineLibrary
         public string notes { get; set; }
         public System.DateTime created_on { get; set; }
         public bool private_notes { get; set; }
+        public Nullable<int> source_id { get; set; }
     }
 }

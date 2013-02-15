@@ -37,5 +37,6 @@ namespace RedmineLibrary
         public Nullable<int> lft { get; set; }
         public Nullable<int> rgt { get; set; }
         public bool is_private { get; set; }
+        public Nullable<int> source_id { get; set; }
     }
 }

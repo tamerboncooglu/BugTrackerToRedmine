@@ -440,6 +440,7 @@
     <Property Name="lft" Type="Int32" />
     <Property Name="rgt" Type="Int32" />
     <Property Name="is_private" Type="Boolean" Nullable="false" />
+    <Property Type="Int32" Name="source_id" />
   </EntityType>
   <EntityType Name="journal_details">
     <Key>
@@ -463,6 +464,7 @@
     <Property Name="notes" Type="String" MaxLength="65535" Unicode="false" FixedLength="false" />
     <Property Name="created_on" Type="DateTime" Nullable="false" />
     <Property Name="private_notes" Type="Boolean" Nullable="false" />
+    <Property Type="Int32" Name="source_id" />
   </EntityType>
   <EntityType Name="kb_articles">
     <Key>

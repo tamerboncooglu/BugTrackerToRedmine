@@ -4,7 +4,7 @@
   <edmx:Runtime>
     <!-- SSDL content -->
     <edmx:StorageModels>
-      <Schema Namespace="redmineModel.Store" Alias="Self" Provider="MySql.Data.MySqlClient" ProviderManifestToken="5.5" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns="http://schemas.microsoft.com/ado/2009/11/edm/ssdl">
+    <Schema Namespace="redmineModel.Store" Alias="Self" Provider="MySql.Data.MySqlClient" ProviderManifestToken="5.5" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns="http://schemas.microsoft.com/ado/2009/11/edm/ssdl">
         <EntityContainer Name="redmineModelStoreContainer">
           <EntitySet Name="attachments" EntityType="redmineModel.Store.attachments" store:Type="Tables" Schema="redmine" />
           <EntitySet Name="auth_sources" EntityType="redmineModel.Store.auth_sources" store:Type="Tables" Schema="redmine" />
@@ -494,6 +494,7 @@
           <Property Name="lft" Type="int" />
           <Property Name="rgt" Type="int" />
           <Property Name="is_private" Type="bool" Nullable="false" />
+          <Property Name="source_id" Type="int" />
         </EntityType>
         <EntityType Name="journal_details">
           <Key>
@@ -517,6 +518,7 @@
           <Property Name="notes" Type="text" />
           <Property Name="created_on" Type="datetime" Nullable="false" />
           <Property Name="private_notes" Type="bool" Nullable="false" />
+          <Property Name="source_id" Type="int" />
         </EntityType>
         <EntityType Name="kb_articles">
           <Key>
@@ -914,8 +916,7 @@
           <Property Name="field_name" Type="varchar" MaxLength="30" />
           <Property Name="rule" Type="varchar" MaxLength="30" />
         </EntityType>
-      </Schema>
-    </edmx:StorageModels>
+      </Schema></edmx:StorageModels>
     <!-- CSDL content -->
     <edmx:ConceptualModels>
       <Schema Namespace="redmineModel" Alias="Self" p1:UseStrongSpatialTypes="false" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" xmlns:p1="http://schemas.microsoft.com/ado/2009/02/edm/annotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm">
@@ -1359,6 +1360,7 @@
           <Property Name="lft" Type="Int32" />
           <Property Name="rgt" Type="Int32" />
           <Property Name="is_private" Type="Boolean" Nullable="false" />
+          <Property Type="Int32" Name="source_id" />
         </EntityType>
         <EntityType Name="journal_details">
           <Key>
@@ -1382,6 +1384,7 @@
           <Property Name="notes" Type="String" MaxLength="65535" Unicode="false" FixedLength="false" />
           <Property Name="created_on" Type="DateTime" Nullable="false" />
           <Property Name="private_notes" Type="Boolean" Nullable="false" />
+          <Property Type="Int32" Name="source_id" />
         </EntityType>
         <EntityType Name="kb_articles">
           <Key>
@@ -2153,6 +2156,7 @@
           <EntitySetMapping Name="issues">
             <EntityTypeMapping TypeName="redmineModel.issues">
               <MappingFragment StoreEntitySet="issues">
+                <ScalarProperty Name="source_id" ColumnName="source_id" />
                 <ScalarProperty Name="id" ColumnName="id" />
                 <ScalarProperty Name="tracker_id" ColumnName="tracker_id" />
                 <ScalarProperty Name="project_id" ColumnName="project_id" />
@@ -2194,6 +2198,7 @@
           <EntitySetMapping Name="journals">
             <EntityTypeMapping TypeName="redmineModel.journals">
               <MappingFragment StoreEntitySet="journals">
+                <ScalarProperty Name="source_id" ColumnName="source_id" />
                 <ScalarProperty Name="id" ColumnName="id" />
                 <ScalarProperty Name="journalized_id" ColumnName="journalized_id" />
                 <ScalarProperty Name="journalized_type" ColumnName="journalized_type" />
