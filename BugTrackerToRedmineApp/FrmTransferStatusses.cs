@@ -42,10 +42,10 @@ namespace BugTrackerToRedmineApp
 
         private void GetRedmineStatuses()
         {
-            var userModelsRedmine = new List<StatusModel>();
+            var statusModelsRedmine = new List<StatusModel>();
             foreach (var status in _redmineEntities.issue_statuses.ToList())
             {
-                userModelsRedmine.Add(new StatusModel
+                statusModelsRedmine.Add(new StatusModel
                 {
                     Position = status.position,
                     StatusID = status.id,
@@ -53,7 +53,7 @@ namespace BugTrackerToRedmineApp
                     Default = status.is_default ? 1 : 0
                 });
             }
-            grdRStatuses.DataSource = userModelsRedmine;
+            grdRStatuses.DataSource = statusModelsRedmine;
         }
 
         private void GetBTStatuses()

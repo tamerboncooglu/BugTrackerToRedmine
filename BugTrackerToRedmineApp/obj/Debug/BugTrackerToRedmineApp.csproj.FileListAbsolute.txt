@@ -21,3 +21,4 @@ C:\Users\unknown\Documents\Visual Studio 2012\Projects\BugTrackerToRedmine\BugTr
 C:\Users\unknown\Documents\Visual Studio 2012\Projects\BugTrackerToRedmine\BugTrackerToRedmineApp\bin\Debug\Tamir.SharpSSH.dll
 C:\Users\unknown\Documents\Visual Studio 2012\Projects\BugTrackerToRedmine\BugTrackerToRedmineApp\bin\Debug\DiffieHellman.dll
 C:\Users\unknown\Documents\Visual Studio 2012\Projects\BugTrackerToRedmine\BugTrackerToRedmineApp\bin\Debug\Org.Mentalis.Security.dll
+C:\Users\unknown\Documents\Visual Studio 2012\Projects\BugTrackerToRedmine\BugTrackerToRedmineApp\obj\Debug\BugTrackerToRedmineApp.FrmTransferProjects.resources

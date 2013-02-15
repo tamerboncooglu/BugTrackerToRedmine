@@ -74,6 +74,12 @@
     <Compile Include="FrmTransferBugs.Designer.cs">
       <DependentUpon>FrmTransferBugs.cs</DependentUpon>
     </Compile>
+    <Compile Include="FrmTransferProjects.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FrmTransferProjects.Designer.cs">
+      <DependentUpon>FrmTransferProjects.cs</DependentUpon>
+    </Compile>
     <Compile Include="FrmTransferStatusses.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -86,6 +92,7 @@
     <Compile Include="FrmTransferUsers.Designer.cs">
       <DependentUpon>FrmTransferUsers.cs</DependentUpon>
     </Compile>
+    <Compile Include="Model\ProjectModel.cs" />
     <Compile Include="Model\UserModel.cs" />
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
@@ -95,6 +102,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="FrmTransferBugs.resx">
       <DependentUpon>FrmTransferBugs.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="FrmTransferProjects.resx">
+      <DependentUpon>FrmTransferProjects.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="FrmTransferStatusses.resx">
       <DependentUpon>FrmTransferStatusses.cs</DependentUpon>

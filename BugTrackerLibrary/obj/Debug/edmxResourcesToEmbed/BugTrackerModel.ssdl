@@ -168,6 +168,7 @@
     <Property Name="bg_tags" Type="nvarchar" MaxLength="200" />
     <Property Name="Bildiren" Type="nvarchar" MaxLength="128" />
     <Property Name="Nasıl oluşturuluyor" Type="nvarchar" MaxLength="2048" />
+    <Property Name="IsTransfered" Type="bit" />
   </EntityType>
   <EntityType Name="categories">
     <Key>

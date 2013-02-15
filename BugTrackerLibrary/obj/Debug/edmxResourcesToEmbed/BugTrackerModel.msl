@@ -92,6 +92,7 @@
     <EntitySetMapping Name="bugs">
       <EntityTypeMapping TypeName="BugTrackerModel.bugs">
         <MappingFragment StoreEntitySet="bugs">
+          <ScalarProperty Name="IsTransfered" ColumnName="IsTransfered" />
           <ScalarProperty Name="bg_id" ColumnName="bg_id" />
           <ScalarProperty Name="bg_short_desc" ColumnName="bg_short_desc" />
           <ScalarProperty Name="bg_reported_user" ColumnName="bg_reported_user" />

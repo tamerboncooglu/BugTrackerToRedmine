@@ -31,6 +31,7 @@
             this.btnTransferUsers = new System.Windows.Forms.Button();
             this.btnTransferStatuses = new System.Windows.Forms.Button();
             this.btnTransferBugs = new System.Windows.Forms.Button();
+            this.btnTransferProjects = new System.Windows.Forms.Button();
             this.SuspendLayout();
             // 
             // btnTransferUsers
@@ -63,11 +64,22 @@
             this.btnTransferBugs.UseVisualStyleBackColor = true;
             this.btnTransferBugs.Click += new System.EventHandler(this.btnTransferBugs_Click);
             // 
+            // btnTransferProjects
+            // 
+            this.btnTransferProjects.Location = new System.Drawing.Point(38, 147);
+            this.btnTransferProjects.Name = "btnTransferProjects";
+            this.btnTransferProjects.Size = new System.Drawing.Size(141, 41);
+            this.btnTransferProjects.TabIndex = 3;
+            this.btnTransferProjects.Text = "Transfer Projects";
+            this.btnTransferProjects.UseVisualStyleBackColor = true;
+            this.btnTransferProjects.Click += new System.EventHandler(this.btnTransferProjects_Click);
+            // 
             // FrmMain
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(613, 371);
+            this.Controls.Add(this.btnTransferProjects);
             this.Controls.Add(this.btnTransferBugs);
             this.Controls.Add(this.btnTransferStatuses);
             this.Controls.Add(this.btnTransferUsers);
@@ -83,6 +95,7 @@
         private System.Windows.Forms.Button btnTransferUsers;
         private System.Windows.Forms.Button btnTransferStatuses;
         private System.Windows.Forms.Button btnTransferBugs;
+        private System.Windows.Forms.Button btnTransferProjects;
     }
 }
 

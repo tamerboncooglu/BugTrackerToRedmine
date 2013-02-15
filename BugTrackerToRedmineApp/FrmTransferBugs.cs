@@ -5,6 +5,7 @@ using System.Diagnostics;
 using System.Globalization;
 using System.IO;
 using System.Linq;
+using System.Security.Cryptography;
 using System.Text;
 using System.Windows.Forms;
 using BugTrackerLibrary;
@@ -43,7 +44,7 @@ namespace BugTrackerToRedmineApp
 
         private void GetBTBugs()
         {
-            foreach (var bug in _bugTrackerEntities.bugs.ToList().Where(w => w.bg_project == 5 || w.bg_project == 9))
+            foreach (var bug in _bugTrackerEntities.bugs.ToList().Where(w => (w.bg_project == 5 || w.bg_project == 9) && w.IsTransfered != true))
             {
                 _bugsModels.Add(new BugModel
                 {
@@ -59,7 +60,7 @@ namespace BugTrackerToRedmineApp
                     Status = bug.bg_status,
                     UpdateOn = bug.bg_last_updated_date,
                     Project = bug.bg_project,
-                    Module= bug.bg_project_custom_dropdown_value1,
+                    Module = bug.bg_project_custom_dropdown_value1,
                     IsUpdateRequired = bug.bg_project_custom_dropdown_value2
                 });
             }
@@ -183,7 +184,7 @@ namespace BugTrackerToRedmineApp
                     issue = _redmineEntities.issues.FirstOrDefault(w => w.source_id == bugModel.BugId);
                     issue.root_id = issue.id;
 
-                    if (string.IsNullOrEmpty(bugModel.Notifier))
+                    if (!string.IsNullOrEmpty(bugModel.Notifier))
                     {
                         custom_values custom = new custom_values();
                         custom.custom_field_id = _redmineEntities.custom_fields.FirstOrDefault(w => w.name == "Notifier").id;
@@ -194,7 +195,7 @@ namespace BugTrackerToRedmineApp
                         _redmineEntities.SaveChanges();
                     }
 
-                    if (string.IsNullOrEmpty(bugModel.IsUpdateRequired))
+                    if (!string.IsNullOrEmpty(bugModel.IsUpdateRequired))
                     {
                         custom_values custom = new custom_values();
                         custom.custom_field_id = _redmineEntities.custom_fields.FirstOrDefault(w => w.name == "Publish Required").id;
@@ -205,7 +206,7 @@ namespace BugTrackerToRedmineApp
                         _redmineEntities.SaveChanges();
                     }
 
-                    if (string.IsNullOrEmpty(bugModel.Module))
+                    if (!string.IsNullOrEmpty(bugModel.Module))
                     {
                         custom_values custom = new custom_values();
                         if (bugModel.Project == 5)
@@ -242,7 +243,7 @@ namespace BugTrackerToRedmineApp
                             journal.notes = journal.notes.Replace("Yayın Onaylandı", "Closed");
                             journal.notes = journal.notes.Replace("Teklif Gerekiyor", "Bid Required");
                         }
-                        
+
                         journal.created_on = bugPost.bp_date;
                         journal.journalized_id = issue.id;
                         journal.journalized_type = "Issue";
@@ -275,17 +276,11 @@ namespace BugTrackerToRedmineApp
                             else
                                 fileName = bugPost.bp_id.ToString(CultureInfo.InvariantCulture);
 
-                            var localPath = ConfigurationSettings.AppSettings["sshLocalPath"].ToString(CultureInfo.InvariantCulture) + fileName;
-                            var remotePath = (ConfigurationSettings.AppSettings["sshRemotePath"].ToString(CultureInfo.InvariantCulture) + "/" + fileName).ToString(CultureInfo.InvariantCulture);
+                            var localPath = ConfigurationSettings.AppSettings["sshLocalPath"].ToString(CultureInfo.InvariantCulture) + "\\" + fileName;
+                            var remotePath = ("files/" + ConfigurationSettings.AppSettings["sshRemotePath"].ToString(CultureInfo.InvariantCulture) + "/btn_" + fileName).ToString(CultureInfo.InvariantCulture);
 
-                            if (string.IsNullOrEmpty(fileName))
-                            {
-                                Debug.WriteLine("file name is empty : " + fileName);
-                                continue;
-                            }
-
-                            using (var fs = new FileStream(localPath, FileMode.Create, FileAccess.Write))
-                                fs.Write(bugPostAttachment.bpa_content, 0, bugPostAttachment.bpa_content.Length);
+                            //using (var fs = new FileStream(localPath, FileMode.Create, FileAccess.Write))
+                            //    fs.Write(bugPostAttachment.bpa_content, 0, bugPostAttachment.bpa_content.Length);
 
                             journalDetail.value = fileName;
                             journalDetail.prop_key = "1";
@@ -297,22 +292,41 @@ namespace BugTrackerToRedmineApp
                             attachment.container_type = "Issue";
                             attachment.created_on = issue.created_on;
                             attachment.description = "";
-                            attachment.digest = Guid.NewGuid().ToString();
-                            attachment.disk_directory =
-                                ConfigurationSettings.AppSettings["sshRemotePath"].ToString(CultureInfo.InvariantCulture);
-                            attachment.disk_filename = fileName;
-                            attachment.filename = fileName;
+                            attachment.digest = CalculateMD5Hash(bugPostAttachment.bpa_content);
+                            attachment.disk_directory = ConfigurationSettings.AppSettings["sshRemotePath"].ToString(CultureInfo.InvariantCulture);
+                            attachment.disk_filename = "btn_" + fileName;
+                            attachment.filename = bugPost.bp_file;//fileName
                             attachment.filesize = bugPostAttachment.bpa_content.Length;
                             attachment.downloads = 0;
                             _redmineEntities.attachments.Add(attachment);
                             _redmineEntities.SaveChanges();
                             lstAdd(fileName + " file transfering");
-                            FileUpload(remotePath, localPath);
+                            FileUpload(remotePath, localPath, bugPostAttachment.bpa_content);
                             lstAdd(fileName + " processed");
                         }
                     }
+
+                    var bug = _bugTrackerEntities.bugs.FirstOrDefault(w => w.bg_id == bugModel.BugId);
+                    bug.IsTransfered = true;
+                    _bugTrackerEntities.SaveChanges();
                 }
             }
+        }
+
+        public string CalculateMD5Hash(byte[] inputBytes)
+        {
+            // step 1, calculate MD5 hash from input
+            MD5 md5 = MD5.Create();
+
+            byte[] hash = md5.ComputeHash(inputBytes);
+
+            // step 2, convert byte array to hex string
+            StringBuilder sb = new StringBuilder();
+            for (int i = 0; i < hash.Length; i++)
+            {
+                sb.Append(hash[i].ToString("X2"));
+            }
+            return sb.ToString().ToLower();
         }
 
         static int checkAck(Stream ins)
@@ -349,7 +363,7 @@ namespace BugTrackerToRedmineApp
             return b;
         }
 
-        private void FileUpload(string remoteFile, string localFile)
+        private void FileUpload(string remoteFile, string localFile, byte[] localFileBytes)
         {
             try
             {
@@ -363,14 +377,9 @@ namespace BugTrackerToRedmineApp
 
                 channel.connect();
 
-                if (checkAck(ins) != 0)
-                {
-                    //Environment.Exit(0);
-                }
-
                 // send "C0644 filesize filename", where filename should not include '/'
 
-                int filesize = (int)(new FileInfo(localFile)).Length;
+                int filesize = localFileBytes.Length;//(int)(new FileInfo(localFile)).Length;
                 command = "C0644 " + filesize + " ";
                 if (localFile.LastIndexOf('/') > 0)
                 {
@@ -384,34 +393,30 @@ namespace BugTrackerToRedmineApp
                 byte[] buff = Util.getBytes(command);
                 outs.Write(buff, 0, buff.Length); outs.Flush();
 
-                if (checkAck(ins) != 0)
-                {
-                    //Environment.Exit(0);
-                }
-
-
+       
                 // send a content of lfile
-                FileStream fis = File.OpenRead(localFile);
-                byte[] buf = new byte[1024];
+                //FileStream fis = File.OpenRead(localFile);
+                
                 //var prg = string.Empty;
-                while (true)
+                //int fileBufLen = localFileBytes.Length;
+                int filePos = 0;
+                while (filePos < filesize)
                 {
-                    int len = fis.Read(buf, 0, buf.Length);
+                    int len = filesize - filePos;
+                    if (len > 1024)
+                        len = 1024;
                     if (len <= 0) break;
-                    outs.Write(buf, 0, len); outs.Flush();
+                    outs.Write(localFileBytes, filePos, len); outs.Flush();
                     Debug.Write("#");
+                    filePos += 1024;
                     //prg += "#";
                 }
                 //lstAdd(prg);
 
                 // send '\0'
+                byte[] buf = new byte[2];
                 buf[0] = 0; outs.Write(buf, 0, 1); outs.Flush();
                 Debug.Write(".");
-
-                if (checkAck(ins) != 0)
-                {
-                    //Environment.Exit(0);
-                }
 
                 //lstAdd(localFile + " file transfered " + remoteFile);
 

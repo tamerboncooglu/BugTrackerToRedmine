@@ -37,5 +37,12 @@ namespace BugTrackerToRedmineApp
             frmTransferBugs.ShowDialog();
             frmTransferBugs.Dispose();
         }
+
+        private void btnTransferProjects_Click(object sender, EventArgs e)
+        {
+            var frmTransferProjects = new FrmTransferProjects();
+            frmTransferProjects.ShowDialog();
+            frmTransferProjects.Dispose();
+        }
     }
 }

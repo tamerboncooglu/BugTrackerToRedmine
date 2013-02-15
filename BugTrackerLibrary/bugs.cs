@@ -33,5 +33,6 @@ namespace BugTrackerLibrary
         public string bg_tags { get; set; }
         public string Bildiren { get; set; }
         public string Nasıl_oluşturuluyor { get; set; }
+        public Nullable<bool> IsTransfered { get; set; }
     }
 }

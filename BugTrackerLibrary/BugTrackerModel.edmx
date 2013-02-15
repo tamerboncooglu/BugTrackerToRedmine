@@ -4,7 +4,7 @@
   <edmx:Runtime>
     <!-- SSDL content -->
     <edmx:StorageModels>
-      <Schema Namespace="BugTrackerModel.Store" Alias="Self" Provider="System.Data.SqlClient" ProviderManifestToken="2005" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns="http://schemas.microsoft.com/ado/2009/11/edm/ssdl">
+    <Schema Namespace="BugTrackerModel.Store" Alias="Self" Provider="System.Data.SqlClient" ProviderManifestToken="2005" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns="http://schemas.microsoft.com/ado/2009/11/edm/ssdl">
         <EntityContainer Name="BugTrackerModelStoreContainer">
           <EntitySet Name="bug_post_attachments" EntityType="BugTrackerModel.Store.bug_post_attachments" store:Type="Tables" Schema="dbo" />
           <EntitySet Name="bug_posts" EntityType="BugTrackerModel.Store.bug_posts" store:Type="Tables" Schema="dbo" />
@@ -173,6 +173,7 @@
           <Property Name="bg_tags" Type="nvarchar" MaxLength="200" />
           <Property Name="Bildiren" Type="nvarchar" MaxLength="128" />
           <Property Name="Nasıl oluşturuluyor" Type="nvarchar" MaxLength="2048" />
+          <Property Name="IsTransfered" Type="bit" />
         </EntityType>
         <EntityType Name="categories">
           <Key>
@@ -471,8 +472,7 @@
           <Property Name="vote_bug" Type="int" Nullable="false" />
           <Property Name="vote_total" Type="int" />
         </EntityType>
-      </Schema>
-    </edmx:StorageModels>
+      </Schema></edmx:StorageModels>
     <!-- CSDL content -->
     <edmx:ConceptualModels>
       <Schema Namespace="BugTrackerModel" Alias="Self" p1:UseStrongSpatialTypes="false" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" xmlns:p1="http://schemas.microsoft.com/ado/2009/02/edm/annotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm">
@@ -617,6 +617,7 @@
           <Property Name="bg_tags" Type="String" MaxLength="200" Unicode="true" FixedLength="false" />
           <Property Name="Bildiren" Type="String" MaxLength="128" Unicode="true" FixedLength="false" />
           <Property Name="Nasıl_oluşturuluyor" Type="String" MaxLength="2048" Unicode="true" FixedLength="false" />
+          <Property Type="Boolean" Name="IsTransfered" />
         </EntityType>
         <EntityType Name="categories">
           <Key>
@@ -1009,6 +1010,7 @@
           <EntitySetMapping Name="bugs">
             <EntityTypeMapping TypeName="BugTrackerModel.bugs">
               <MappingFragment StoreEntitySet="bugs">
+                <ScalarProperty Name="IsTransfered" ColumnName="IsTransfered" />
                 <ScalarProperty Name="bg_id" ColumnName="bg_id" />
                 <ScalarProperty Name="bg_short_desc" ColumnName="bg_short_desc" />
                 <ScalarProperty Name="bg_reported_user" ColumnName="bg_reported_user" />

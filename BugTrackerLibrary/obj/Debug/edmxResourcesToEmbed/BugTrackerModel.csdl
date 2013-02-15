@@ -141,6 +141,7 @@
     <Property Name="bg_tags" Type="String" MaxLength="200" Unicode="true" FixedLength="false" />
     <Property Name="Bildiren" Type="String" MaxLength="128" Unicode="true" FixedLength="false" />
     <Property Name="Nasıl_oluşturuluyor" Type="String" MaxLength="2048" Unicode="true" FixedLength="false" />
+    <Property Type="Boolean" Name="IsTransfered" />
   </EntityType>
   <EntityType Name="categories">
     <Key>
